@@ -28,4 +28,41 @@ def experiment_list(request):
     data = JSONParser().parse(request)
     # Create the new data in serializer
     serializer = ExperimentSerializer(data=data)
+    # if it is valid save it
+    if serializer.is_valid():
+      serializer.save()
+      # return the new data or give an error if not valid
+      # 201 = created 
+      return JsonReponse(serializer.data, status=201)
+    # 400 = bad request
+    return JsonResponse(serializer.errors, status=400)
+  
+  @crsf_exempt
+  # request && primary_key
+  def experiment_detail(request, pk):
+    """
+    Retreieve, update or delete a code experiment
+    """
+    try:
+      experiment = Experiment.objects.get(pk=pk)
+    except Experiment.DoesNotExist:
+      # returns a http request page not found(404)
+      return HttpResponse(status=404)
+    
+    # retrieve data
+    if request.method == 'GET':
+      serializer = ExperimentSerialzer(experiment)
+      return JsonResponse(serializer.data)
+    # Update data
+    elif request.method == 'PUT':
+      # data equals JSONParser, break down the data, parse the data request.
+      data = JSONParser().parse(request)
+      # update the serializer
+      serializer = ExperimentSerializer(experiment, data=data)
+      if serializer.is_valid():
+          serializer.save()
+          return JSONParser(serialzer.data)
+       return JSONParser(serializer.errors status=400)
+    
+    
   
