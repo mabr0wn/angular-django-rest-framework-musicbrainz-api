@@ -62,7 +62,14 @@ def experiment_list(request):
       if serializer.is_valid():
           serializer.save()
           return JSONParser(serialzer.data)
+       # 400 = bad request 
        return JSONParser(serializer.errors status=400)
+      
+    # delete data
+    elif request.method == 'DELETE':
+      experiment.delete()
+      # delete data "no content"
+      return HttpResponse(status=204)
     
     
   
