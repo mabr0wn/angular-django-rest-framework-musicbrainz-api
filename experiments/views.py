@@ -50,7 +50,7 @@ def experiment_detail(request, pk, format=None):
     
     if request.method == 'GET':
         serializer = ExperimentSerializer(experiment)
-        return Response(serialier.data)
+        return Response(serializer.data)
     
     elif request.method == 'PUT':
         serializer = ExperimentSerializer(experiment, data=request.data)
