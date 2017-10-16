@@ -23,13 +23,47 @@ class ExperimentList(mixins.ListModelMixin,
                      mixins.CreateModelMixin,
                      generics.GenericAPIView):
     # Queryset is going to call all the objects in Experiment Model
+    queryset = Experiment.objects.all()
+    # call the fields from the serializer we made.
+    serializer_class = ExperimentSerializer
+    
+    """
+    By calling the *, ** we have now made our code much more
+    simple and easy to write as well as read.
+    """
+    def get(self, request, *args, **kwargs):
+        # return the list of fields with its values.
+        return self.list(request, *args, **kwargs)
+     
+    # return the newly created args and kwargs
+    def post(self, request, *args, *kwargs):
+        return self.create(request, *args, **kwargs)
 
+"""
+We are building our view using GenericAPIView and adding in
+ListModelMixin and CreateModelMixin.
 
+The base class provides the core functionality, and the mixin classes
+provide the .list() and .create() actions.  we're then explicity binding
+the get and post methods to the appropriate actions.
+"""
 
-
-
-
-
+class ExperimentDetail(mixins.RetrieveModelMixin,
+                       mixins.UpdateModelMixin,
+                       mixins.DestroyModelMixin,
+                       generics.GenericAPIView):
+  queryset = Experiment.objects.all()
+  serializer_class = ExperimentSerializer
+  
+  def get(self, request, *args, **kwargs):
+      return self.retrieve(request, *args, **kwargs)
+    
+  def put(self, request, *args, **kwargs):
+      return self.update(request, *args, **kwargs)
+  
+  def delete(self, request, *args, **kwargs):
+      return self.destroy(request, *args, **kwargs)
+    
 # from rest_framework import status
 # from rest_framework.decarators import api_view
 # from rest_framework.response import Response
