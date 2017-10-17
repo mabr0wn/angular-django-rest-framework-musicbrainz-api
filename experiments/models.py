@@ -39,7 +39,7 @@ class Experiment(models.Model):
     above *args and **kwargs is calling the Experiment fields and
     the values assigned to those fields.
     
-    This method def save below allows to create highlighted HTML format,
+    This method def save() below allows to create highlighted HTML format,
     calling itself, with the *args && **kwargs listed in the experiment
     class above from there we call the lexer which will define the language(python)
     you selected for your highlighter, linenos which allows you to add number lines by
