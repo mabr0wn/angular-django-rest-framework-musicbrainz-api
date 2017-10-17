@@ -1,7 +1,9 @@
 from experiments.models import Experiment
-from experiments.serializers import ExperimentSerializer
+from experiments.permissions import IsOwnerReadOnly
+from experiments.serializers import ExperimentSerializer, UserSerializer
 from rest_framework import mixins
 from rest_framework import generics
+from rest_framework import permissions
 
 """
 Here we are going to have a class ExperimentList that has mixins and generics.
