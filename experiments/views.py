@@ -4,7 +4,41 @@ from experiments.serializers import ExperimentSerializer, UserSerializer
 from rest_framework import mixins
 from rest_framework import generics
 from rest_framework import permissions
+from rest_framework.decarators import api_view
+from rest_framework.response import Response
+from rest_framework import renderers
 
+"""
+This will create a reverse lookup for our users && experiments.
+api_root your default, sends our request and the repsonse
+will be users && experiments.
+"""
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'experiments': reverse('experiment-list', request=request, format=format)
+    })
+
+"""
+Create an endpoint for experiment highlights, which is missing from our pastebin API,
+we want this to display HTML not json unlike other API endpoints.  This type
+of style is called pre-rendered HTML(StaticHTMLRendered).  What is happening here is
+then render it to a pre-rendered HTML page.
+
+def get is requesting data from experiment and return the data from experiment model class
+with just the data we stated in field highlighted which is self.highlighted from
+our def save() method.
+"""
+
+class ExperimentHighlight(generics.GenericAPIView):
+  queryset = Experiment.objects.all()
+  renderer_classes = (renderers.StaticHTMLRenderer,)
+  
+  def get(self, request, *args, **kwargs):
+      experiment = self.get_object()
+      return Response(experiment.highlighted) # returning code, lexer, formatter
+    
 """
 Here we are going to have a class ExperimentList that has mixins and generics.
 Mixins are sort of a class that are used to "mix in" extra properties and methods
@@ -14,7 +48,7 @@ way to customize and modify your views.
 
 Generic is a pre-built view that provides provide commonly uesd patterns, it saves you time.
 
-We also are going to shorten this by using *args  && **kwargs,
+We also are going to shorten this by using *args && **kwargs,
 which simply *args will call th fields e.g. 'id', 'title', etc.
 **kwargs will call the fields and assigned value to that field such as 'foo = \"bar\"\n"'
 this is much less writing involved now instead of listing out to call the serialization data
