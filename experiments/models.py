@@ -60,7 +60,7 @@ class Experiment(models.Model):
         lexer = get_lexer_by_name(self.language)
         linenos = self.linenos and 'table' or False
         options = self.title and {'title': self.title} or {}
-        formatter - HtmlFormatter(style=self.style, linenoe=linenos,
+        formatter = HtmlFormatter(style=self.style, linenoe=linenos,
                                   full=True, **options)
         self.highlighted = highlight(self.code, lexer, formatter)
         super().save(*args, **kwargs)
