@@ -46,6 +46,13 @@ class ExperimentList(mixins.ListModelMixin,
     # return the newly created args and kwargs
     def post(self, request, *args, *kwargs):
         return self.create(request, *args, **kwargs)
+    
+    # allows a user to save a created change in our Experiment List,
+    # from the data that has been serialized.
+    # The create() method of our serializer will not be passed in
+    # unless you are authenticated.
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 """
 We are building our view using GenericAPIView and adding in
