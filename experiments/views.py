@@ -29,6 +29,12 @@ class ExperimentList(mixins.ListModelMixin,
     # call the fields from the serializer we made.
     serializer_class = ExperimentSerializer
     
+    # IsAuthenticatedOrReadyOnly, which will ensure that authenticated requests get read-write access,
+    # and unauthenticated requests get read-only access.
+    permission_classes = (permission.IsAuthenticatedOrReadOnly, 
+                          IsOwnerOrReadOnly,)
+    
+    
     """
     By calling the *, ** we have now made our code much more
     simple and easy to write as well as read.
@@ -56,6 +62,10 @@ class ExperimentDetail(mixins.RetrieveModelMixin,
                        generics.GenericAPIView):
   queryset = Experiment.objects.all()
   serializer_class = ExperimentSerializer
+  
+  permission_classes = (permission.IsAuthenticatedOrReadOnly, 
+                          IsOwnerOrReadOnly,)
+    
   
   def get(self, request, *args, **kwargs):
       return self.retrieve(request, *args, **kwargs)
