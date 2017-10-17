@@ -83,6 +83,22 @@ class ExperimentDetail(mixins.RetrieveModelMixin,
   def delete(self, request, *args, **kwargs):
       return self.destroy(request, *args, **kwargs)
     
+
+"""
+We will also add a couple of views to views.py We'd like to just use read-only views for the user
+representation, so we will use the ListAPIView and RetreieveAPIView generic class-base views.
+"""
+
+from django.contrib.auth.models import User
+
+class UserList(generics.ListAPIViews):
+  queryset = User.objects.all()
+  serializer_class = UserSerializer
+  
+class UserDetail(generics.RetreiveAPIView):
+  queryset = User.objects.all()
+  serializer_class = UserSerializer
+    
 # from rest_framework import status
 # from rest_framework.decarators import api_view
 # from rest_framework.response import Response
