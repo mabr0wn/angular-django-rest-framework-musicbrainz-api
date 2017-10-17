@@ -10,4 +10,4 @@ REST framework, and give you a comprehensive understanding of how everything fit
 
 - We can do this by declaring serializers that work very similar to Django's forms
 - Create a `models.py` to have that data be serialized in `serializers.py`
-- Create a `serializers.py` to serialize the db fields into `JSON`
+- Create a `serializers.py` to serialize the db fields in `models.py` into `JSON`
