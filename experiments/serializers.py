@@ -35,8 +35,8 @@ class UserSerializer(serializer.ModelSerializer):
   experiments = serializers.PrimaryKeyRelatedField(many=True, queryset=Experiment.objects.all())
   
   class Meta:
-    model = User
-    fields = ('id', 'username', 'experiments')
+      model = User
+      fields = ('id', 'username', 'experiments')
 
 
 
