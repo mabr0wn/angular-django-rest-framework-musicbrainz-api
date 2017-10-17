@@ -3,12 +3,43 @@ from experiments.models import Experiment, LANGUAGE_CHOICES, STYLE_CHOICES
 
 """
 Replace the ExperimentSerializer class with the following.
+
+Update our serializer,
+
+Now that experiments are associated with the user that created them, let's update our ExperimentSerializer
+to reflect that.
 """
 class ExperimentSerializer(serializers.ModelSerializer):
+  ''' we can also use CharField(read_only=True) && will set it to read only '''
+  owner = serializers.ReadOnlyField(soruce='owner.username')
+  
   class Meta:
     model = Experiment
     # Many=True will call below instead of the model.
-    fields = ('id', 'title', 'code', 'linenos', 'language', 'style')
+    fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
+    
+    
+    
+from django.contrib.auth.models import User
+
+"""
+Now we need to add a User serializer to work with Users, we will add a representation of those users
+to our API.  We create this to see how many JSON each user has created, it will display the id, username
+and the number of experiments that user created.
+
+Because 'experiments' is a reverse relationship on the User model, it will not be included by default
+when using the ModelSerializer class, so we need to add an explicit field for it.
+"""
+
+class UserSerializer(serializer.ModelSerializer):
+  experiments = serializers.PrimaryKeyRelatedField(many=True, queryset=Experiment.objects.all())
+  
+  class Meta:
+    model = User
+    fields = ('id', 'username', 'experiments')
+
+
+
 
 # class SnippetSerializer(serializers.Serializer):
 # 	id = serializers.IntegerField(read_only=True)
