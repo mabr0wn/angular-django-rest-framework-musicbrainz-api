@@ -9,14 +9,19 @@ Update our serializer,
 Now that experiments are associated with the user that created them, let's update our ExperimentSerializer
 to reflect that.
 """
-class ExperimentSerializer(serializers.ModelSerializer):
+class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
   ''' we can also use CharField(read_only=True) && will set it to read only '''
   owner = serializers.ReadOnlyField(soruce='owner.username')
+  ''' HyperLinkedIdentitField used to represent the target of the relationship using a hyperlink
+      Will allow the serialized data to show a hyperlink for highlight and point it to view name
+      experiment-highlight and format it in HTML        '''
+  highlight = serializers.HyperLinkedIdentityField(view_name='experiment-highlight', format='html')
   
   class Meta:
     model = Experiment
     # Many=True will call below instead of the model.
-    fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
+    fields = ('url', 'id', 'highlight',  'owner',
+              'title', 'code', 'linenos', 'language', 'style',)
     
     
     
@@ -31,12 +36,12 @@ Because 'experiments' is a reverse relationship on the User model, it will not b
 when using the ModelSerializer class, so we need to add an explicit field for it.
 """
 
-class UserSerializer(serializer.ModelSerializer):
+class UserSerializer(serializer.HyperlinkedModelSerializer):
   experiments = serializers.PrimaryKeyRelatedField(many=True, queryset=Experiment.objects.all())
   
   class Meta:
       model = User
-      fields = ('id', 'username', 'experiments')
+      fields = ('url', 'id', 'username', 'experiments')
 
 
 
