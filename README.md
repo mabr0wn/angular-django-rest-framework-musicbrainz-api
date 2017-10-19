@@ -33,7 +33,7 @@ class Experiment(models.Model):
 	style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
 	def save(self, *args, **kwargs):
-    lexer = get_lexer_by_name(self.language)
+                lexer = get_lexer_by_name(self.language)
 		linenos = self.linenos and 'table' or False
 		options = self.title and {'title': self.title} or {}
 		formatter = HtmlFormatter(style=self.style, linenos=linenos,
