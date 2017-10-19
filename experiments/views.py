@@ -24,3 +24,9 @@ class ExperimentViewSet(viewsets.ModelViewSet):
                           IsOwnerOrReadOnly,)
     
     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
+    def highlight(self, request, *args, *kwargs):
+        experiment = self.get_object()
+        return Response(experiment.highlighted)
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
