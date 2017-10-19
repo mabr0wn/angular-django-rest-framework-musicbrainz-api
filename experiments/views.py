@@ -20,4 +20,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     """
     queryset = Experiment.objects.all()
     serializer_class = ExperimentSerializer
-    permission
+    permission_classes = (permissions.IsAuthenicatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
+    
+    @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
