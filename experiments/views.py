@@ -22,7 +22,15 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     serializer_class = ExperimentSerializer
     permission_classes = (permissions.IsAuthenicatedOrReadOnly,
                           IsOwnerOrReadOnly,)
+    """
+    Notice that we've also used the @detail_route decorator to create a custom action, 
+    named highlight. This decorator can be used to add any custom endpoints that don't fit 
+    into the standard create/update/delete style.
     
+    Custom actions which use the @detail_route decorator will respond to GET requests by 
+    default. We can use the methods argument if we wanted an action that responded to POST 
+    requests.
+    """
     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
     def highlight(self, request, *args, *kwargs):
         experiment = self.get_object()
