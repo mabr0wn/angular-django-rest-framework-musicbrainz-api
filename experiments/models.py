@@ -5,8 +5,6 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
 
-# Pygments is used for code highlighting
-
 """
 A Lexer splits the source into tokens, fragments of the source that have a 
 token type that determines what the text represents semantically
@@ -14,12 +12,8 @@ token type that determines what the text represents semantically
 format that Pygments supports
 """
 
-# get_all_lexers() returns an iterable over all registeed lexers, yeilding tuples in the format.
-# call item in get_all_lexers() if item list[1] is one.
 LEXERS = [item for item in get_all_lexers() if item[1]]
-# sort the items in LEXERS and this will list the **kwargs in a pair[('Clipper', 'FoxPro')]
 LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-# sorting the items in get_all_styles()
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Experiment(models.Model):
@@ -65,6 +59,5 @@ class Experiment(models.Model):
         self.highlighted = highlight(self.code, lexer, formatter)
         super().save(*args, **kwargs)
     
-    # order by date created
     class Meta:
         ordering = ('created',)
