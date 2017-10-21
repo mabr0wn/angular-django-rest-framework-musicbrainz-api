@@ -52,6 +52,24 @@ class Musician(models.Model):
         :return: Queryset of Musicians
         """
         search = mb.search_artists(artist)
+        results = search['artist-list'][0]
+        genre = Musician.get_genre_from_musicbrainz_tag_list(results['tag-list'])
+        
+        for collection_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
+            collection = Collection.objects.create(name=collection_dict['title'], creator=creator, slug=slugify(collection['title'])))
+            
+            """
+                Medium-list results from dearch having an additional 
+                <track-count> elements containing the number of
+                tracks over all mediums.
+                e.g. CD 1 of the 1984 US release of "The Wall" by Pink Floyd
+
+            """
+            
+            for record_dict in collection_dict['medium-list'][0]['track-list']:
+                record = Record.objects.create(collection=collection, name=record_dict['recording']['title'],
+                                               record_number=record_dict['position'],
+                                               slug=slugify(record_dict['recording']['title']))
     
 
 class Experiment(models.Model):
