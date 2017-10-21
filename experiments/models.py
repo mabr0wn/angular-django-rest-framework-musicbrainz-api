@@ -1,9 +1,13 @@
 from django.db import models
+from Collection.models import Collection, Record
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
+from django.core.urlresolvers import reverse
+import musicbrainzngs as mb
+from django.utils.text import slugify
 
 """
 A Lexer splits the source into tokens, fragments of the source that have a 
@@ -15,6 +19,40 @@ format that Pygments supports
 LEXERS = [item for item in get_all_lexers() if item[1]]
 LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
+
+mb.set_useragent('Mbrown - mattd429@gmail.com', version='0.0.1')
+
+class Musician(models.Model):
+    record = models.ForeignKey(Record)
+    creator = models.CharField(max_length=255)
+    genre = models.CharField(max_length=255)
+    start_time = models.CharField(max_length=20, blank=True, null=True)
+    end_time = models.CharField(max_length=20, blank=True, null=True)
+    slug = models.SlugField()
+    
+    class Meta:
+        ordering = ['record', 'start_time']
+    
+    def get_absolute_url(self):
+        return reverse('musician_detail_view', kwargs={'collection': self.record.collection.slug, 'record': self.record.slug,
+                                                       'creator': self.slug})
+    def get_period_of_play_time(self):
+        play_string = ''
+        if self.start_time and self.end_time:
+            play_string = '{}-{}'.format(self.start_time, self.end_time)
+        return play_string
+    ''' From MusicBrainzNGS '''
+    @classmethod
+    def get_creator_records_from_musicbrainz_api(cls, artist):
+        """
+        Create Collection, Record, and Musician reords for artists we find
+        in the MusicBrainzNGS API
+        
+        :param artist: an artist's name as a string to search for
+        :return: Queryset of Musicians
+        """
+        search = mb.search_artists(artist)
+    
 
 class Experiment(models.Model):
     owner = models.ForeignKey('auth.User', related_name='experiments', on_delete=model.CASADE)
