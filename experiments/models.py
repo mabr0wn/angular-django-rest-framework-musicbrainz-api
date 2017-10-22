@@ -70,6 +70,20 @@ class Musician(models.Model):
                 record = Record.objects.create(collection=collection, name=record_dict['recording']['title'],
                                                record_number=record_dict['position'],
                                                slug=slugify(record_dict['recording']['title']))
+                Musician.objects.create(record=record, creator=creator, genre=genre, slug=slugify(creator))
+                
+            return Musician.objects.filter(creator=creator)
+    @classmethod
+    def get_genre_from_musicbrainz_tag_list(cls, tag_list):
+        """
+        Return a genre from a list of dict-tags as returned in the
+        MusicBrainzNGS API
+        
+        :param tag_list: a list of dicts with keys 'count' and 'name'
+        :return: a string
+        """
+        map = {'electropop': 'electropop', 'pop': 'pop', 'electronic': 'electronic'}
+        return map[set(map.keys()).intersection([tag['name'] for tag in tag_list]).pop()]
     
 
 class Experiment(models.Model):
