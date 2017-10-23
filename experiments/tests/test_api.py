@@ -37,3 +37,17 @@ class MusicianAPITestCase(APITestCase):
         
         self.assertEqual(route.func.__name__, 'MusicianViewSet')
         
+class ExperimentAPITestCase(APITestCase):
+    
+    def setUp(self):
+        self.title_code = Experiment.objects.create(title='Experiment Title', code='var = 2'),
+        self.language_style = Experiment.objects.create(language='Cucumber', style='autumn'),
+    
+    def test_create_experiment(self):
+        ''' Test that we can create an Experiment '''
+        post_data = {'url': 'http://127.0.0.1:8000/experiments/1/', 'id': 1,
+                     'highlighted': 'http://127.0.0.1:8000/experiments/1/highlight/', 'owner': 'owner',
+                     'title': 'Django Rest framework 3', 'code': '@api_view(['GET'])\r\ndef api_root(request, format=None):\r\n      return Response({\r\n      \t\t'users': reverse('user-list', request=request, format=format),\r\n\t\t'snippets': reverse('snippet-list', request=request, format=format)\r\n      })', 
+                     'linenoe': False, 'language': 'python3', 'style': 'colorful'}
+        response = self.client.post('/api/experiments/', data=post_data, format='html')
+        
