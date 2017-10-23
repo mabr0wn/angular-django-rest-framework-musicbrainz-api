@@ -64,3 +64,11 @@ class ExperimentAPITestCase(APITestCase):
             'style': 'colorful'
         })
         
+    def test_experiment_list_route(self):
+        ''' Test that we've got routing setup for Experiments '''
+        route = resolve('/api/experiments/')
+        
+        self.assertEqual(route.func.__name__, 'ExperimentViewSet')
+
+class UserAPITestCase(APITestCase):
+    pass
