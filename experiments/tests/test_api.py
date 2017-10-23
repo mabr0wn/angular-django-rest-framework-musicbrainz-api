@@ -47,7 +47,20 @@ class ExperimentAPITestCase(APITestCase):
         ''' Test that we can create an Experiment '''
         post_data = {'url': 'http://127.0.0.1:8000/experiments/1/', 'id': 1,
                      'highlighted': 'http://127.0.0.1:8000/experiments/1/highlight/', 'owner': 'owner',
-                     'title': 'Django Rest framework 3', 'code': '@api_view(['GET'])\r\ndef api_root(request, format=None):\r\n      return Response({\r\n      \t\t'users': reverse('user-list', request=request, format=format),\r\n\t\t'snippets': reverse('snippet-list', request=request, format=format)\r\n      })', 
+                     'title': 'Django Rest framework 3', 'code': '@api_view(['GET'])\r\ndef api_root(request, format=None):\r\n      return Response({\r\n      \t\t'users': reverse('user-list', request=request, format=format),\r\n\t\t'experiments': reverse('experiment-list', request=request, format=format)\r\n      })', 
                      'linenoe': False, 'language': 'python3', 'style': 'colorful'}
         response = self.client.post('/api/experiments/', data=post_data, format='html')
+        
+        self.assertEqual(response.status_code, 201, response.data)
+        self.assertEqual(response_data, {
+            'url': 'http://127.0.0.1:8000/experiments/1/',
+            'id': 1,
+            'highlight': 'http://127.0.0.1:8000/experiments/1/highlight/',
+            'owner': 'owner',
+            'title': 'Django is cool',
+            'code': '@api_view(['GET'])\r\ndef api_root(request, format=None):\r\n      return Response({\r\n      \t\t'users': reverse('user-list', request=request, format=format),\r\n\t\t'experiments': reverse('experiment-list', request=request, format=format)\r\n      })',
+            'linenos': False,
+            'language': 'python3',
+            'style': 'colorful'
+        })
         
