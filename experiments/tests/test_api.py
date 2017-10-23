@@ -30,4 +30,10 @@ class MusicianAPITestCase(APITestCase):
             'end_time': '3:15',
             'record':  'http://127.0.0.1:8000/api/tracks/1/'
         })
+    
+    def test_musician_list_route(self):
+        ''' Test that we've got routing set up for Musicians '''
+        route = resolve('/api/musicians/')
+        
+        self.assertEqual(route.func.__name__, 'MusicianViewSet')
         
