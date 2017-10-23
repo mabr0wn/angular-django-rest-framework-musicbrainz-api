@@ -103,4 +103,15 @@ class MusicianModelTestCase(TestCase):
         self.assertEqual(len(created_musicians), 2)
         self.assertEqual(created_musicians[0].artist, 'Maroon 5')
         self.assertEqual(created_composers[1].record.name, 'Goodnight Goodnight')
+    
+    def test_get_genre_from_musicbrainz_tag_list(self):
+        ''' Test that we can map tags from musicbrainz to genres '''
+        tag_list = [{'count': '3', 'name': 'electropop'}, {'count': '2', 'name': 'pop'}, {'count': '2', 'name': 'electronic'}]
+        
+        self.assertEqual(Musician.get_genre_from_musicbrainz_tag_list(tag_list), 'electropop')
+        
+class ExperimentModelTestCase(TestCase):
+    
+    def setUp(self):
+        pass
         
