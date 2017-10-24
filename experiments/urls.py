@@ -7,9 +7,12 @@ Create a router and register our viewsets with it.
 DefaultRouter() automatically created the api_root
 from views, no longer required.
 """
-router = DefaultRouter()
+router = routers.SimpleRouter()
 router.register(r'experiments', views.ExerimentsViewSet)
 router.register(r'users', views.UserViewSet)
+router.register(r'musicians', views.MusicianViewSet)
+router.register(r'collections', CollectionViewSet)
+router.register(r'records', RecordViewSet)
 
 """
 The API URLs are now determined automatically by the router.
