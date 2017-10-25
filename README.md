@@ -6,6 +6,10 @@ create a Django project including serialization to serializing and deserializing
 
 - We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
 
+```
+pip install musicbrainzngs
+```
+
 ```html
 <a class="navbar-brand">MB</a>
 
