@@ -1,6 +1,11 @@
 from django.conf.urls import url, include
 from experiments import views
-from rest_framework.routers import DefaultRouter
+from rest_framework.schemas import get_schema_view
+
+from rest_framework import routers
+
+from collections.views import CollectionViewSet, RecordViewSet
+from experiments.views import MusicianViewSet
 
 """
 Create a router and register our viewsets with it.
