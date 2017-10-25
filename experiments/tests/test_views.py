@@ -61,3 +61,23 @@ class IndexViewTestCase(MusicianBaseTestCase):
         musicians = response.context['musicians']
         self.assertEqual(len(musicians), 1)
         self.assertEqual(musicians[0].creator, 'Maroon 5')
+
+class MusicianViewTestCase(MusicianBaseTestCase):
+    
+    def setUp(self):
+        self.factory = RequestFactory()
+    
+    def test_basic(self):
+        self.factory = RequestFactory()
+        
+    def test_basic(self):
+        ''' Test that musician view returns a 200 response, uses the correct template, and has the correct context '''
+        request = self.factory.get('/musicians/voices/nothing-but-trouble/phantogram/')
+        
+        with self.assertTemplateUsed('musicians/musician_detail.html'):
+            response = musician_detail(request, album=self.voices.slug, record=self.nothing_but_trouble.slug,
+                                       creator=self.electropop_musician.slug)
+            self.assertEqual(response.status_code, 200)
+            page = response.content.decode()
+            self.assertInHTML('<p id="mb-artist">Phantogram</p>', page)
+            self.assertInHTML('<p id="mb-track">Nothing but Trouble [1 composer]', page)
