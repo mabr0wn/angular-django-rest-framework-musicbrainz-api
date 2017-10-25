@@ -41,3 +41,8 @@ class RecordAPITestCase(APITestCase):
         self.assertEqual(response.data[0]['name'], 'Futuristic Casket')
         self.assertEqual(response.data[0]['url'], 'http://testserver/records/1/')
    
+    def test_collection_list_route(self):
+        ''' Test that we've got routing setup for collections '''
+        route = resolve('/records/1/')
+        
+        self.assertEqual(route.func.__name__, 'RecordViewSet')
