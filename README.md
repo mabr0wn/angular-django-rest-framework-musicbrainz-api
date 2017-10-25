@@ -4,6 +4,31 @@
 
 create a Django project including serialization to serializing and deserializing the experiment instances into representations such as `json`
 
+- We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
+
+```html
+<a class="navbar-brand">MB</a>
+
+<form>
+  <label for="mb-genre">Genre</label>
+  <input type="text" class="form-control" id="mb-genre" name="genre" placeholder="i.e. pop" />
+
+  <label for="mb-artist">Artist</label>
+  <input type="text" class="form-control" id="mb-artist" name="artist" placeholder="i.e. Maroon 5" />
+
+  <button type="submit">Search MB</button>
+</form>
+
+{% for musician in musicians %}
+  <div class="mb-search-result">
+      <a href="{{ composer.get_absolute_url }}">
+        {{ musician.track }}: {{ musician.artist }} on {{ musician.genre }}
+      </a>
+  </div>
+{% endfor %}
+
+```
+
 - Web API 
 
 REST framework, and give you a comprehensive understanding of how everything fits together. we need to use serialization to store instances for representation of `JSON`
