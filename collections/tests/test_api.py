@@ -38,3 +38,6 @@ class RecordAPITestCase(APITestCase):
         response = self.client.get('/records/')
         
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data[0]['name'], 'Futuristic Casket')
+        self.assertEqual(response.data[0]['url'], 'http://testserver/records/1/')
+   
