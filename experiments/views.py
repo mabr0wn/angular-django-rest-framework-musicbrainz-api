@@ -1,11 +1,20 @@
-from experiments.model import Experiment
+from experiments.model import Experiment, Musician
 from experiments.permission import IsOwnerOrReadOnly
-from experiments.serializer import ExperimentSerializer, UserSerializer
+from experiments.serializer import ExperimentSerializer, UserSerializer, MusicianSerializer
+from rest_framework import mixins
+from rest_framework import generics
 from rest_framework import permissions
 from rest_framework.decorators import detail_route
 from rest_framwork.response import Response
-from rest_framework import renderers, viewsets
+from rest_framework.reverse import reverse
+from rest_framework import renderers, viewsets, mixins
 from django.contrib.auth.models import User
+
+from django.shortcuts import render_to_response
+
+import musicbrianzngs as mb
+
+mb.set_useragent('', version='0.0.1')
 
 """
 We can now group all three views classes into one now using
