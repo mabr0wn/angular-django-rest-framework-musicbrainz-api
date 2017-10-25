@@ -30,4 +30,11 @@ class RecordAPITestCase(APITestCase):
     def setUp(self):
         self.eyelid_movies = Collection.objects.create(name='Eyelid Movies', slug='eyelig-movies')
         self.futuristic_casket = Collection.objects.create(name='Futuristic Casket', slug='futuristic-casket',
-                                                           album=self.eyelid_movies)
+                                                           collection=self.eyelid_movies)
+        self.electropop_musician = Musician.objects.create(genre='electropop', creator='Phantogram',
+                                                           slug='phantogram', record=self.futuristic_casket)
+    def test_retrieve_record(self):
+        ''' Test that we can get a list of records '''
+        response = self.client.get('/records/')
+        
+        self.assertEqual(response.status_code, 200)
