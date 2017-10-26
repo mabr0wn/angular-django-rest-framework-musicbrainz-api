@@ -14,7 +14,22 @@ from django.shortcuts import render_to_response
 
 import musicbrianzngs as mb
 
-mb.set_useragent('', version='0.0.1')
+mb.set_useragent('PUT_EMAIL_HERE', version='0.0.1')
+
+def index(request):
+    context = {'musicians': []}
+    
+    if request.GET.keys():
+        musician_queryset = Musician.objects.all()
+        
+        if request.GET.get('genre'):
+            musician_queryset = musician_queryset.filter(genre=request.GET['genre'])
+            
+        creator_kwarg = request.GET.get('creator', None)
+        if creator_kwarg:
+            musicians_queryset = musician_queryset.filter(creator=creator_kwarg)
+            
+        context['musicians'] = musician_queryset
 
 """
 We can now group all three views classes into one now using
