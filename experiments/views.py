@@ -30,6 +30,22 @@ def index(request):
             musicians_queryset = musician_queryset.filter(creator=creator_kwarg)
             
         context['musicians'] = musician_queryset
+        
+        if context['musicians'].count() == 0 and creator_kwarg:
+            context['musicians'] = Musician.get_artist_tracks_from_musicbrainz_api(creator_kwarg)
+    
+    return render_to_response('musicians/index.html', context)
+
+def musician_detail(request, collection, record, creator):
+    context = {
+        'musician': Musician.objects.get(slug=creator, record__slug=record, record__collection__slug=collection)
+    }
+    
+    return render_to_response('musicians/musician_detail.html', context)
+
+class MusicianViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins.RetrieveModelMixin):
+    queryset = Musician.objects.all()
+    serializer_class = MusicianSerializer
 
 """
 We can now group all three views classes into one now using
