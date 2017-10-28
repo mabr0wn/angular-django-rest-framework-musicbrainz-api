@@ -17,3 +17,11 @@ class StudentTestCase(LiveServerTestCase):
         self.record1 = Record.objects.create(name='', slug='')
         self.musician1 = Musician.objects.create(genre='', artist='', track=self.track1,
                                                  slug='')
+        self.collection2 = Collection.objects.create(name='', slug='')
+        self.record2 = Record.objects.create(name='', slug='')
+        self.musician2 = Musician.objects.create(genre='', artist='', track=self.track2,
+                                                 slug='')
+        self.collection3 = Collection.objects.create(name='', slug='')
+        self.record3 = Record.objects.create(name='', slug='')
+        self.musicians3 = Musician.objects.create(genre='', artist='', track=self.track3,
+                                                 slug='')
