@@ -10,6 +10,13 @@ create a Django project including serialization to serialize and deserialize the
 pip install musicbrainzngs
 ```
 
+- pip allows you to install the musicbrainzNGS python content and implement it into your project.
+- Must add the import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
+```python
+import musicbrainzngs as mb 
+
+mb.set_useragent('some_content', version='0.0.1')
+```
 ```html
 <a class="navbar-brand">MB</a>
 
