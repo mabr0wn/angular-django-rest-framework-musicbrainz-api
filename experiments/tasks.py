@@ -36,4 +36,10 @@ def get_artist_tracks_from_musicbrianz_api(artist):
         collection = Collection.objects.create(name=collection_dict['title'], artist=artist, slug=slugify(collection_dict['title']))
         
         for record_dict in collection_dict['medium-list'][0]['track-list']:
-            record = Record.objects.create(collection=collection, name=record_dict)
+            record = Record.objects.create(collection=collection, name=record_dict['recording']['title'],
+                                           record_number=record_dict['position'],
+                                           slug=slugify(record_dict['recording']['title']))
+            
+            Musician.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))
+            
+    return Musician.objects.filter(artist=artist)
