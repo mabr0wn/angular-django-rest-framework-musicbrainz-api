@@ -34,4 +34,7 @@ class StudentTestCase(LiveServerTestCase):
         self.admin_user = get_user_model().objects.create_superuser(username='username', email='example@example.com'
                                                                     password='password')
         
+    def tearDown(self):
+        self.browser.quit()
+        
         
