@@ -37,4 +37,8 @@ class StudentTestCase(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
         
+    def find_search_results(self):
+        return self.browser.find_elements_by_css_selector('.mb-search-result a')
+    
+        
         
