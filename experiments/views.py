@@ -25,20 +25,20 @@ def index(request):
         if request.GET.get('genre'):
             musician_queryset = musician_queryset.filter(genre=request.GET['genre'])
             
-        creator_kwarg = request.GET.get('creator', None)
-        if creator_kwarg:
-            musicians_queryset = musician_queryset.filter(creator=creator_kwarg)
+        artist_kwarg = request.GET.get('artist', None)
+        if artist_kwarg:
+            musicians_queryset = musician_queryset.filter(artist=artist_kwarg)
             
         context['musicians'] = musician_queryset
         
-        if context['musicians'].count() == 0 and creator_kwarg:
-            context['musicians'] = Musician.get_artist_tracks_from_musicbrainz_api(creator_kwarg)
+        if context['musicians'].count() == 0 and artist_kwarg:
+            context['musicians'] = Musician.get_artist_tracks_from_musicbrainz_api(artist_kwarg)
     
     return render_to_response('musicians/index.html', context)
 
-def musician_detail(request, collection, record, creator):
+def musician_detail(request, collection, record, artist):
     context = {
-        'musician': Musician.objects.get(slug=creator, record__slug=record, record__collection__slug=collection)
+        'musician': Musician.objects.get(slug=artist, record__slug=record, record__collection__slug=collection)
     }
     
     return render_to_response('musicians/musician_detail.html', context)
