@@ -13,15 +13,15 @@ class StudentTestCase(LiveServerTestCase):
         self.browser = webdriver.Chrome()
         self.browser.implicity_wait(2)
         
-        self.colletion1 = Collection.objects.create(name='', slug='')
-        self.record1 = Record.objects.create(name='', slug='')
-        self.musician1 = Musician.objects.create(genre='', artist='', track=self.track1,
-                                                 slug='')
-        self.collection2 = Collection.objects.create(name='', slug='')
-        self.record2 = Record.objects.create(name='', slug='')
-        self.musician2 = Musician.objects.create(genre='', artist='', track=self.track2,
-                                                 slug='')
-        self.collection3 = Collection.objects.create(name='', slug='')
-        self.record3 = Record.objects.create(name='', slug='')
-        self.musicians3 = Musician.objects.create(genre='', artist='', track=self.track3,
-                                                 slug='')
+        self.colletion1 = Collection.objects.create(name='The Fame', slug='the-fame')
+        self.record1 = Record.objects.create(name='Just Dance', slug='just-dance')
+        self.musician1 = Musician.objects.create(genre='pop', artist='Lady Gag', track=self.track1,
+                                                 slug='lady-gaga')
+        self.collection2 = Collection.objects.create(name='Voices', slug='voices')
+        self.record2 = Record.objects.create(name='Black Out Days', slug='black-out-days')
+        self.musician2 = Musician.objects.create(genre='electronic', artist='Phantogram', track=self.track2,
+                                                 slug='phantogram')
+        self.collection3 = Collection.objects.create(name='Late Registration', slug='late-registration')
+        self.record3 = Record.objects.create(name='I Need to Know', slug='i-need-to-know')
+        self.musicians3 = Musician.objects.create(genre='hiphop', artist='Kanye West', track=self.track3,
+                                                 slug='kayne-west')
