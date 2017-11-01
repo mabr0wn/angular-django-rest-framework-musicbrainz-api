@@ -25,5 +25,5 @@ class Command(BaseCommand):
               password='membership'
           )
       except IntegrityError:
-          return self.stdout.write('User' \'{}\' already exists'.format(options['username']))
+          return self.stdout.write('User \'{}\' already exists'.format(options['username']))
       self.stdout.write('User \'{}\' created with default password'.format(user.username))
