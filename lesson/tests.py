@@ -40,5 +40,24 @@ class UserTestCase(LiveServerTestCase):
     def find_search_results(self):
         return self.browser.find_elements_by_css_selector('.mb-search-result a')
     
+    def test_user_find_musicians(self):
+        """
+        Test that a user can search for Musicians
+        """
+        # Sarah is a promoter who would like to find more hip hop composers so she can book new talent.
+        # Visits the homepage of website
+        home_page = self.browser.get(self.live_server_url + '/')
+        
+        # She knows she's in the right place because she can see the name of the site in the heading.
+        brand_element = self.browser.find_element_by_css_selector('.navbar-brand')
+        self.assertEqual('MB', brand_element.text)
+        
+        # She sees the inputs of the search form, including labels and placeholders.
+        genre_input = self.browser.find_element_by_css_selector('input#mb-genre')
+        self.assertIsNotNone(self.browser.find_element_by_css_selector('label[for="mb-genre"]'))
+        self.assertEqual(artist_input.get_attribute('placeholder'), 'Search Artist')
+        
+        
+    
         
         
