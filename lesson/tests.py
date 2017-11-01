@@ -7,7 +7,7 @@ from selenium import webdriver
 from expeirments.models import Musician
 from collections.models import Collection, Record
 
-class StudentTestCase(LiveServerTestCase):
+class UserTestCase(LiveServerTestCase):
     ''' Tell the webdriver to poll the Document object model to chrome and wait 2 seconds '''
     def setUp(self):
         self.browser = webdriver.Chrome()
