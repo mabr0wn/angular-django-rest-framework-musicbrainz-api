@@ -21,3 +21,28 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
       
       ''' Write permissions are only allowed to the owner of the experiment'''
       return obj.owner == request.user
+
+class CustomerAccessPermission(permissions.BasePermission):
+    """
+    Adding a customer access permission,
+    Going to write this soon.
+    """
+    pass
+  
+class BlacklistPermission(permissions.BasePermission):
+    """
+    Global permission check for blacklisted IPs
+    """
+    
+    def has_permission(self,request, view):
+        ip_addr = request.META['REMOTE_ADDR']
+        blacklisted = Blacklist.objects.filter(ip_addr=ip_addr).exists()
+        return not blacklisted
+      
+class IsSpecialUserNotAdmin(permissions.BasePermission):
+    """
+    Customer permission to allow special users to change an object,
+    Not quite an admin.
+    """
+    def special_user_object_permission(self, request, view, obj):
+        pass
