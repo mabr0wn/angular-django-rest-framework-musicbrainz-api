@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ### Celery
 # not ready yet, in localhost program
 
-''' This will allow you to transfer message to one server to another.
+''' This will allow you to transfer message to one server to another.'''
 BROKER_URL = 'redis://localhost'
 CELERY_RESULT_BACKEND = 'redis://locahost'
 
