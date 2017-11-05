@@ -65,6 +65,24 @@ class UserTestCase(LiveServerTestCase):
         search_results = self.find_search_results()
         self.assertGreater(len(search_results), 2)
         
+        # So she adds an artist to her search query and gets more manageable list.
+        second_artist_input = self.browser.find_element_by_css_selector('input#mb-artist')
+        second_artist_input.send_keys('Phantogram')
+        self.browser.find_element_by_css_selector('form input').bind('<Return>')
+        
+        second_search_results = self.find_search_results()
+        self.assertEqual(len(second_search_results), 2)
+        
+        # She clicks on a search results.
+        second_search_results[0].click()
+        
+        # On the composer page
+        self.assertEqual(self.browser.curren_url,
+             self.live_server_url + '/recordings/black-out-days/voices/phantogram/')
+        
+        # She see the artist
+        self.assertEqual(self.browser.find_element_by_css_selector('#mb-artist').text, 'Phantogram')
+        
         
     
         
