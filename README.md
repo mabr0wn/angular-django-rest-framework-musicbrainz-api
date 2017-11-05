@@ -41,7 +41,7 @@ import musicbrainzngs as mb
 mb.set_useragent('some_content', version='0.0.1')
 ```
 
-- We usual
+
 
 
 
