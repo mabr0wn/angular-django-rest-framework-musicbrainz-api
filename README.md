@@ -2,21 +2,49 @@
 
 ![alt text](https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?w=460&fit=max&v=1463687041&auto=format&q=92&s=18c6f5574a0053aa1934f0845f4dd4bb)
 
-create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`
+create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`, this allows us to take our `models.py` and turn that data into `json` representation of your data.
+
+```python
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "url": "http://127.0.0.1:7000/snippets/1/",
+            "id": 1,
+            "highlight": "http://127.0.0.1:7000/snippets/1/highlight/",
+            "owner": "mattd",
+            "title": "MusicBrainz",
+            "code": "for item in mb.browse_releases(results['name'])",
+            "linenos": false,
+            "language": "python3",
+            "style": "tango"
+        },
+```
 
 - We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
 
-```
-pip install musicbrainzngs
-```
+- Run your `requirements.txt` file first, you will have all your requirements you need to build your app.
 
-- pip allows you to install the musicbrainzNGS python content and implement it into your project.
+```
+djangorestframework==3.6.2
+Django==1.11
+Pygments==2.1.3
+Markdown==2.6.3
+musicbrainzngs==0.5
+```
 - Must add the import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
 ```python
 import musicbrainzngs as mb 
 
 mb.set_useragent('some_content', version='0.0.1')
 ```
+
+- We usual
+
+
+
 ```html
 <a class="navbar-brand">MB</a>
 
