@@ -57,6 +57,14 @@ class UserTestCase(LiveServerTestCase):
         self.assertIsNotNone(self.browser.find_element_by_css_selector('label[for="mb-genre"]'))
         self.assertEqual(artist_input.get_attribute('placeholder'), 'Search Artist')
         
+        artist_input = self.browser.find_element_by_css_selector('input#mb-artist')
+        self.assertIsNotNone(self.browser.find_element_by_css_selector('label[for='mb-artist']'))
+        self.assertEqual(artist_input.get_attribute(''placeholder), 'i.e. Maroon 5')
+        
+        # She types too many search results...
+        search_results = self.find_search_results()
+        self.assertGreater(len(search_results), 2)
+        
         
     
         
