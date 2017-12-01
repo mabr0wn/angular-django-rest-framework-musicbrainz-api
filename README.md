@@ -110,10 +110,7 @@ import musicbrainzngs as mb
 mb.set_useragent('some_content', version='0.0.1')
 ```
 
-
-
-
-
+Below is what the HTML file will look like at the home-page of your project.
 
 ```html
 <a class="navbar-brand">MB</a>
