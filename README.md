@@ -39,12 +39,17 @@ Pygments==2.1.3
 Markdown==2.6.3
 musicbrainzngs==0.5
 ```
-- Must add the import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
+
+- Must add the musicbrainzngs import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
+
+- add the below into your `views.py` and your `models.py`.
+
 ```python
 import musicbrainzngs as mb 
 
 mb.set_useragent('some_content', version='0.0.1')
 ```
+
 
 
 
