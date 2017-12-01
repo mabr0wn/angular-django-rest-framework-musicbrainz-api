@@ -5,7 +5,7 @@
 
 # Django-serialization-001 -- Still writing README, will see a checkmark when complete.
 
-![alt text](https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?w=460&fit=max&v=1463687041&auto=format&q=92&s=18c6f5574a0053aa1934f0845f4dd4bb) ![alt text](https://github.com/mattd429/Django-serialization-001/blob/master/static/img/Screen%20Shot%202017-12-01%20at%203.31.12%20PM.png)
+![alt text](https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?w=460&fit=max&v=1463687041&auto=format&q=92&s=18c6f5574a0053aa1934f0845f4dd4bb) ![alt text](http://www.tranquilbase.org/wp-content/uploads/2013/04/Musicbrainzlogo.jpg)
 
 create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`, this allows us to take our `models.py` and turn that data into `json` representation of your data.
 
