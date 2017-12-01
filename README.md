@@ -30,6 +30,8 @@ create a Django project including serialization to serialize and deserialize the
 
 - Run your `requirements.txt` file first, you will have all your requirements you need to build your app.
 
+`pip install requirements.txt`
+
 ```
 djangorestframework==3.6.2
 Django==1.11
