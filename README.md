@@ -3,7 +3,7 @@
 
 
 
-# Django-serialization-001 -- Still writing README, will see a checkmark when complete.
+# Django-serialization-001
 
 ![alt text](https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?w=460&fit=max&v=1463687041&auto=format&q=92&s=18c6f5574a0053aa1934f0845f4dd4bb)
 
