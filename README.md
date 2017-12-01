@@ -30,59 +30,7 @@ create a Django project including serialization to serialize and deserialize the
         },
 ```
 
-- We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
-
-- Run your `requirements.txt` file first, you will have all your requirements you need to build your app.
-
-`pip install requirements.txt`
-
-```
-djangorestframework==3.6.2
-Django==1.11
-Pygments==2.1.3
-Markdown==2.6.3
-musicbrainzngs==0.5
-```
-
-- Must add the musicbrainzngs import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
-
-- add the below into your `views.py` and your `models.py`.
-
-```python
-import musicbrainzngs as mb 
-
-mb.set_useragent('some_content', version='0.0.1')
-```
-
-
-
-
-
-
-```html
-<a class="navbar-brand">MB</a>
-
-<form>
-  <label for="mb-genre">Genre</label>
-  <input type="text" class="form-control" id="mb-genre" name="genre" placeholder="i.e. pop" />
-
-  <label for="mb-artist">Artist</label>
-  <input type="text" class="form-control" id="mb-artist" name="artist" placeholder="i.e. Maroon 5" />
-
-  <button type="submit">Search MB</button>
-</form>
-
-{% for musician in musicians %}
-  <div class="mb-search-result">
-      <a href="{{ composer.get_absolute_url }}">
-        {{ musician.track }}: {{ musician.artist }} on {{ musician.genre }}
-      </a>
-  </div>
-{% endfor %}
-
-```
-
-- Web API 
+### Web API 
 
 REST framework, and give you a comprehensive understanding of how everything fits together. we need to use serialization to store instances for representation of `JSON`
 
@@ -137,3 +85,57 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 		model = User
 		fields = ('url', 'id', 'username', 'snippets')
 ```
+
+- We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
+
+- Run your `requirements.txt` file first, you will have all your requirements you need to build your app.
+
+`pip install requirements.txt`
+
+```
+djangorestframework==3.6.2
+Django==1.11
+Pygments==2.1.3
+Markdown==2.6.3
+musicbrainzngs==0.5
+```
+
+- Must add the musicbrainzngs import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
+
+- add the below into your `views.py` and your `models.py`.
+
+```python
+import musicbrainzngs as mb 
+
+mb.set_useragent('some_content', version='0.0.1')
+```
+
+
+
+
+
+
+```html
+<a class="navbar-brand">MB</a>
+
+<form>
+  <label for="mb-genre">Genre</label>
+  <input type="text" class="form-control" id="mb-genre" name="genre" placeholder="i.e. pop" />
+
+  <label for="mb-artist">Artist</label>
+  <input type="text" class="form-control" id="mb-artist" name="artist" placeholder="i.e. Maroon 5" />
+
+  <button type="submit">Search MB</button>
+</form>
+
+{% for musician in musicians %}
+  <div class="mb-search-result">
+      <a href="{{ composer.get_absolute_url }}">
+        {{ musician.track }}: {{ musician.artist }} on {{ musician.genre }}
+      </a>
+  </div>
+{% endfor %}
+
+```
+
+
