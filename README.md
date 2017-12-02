@@ -9,7 +9,7 @@
 
 ![alt text](http://i3.cpcache.com/product/14639896/musicbrainz_magnet.jpg?height=460&width=460&qv=90)
 
-create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`, this allows us to take our `models.py` and turn that data into `json` representation of your data.
+Create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`, this allows us to take our `models.py` and turn that data into `json` representation of your data.
 
 ```python
 {
