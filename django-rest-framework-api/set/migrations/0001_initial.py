@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=100)),
                 ('record_name', models.PositiveIntegerField(blank=True, null=True)),
                 ('slug', models.SlugField()),
-                ('collection', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='collections.Collection')),
+                ('collection', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='set.Collection')),
             ],
             options={
                 'ordering': ['collection', 'record_number'],

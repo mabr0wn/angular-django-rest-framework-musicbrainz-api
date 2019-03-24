@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from .models import Collection, Record
 
-class CollectionSerializer(serializers.HyperlinkedModelSerializer):
+class seterializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Collection
         fields = '__all__'

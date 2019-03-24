@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('collections', '0001_inital'),
+        ('set', '0001_inital'),
     ]
     
     operations = [
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('start_time', models.CharField(blank=True, max_length=20, null=True)),
                 ('end_time', models.CharField(blank=True, max_length=20, null=True)),
                 ('slug', models.SlugField()),
-                ('track', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='collections.Record')), 
+                ('track', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='set.Record')), 
             ],
             options={
                 'ordering': ['record', 'start_time'],  

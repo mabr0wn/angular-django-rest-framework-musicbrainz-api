@@ -4,7 +4,7 @@ from celery import shared_task
 import musicbrainzngs as mb
 
 from .models import Musician
-from collections.models import Collection, Record
+from set.models import Collection, Record
 
 mb.set_useragent('Set Content', version='0.0.1')
 

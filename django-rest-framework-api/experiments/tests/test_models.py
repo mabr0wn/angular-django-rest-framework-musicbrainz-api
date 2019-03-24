@@ -3,7 +3,7 @@ from unittest.mock import patch
 from django.test import TestCase
 
 from experiments.models import Musician, Experiment
-from collections.model import Collection, Record
+from set.model import Collection, Record
 
 """ SetUp the TestCase """
 

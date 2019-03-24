@@ -2,7 +2,7 @@ from django.core.urlresolvers import resolve
 
 from rest_framework.test import APITestCase
 
-from collections.models import Collection, Record
+from set.models import Collection, Record
 from experiments.models import Musician
 
 class CollectionAPITestCase(APITestCase):
@@ -12,18 +12,18 @@ class CollectionAPITestCase(APITestCase):
         self.humanz = Collection.objects.create(name='Humanz')
     
     def test_album_list_route(self):
-        ''' Test that we have got routing setup for Collections '''
-        route = resolve('/collections/')
+        ''' Test that we have got routing setup for set '''
+        route = resolve('/set/')
         
         self.assertEqual(route.func.__name__, 'CollectionViewSet')
         
-    def test_list_collections(self):
-        ''' Test that we can get a list of collections '''
-        response = self.client.get('/collections/')
+    def test_list_set(self):
+        ''' Test that we can get a list of set '''
+        response = self.client.get('/set/')
         
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data[0]['name'], 'Humanz')
-        self.assertEqual(response.data[1]['url'], 'http://testserver/collections/1/')
+        self.assertEqual(response.data[1]['url'], 'http://testserver/set/1/')
     
 class RecordAPITestCase(APITestCase):
     
@@ -42,7 +42,7 @@ class RecordAPITestCase(APITestCase):
         self.assertEqual(response.data[0]['url'], 'http://testserver/records/1/')
    
     def test_collection_list_route(self):
-        ''' Test that we've got routing setup for collections '''
+        ''' Test that we've got routing setup for set '''
         route = resolve('/records/1/')
         
         self.assertEqual(route.func.__name__, 'RecordViewSet')

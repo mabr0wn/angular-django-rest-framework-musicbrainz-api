@@ -5,7 +5,7 @@ from django.db.models.query import QuerySet
 
 from experiments.views import index, musician_detail
 from experiments.models import Musician
-from collections.models import Collection, Record
+from set.models import Collection, Record
 
 class MusicianBaseTestCase(TestCase):
     

@@ -3,12 +3,12 @@ from django.core.urlresolvers import resolve
 from rest_framework.test import APITestCase
 
 from experiments.models import Experiment, LANGUAGE_CHOICES, STYLE_CHOICES,
-from collections.models import Collection, Record,
+from set.models import Collection, Record,
 
 class MusicianAPITestCase(APITestCase):
     
     def setUp(self):
-        self.movement = Collections.objects.create(name='Movement', slug='movement')
+        self.movement = set.objects.create(name='Movement', slug='movement')
         self.dreams_never_end = Record.objects.create(name'Dreams Never End', slug'dreams-never-end', collection=self.movement)
         
     def test_create_musician(self):

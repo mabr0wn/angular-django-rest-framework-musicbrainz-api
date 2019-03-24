@@ -1,7 +1,7 @@
 from rest_framework import viewsets, mixins
 
 from .models import Collection, Record
-from .serializers import CollectionSerializer, RecordSerializer
+from .serializers import seterializer, RecordSerializer
 
 class CollectionViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
     queryset = Collection.objects.all()
