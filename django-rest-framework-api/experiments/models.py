@@ -1,11 +1,11 @@
 from django.db import models
-from Assortment.models import Assortment, Record
+from assortment.models import Assortment, Record
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 import musicbrainzngs as mb
 from django.utils.text import slugify
 
@@ -23,7 +23,7 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 mb.set_useragent('Mbrown - mattd429@gmail.com', version='0.0.1')
 
 class Musician(models.Model):
-    record = models.ForeignKey(Record)
+    record = models.ForeignKey(Record, on_delete=models.CASCADE)
     artist = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
     start_time = models.CharField(max_length=20, blank=True, null=True)
@@ -56,7 +56,7 @@ class Musician(models.Model):
         genre = Musician.get_genre_from_musicbrainz_tag_list(results['tag-list'])
         
         for assortment_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
-            assortment = Assortment.objects.create(name=assortment_dict['title'], artist=artist, slug=slugify(assortment['title'])))
+            assortment = Assortment.objects.create(name=assortment_dict['title'], artist=artist, slug=slugify(assortment['title']))
             
             """
                 Medium-list results from dearch having an additional 
@@ -87,14 +87,14 @@ class Musician(models.Model):
     
 
 class Experiment(models.Model):
-    owner = models.ForeignKey('auth.User', related_name='experiments', on_delete=model.CASADE)
+    owner = models.ForeignKey('auth.User', related_name='experiments', on_delete=models.CASCADE)
     highlighted = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()
     linenos = models.BooleanField(default=False)
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
-    style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_lenth=100)
+    style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
       
     """
     Use the 'pygments' library to create a highlighted HTML
