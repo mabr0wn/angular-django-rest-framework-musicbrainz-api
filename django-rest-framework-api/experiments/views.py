@@ -1,5 +1,5 @@
-from experiments.model import Experiment, Musician
-from experiments.permission import IsOwnerOrReadOnly
+from experiments.models import Experiment, Musician
+from experiments.permissions import IsOwnerOrReadOnly
 from experiments.serializer import ExperimentSerializer, UserSerializer, MusicianSerializer
 from rest_framework import mixins
 from rest_framework import generics
@@ -72,7 +72,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     requests.
     """
     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
-    def highlight(self, request, *args, *kwargs):
+    def highlight(self, request, *args, **kwargs):
         experiment = self.get_object()
         return Response(experiment.highlighted)
     

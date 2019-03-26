@@ -13,7 +13,7 @@ DefaultRouter() automatically created the api_root
 from views, no longer required.
 """
 router = routers.SimpleRouter()
-router.register(r'experiments', views.ExerimentsViewSet)
+router.register(r'experiments', views.ExperimentViewSet)
 router.register(r'users', views.UserViewSet)
 router.register(r'musicians', MusicianViewSet)
 router.register(r'assortment', CollectionViewSet)
@@ -27,7 +27,7 @@ Additionally, we include the login URLs for the browsable API.
 """
 urlpatterns = [
 	url(r'^api/', include(router.urls)),
-	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 	url(r'^schema/$', schema_view),
 	
 	url(r'^recordings/(?P<album>[\w-]+)/(?P<track>[\w-]+)/(?P<artist>[\w-]+)/$',

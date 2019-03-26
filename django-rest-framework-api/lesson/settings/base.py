@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 ''' This will allow you to transfer message to one server to another.'''
 BROKER_URL = 'redis://localhost'
 CELERY_RESULT_BACKEND = 'redis://locahost'
+ROOT_URLCONF = 'lesson.urls'
+
 
 # Application definition
 
