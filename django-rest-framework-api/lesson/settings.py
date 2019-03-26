@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'experiments.apps.ExperimentsConfig',
-    'set.apps.setCongig',
+    'assortment.apps.assortmentCongig',
 ]
 
 MIDDLEWARE = [

@@ -3,13 +3,13 @@ from django.core.urlresolvers import resolve
 from rest_framework.test import APITestCase
 
 from experiments.models import Experiment, LANGUAGE_CHOICES, STYLE_CHOICES,
-from set.models import Collection, Record,
+from assortment.models import assortment, Record,
 
 class MusicianAPITestCase(APITestCase):
     
     def setUp(self):
-        self.movement = set.objects.create(name='Movement', slug='movement')
-        self.dreams_never_end = Record.objects.create(name'Dreams Never End', slug'dreams-never-end', collection=self.movement)
+        self.movement = assortment.objects.create(name='Movement', slug='movement')
+        self.dreams_never_end = Record.objects.create(name'Dreams Never End', slug'dreams-never-end', assortment=self.movement)
         
     def test_create_musician(self):
         """

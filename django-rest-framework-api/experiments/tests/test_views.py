@@ -5,7 +5,7 @@ from django.db.models.query import QuerySet
 
 from experiments.views import index, musician_detail
 from experiments.models import Musician
-from set.models import Collection, Record
+from assortment.models import Assortment, Record
 
 class MusicianBaseTestCase(TestCase):
     
@@ -16,12 +16,12 @@ class MusicianBaseTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.voices = Collection.objects.create(name='Voices', slug='voices')
-        cls.nothing_but_trouble = Record.objects.create(name='Nothing but Trouble', slug='nothing-but-trouble', collection=cls.voices)
+        cls.voices = Assortment.objects.create(name='Voices', slug='voices')
+        cls.nothing_but_trouble = Record.objects.create(name='Nothing but Trouble', slug='nothing-but-trouble', assortment=cls.voices)
         cls.electropop_musician = Musician.objects.create(genre='electropop', creator='Phantogram', record=cls.nothing_but_trouble,
                                                               slug='phantogram')
-        cls.permanent_signal = Collection.objects.create(name='Permanent Signal', slug='permanent-signal')
-        cls.the_way_out = Record.objects.create(name='The Way Out', slug='the-way-out', collection=cls.permanent_signal)
+        cls.permanent_signal = Assortment.objects.create(name='Permanent Signal', slug='permanent-signal')
+        cls.the_way_out = Record.objects.create(name='The Way Out', slug='the-way-out', assortment=cls.permanent_signal)
         cls.dream_pop_musician = Musician.objects.create(genre='dream pop', creator='Procelain Raft', record=cls.the_way_out,
                                                              slug='procelain-raft')
             

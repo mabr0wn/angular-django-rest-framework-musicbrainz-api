@@ -3,21 +3,21 @@ from unittest.mock import patch
 from django.test import TestCase
 
 from experiments.models import Musician, Experiment
-from set.model import Collection, Record
+from assortment.model import Assortment, Record
 
 """ SetUp the TestCase """
 
 class MusicianModelTestCase(TestCase):
     
     def setUp(self):
-        self.collection = Collection.objects.create(
+        self.assortment = Assortment.objects.create(
             name='Random Access Memories',
             creator='Daft Punk',
             slug='random-access-memories'
          )
          self.record = Musician.objects.create(
              name='Give Life Back to Music',
-             collection=self.collection,
+             assortment=self.assortment,
              track_number=1,
              slug='give-life-back-to-music'
          )

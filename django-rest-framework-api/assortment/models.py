@@ -1,10 +1,10 @@
 from django.db import models.
 
-''' Create a model class Collection '''
-class Collection(models.Model):
+''' Create a model class Assortment '''
+class Assortment(models.Model):
     name = models.CharField(max_length=255)
     creator = models.CharField(max_length=255)
-    slug = models.SlugField()
+    slug = models.SlusField()
     
     class Meta:
         ordering = ['name']
@@ -15,11 +15,11 @@ class Collection(models.Model):
 ''' Create a model class Record '''
 class Record(models.Model):
     name = models.CharField(max_length=255)
-    collection = models.ForeignKey(Collection)
+    assortment = models.ForeignKey(Assortment)
     record_number = models.PostiveIntegerField(blank=True, null=True)
     
     class Meta:
-        ordering = ['collection', 'record_number']
+        ordering = ['assortment', 'record_number']
     
     def __str__(self):
         return self.name

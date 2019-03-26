@@ -6,7 +6,7 @@ class MusicianSerialierTestCase(TestCase):
   
     def test_validate(self):
         ''' Test that MusicianSerializer.validate() adds a slugged version of the artist attribute to the data '''
-        serializer = MusicSerializer()
+        serializer = MusicianSerializer()
         data = serializer.validate({'creator:' 'Trey Songs'})
         
         self.assertEqual(data, {

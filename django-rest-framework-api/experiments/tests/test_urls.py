@@ -15,6 +15,6 @@ class ExperimentURLsTestCase(TestCase):
         musician_detial = resolve('/recordings/lemonade/hold-up/beyoncé/')
         
         self.assertEqual(musician_detail.func.__name__, 'musician_detail')
-        self.assertEqual(musician_detail.kwargs['collection'], 'lemonade')
+        self.assertEqual(musician_detail.kwargs['assortment'], 'lemonade')
         self.assertEqual(musician_detail.kwargs['record'], 'hold-up')
         self.assertEqual(musician_detail.kwargs['creator'], 'beyoncé')

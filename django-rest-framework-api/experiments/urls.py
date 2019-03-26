@@ -4,7 +4,7 @@ from rest_framework.schemas import get_schema_view
 
 from rest_framework import routers
 
-from set.views import CollectionViewSet, RecordViewSet
+from assortments.views import CollectionViewSet, RecordViewSet
 from experiments.views import MusicianViewSet
 
 """
@@ -16,7 +16,7 @@ router = routers.SimpleRouter()
 router.register(r'experiments', views.ExerimentsViewSet)
 router.register(r'users', views.UserViewSet)
 router.register(r'musicians', MusicianViewSet)
-router.register(r'set', CollectionViewSet)
+router.register(r'assortment', CollectionViewSet)
 router.register(r'records', RecordViewSet)
 
 schema_view = get_schema_view(title='Pastebin API')

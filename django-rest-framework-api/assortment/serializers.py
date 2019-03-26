@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import Collection, Record
+from .models import Assortment, Record
 
-class seterializer(serializers.HyperlinkedModelSerializer):
+class AssortmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Collection
+        model = Assortment
         fields = '__all__'
         
 class RecordSerializer(serializers.HyperlinkedModelSerializer):
