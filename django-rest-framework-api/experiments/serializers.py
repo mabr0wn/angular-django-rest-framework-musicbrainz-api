@@ -11,11 +11,11 @@ to reflect that.
 """
 class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
   ''' we can also use CharField(read_only=True) && will set it to read only '''
-  owner = serializers.ReadOnlyField(soruce='owner.username')
+  owner = serializers.ReadOnlyField(source='owner.username')
   ''' HyperLinkedIdentitField used to represent the target of the relationship using a hyperlink
       Will allow the serialized data to show a hyperlink for highlight and point it to view name
       experiment-highlight and format it in HTML        '''
-  highlight = serializers.HyperLinkedIdentityField(view_name='experiment-highlight', format='html')
+  highlight = serializers.HyperlinkedIdentityField(view_name='experiment-highlight', format='html')
   
   class Meta:
     model = Experiment
@@ -35,7 +35,7 @@ Because 'experiments' is a reverse relationship on the User model, it will not b
 when using the ModelSerializer class, so we need to add an explicit field for it.
 """
 
-class UserSerializer(serializer.HyperlinkedModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
   experiments = serializers.PrimaryKeyRelatedField(many=True, queryset=Experiment.objects.all())
   
   class Meta:
