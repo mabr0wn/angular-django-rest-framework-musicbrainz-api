@@ -16,25 +16,30 @@ import musicbrainzngs as mb
 
 mb.set_useragent('PUT_EMAIL_HERE', version='0.0.1')
 
+from django.shortcuts import render
+
 def index(request):
-    context = {'musicians': []}
+    return render(request, 'musicians/index.html')
+
+# def index(request):
+#     context = {'musicians': []}
     
-    if request.GET.keys():
-        musician_queryset = Musician.objects.all()
+#     if request.GET.keys():
+#         musician_queryset = Musician.objects.all()
         
-        if request.GET.get('genre'):
-            musician_queryset = musician_queryset.filter(genre=request.GET['genre'])
+#         if request.GET.get('genre'):
+#             musician_queryset = musician_queryset.filter(genre=request.GET['genre'])
             
-        artist_kwarg = request.GET.get('artist', None)
-        if artist_kwarg:
-            musicians_queryset = musician_queryset.filter(artist=artist_kwarg)
+#         artist_kwarg = request.GET.get('artist', None)
+#         if artist_kwarg:
+#             musicians_queryset = musician_queryset.filter(artist=artist_kwarg)
             
-        context['musicians'] = musician_queryset
+#         context['musicians'] = musician_queryset
         
-        if context['musicians'].count() == 0 and artist_kwarg:
-            context['musicians'] = Musician.get_artist_tracks_from_musicbrainz_api(artist_kwarg)
+#         if context['musicians'].count() == 0 and artist_kwarg:
+#             context['musicians'] = Musician.get_artist_tracks_from_musicbrainz_api(artist_kwarg)
     
-    return render_to_response('musicians/index.html', context)
+#     return render_to_response('musicians/index.html', context)
 
 def musician_detail(request, collection, record, artist):
     context = {
