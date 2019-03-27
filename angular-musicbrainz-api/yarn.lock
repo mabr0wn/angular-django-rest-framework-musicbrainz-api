@@ -9,6 +9,11 @@
   dependencies:
     lodash "^4.17.10"
 
+"@angular-builders/dev-server@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@angular-builders/dev-server/-/dev-server-7.3.1.tgz#a687dda691f921a236e6c9fc12985c2eaf4e8923"
+  integrity sha512-rFr0NyFcwTb4RkkboYQN5JeR9ZraOkfUrQYljMSe/O01MM3SJvE8LYJbsyMwGtp71Rc8T6JrpdxaNEeYCV/4PA==
+
 "@angular-devkit/architect@0.13.6":
   version "0.13.6"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.13.6.tgz#7758ab9f288cfd4f64d8b88b0700bac5c4961d06"
