@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from selenium import webdriver
 
 from experiments.models import Musician
-from assortment.models import Collection, Record
+from assortment.models import Assortment, Record
 
 class UserTestCase(LiveServerTestCase):
     ''' Tell the webdriver to poll the Document object model to chrome and wait 2 seconds '''
