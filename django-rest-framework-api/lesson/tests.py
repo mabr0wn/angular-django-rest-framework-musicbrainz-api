@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 
 from selenium import webdriver
 
-from expeirments.models import Musician
+from experiments.models import Musician
 from assortment.models import Collection, Record
 
 class UserTestCase(LiveServerTestCase):
