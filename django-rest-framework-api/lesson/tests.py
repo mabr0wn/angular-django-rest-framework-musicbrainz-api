@@ -31,7 +31,7 @@ class UserTestCase(LiveServerTestCase):
         record4 = Record.objects.create(name='My Only Friend', collection=self.collection2, record_number=11)
         record5 = Record.objects.create(name='Never Going Home', collection=self.collection2, record_number=4)
         
-        self.admin_user = get_user_model().objects.create_superuser(username='username', email='example@example.com'
+        self.admin_user = get_user_model().objects.create_superuser(username='username', email='example@example.com',
                                                                     password='password')
         
     def tearDown(self):

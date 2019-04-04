@@ -15,15 +15,16 @@ class AssortmentAPITestCase(APITestCase):
         ''' Test that we have got routing setup for set '''
         route = resolve('/set/')
         
-        self.assertEqual(route.func.__name__, 'AssortmentViewSet')
+        self.assertEqual(route.AssortmentViewSet, 'set')
         
     def test_list_set(self):
         ''' Test that we can get a list of set '''
         response = self.client.get('/set/')
         
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data[0]['name'], 'Humanz')
-        self.assertEqual(response.data[1]['url'], 'http://testserver/set/1/')
+        self.assertEqual(response.AssortmentViewSet, 'Humanz')
+        # self.assertEqual(response.data[0]['name'], 'Humanz')
+        # self.assertEqual(response.data[1]['url'], 'http://testserver/set/1/')
     
 class RecordAPITestCase(APITestCase):
     
