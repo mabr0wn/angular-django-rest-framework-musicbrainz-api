@@ -16,15 +16,16 @@ class UserTestCase(LiveServerTestCase):
         time.sleep(5) # Let the user actually see something!
         
         self.colletion1 = Assortment.objects.create(name='The Fame', slug='the-fame')
-        self.record1 = Record.objects.create(name='Just Dance', slug='just-dance')
+        self.record1 = Record.objects.create(name='Just Dance')
         self.musician1 = Musician.objects.create(genre='pop', artist='Lady Gag', record=self.record1,
                                                  slug='lady-gaga')
         self.assortment2 = Assortment.objects.create(name='Voices', slug='voices')
-        self.record2 = Record.objects.create(name='Black Out Days', slug='black-out-days')
+        self.record2 = Record.objects.create(name='Black Out Days')
         self.musician2 = Musician.objects.create(genre='electronic', artist='Phantogram', record=self.record2,
                                                  slug='phantogram')
         self.assortment3 = Assortment.objects.create(name='Late Registration', slug='late-registration')
-        self.record3 = Record.objects.create(name='I Need to Know', slug='i-need-to-know')
+        self.record3 = Record.objects.create(name='I Need to Know')
+        # self.record3 = Record.objects.create(name='I Need to Know', slug='i-need-to-know')
         self.musicians3 = Musician.objects.create(genre='hiphop', artist='Kanye West', record=self.record3,
                                                  slug='kayne-west')
         
