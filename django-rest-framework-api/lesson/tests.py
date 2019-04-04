@@ -15,7 +15,7 @@ class UserTestCase(LiveServerTestCase):
         self.browser.get('http://www.google.com/xhtml')
         time.sleep(5) # Let the user actually see something!
         
-        self.colletion1 = Assortment.objects.create(name='The Fame', slug='the-fame')
+        self.assortment1 = Assortment.objects.create(name='The Fame', slug='the-fame')
         self.record1 = Record.objects.create(name='Just Dance', slug='the-fame')
         self.musician1 = Musician.objects.create(genre='pop', artist='Lady Gag', record=self.record1,
                                                  slug='lady-gaga')
