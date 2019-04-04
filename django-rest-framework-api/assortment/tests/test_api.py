@@ -2,7 +2,7 @@ from django.urls import resolve
 
 from rest_framework.test import APITestCase
 
-from Asssortment.models import Assortment, Record
+from assortment.models import Assortment, Record
 from experiments.models import Musician
 
 class AssortmentAPITestCase(APITestCase):
