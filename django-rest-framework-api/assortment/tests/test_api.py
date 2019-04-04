@@ -31,7 +31,7 @@ class RecordAPITestCase(APITestCase):
     def setUp(self):
         self.eyelid_movies = Assortment.objects.create(name='Eyelid Movies', slug='eyelig-movies')
         self.futuristic_casket = Assortment.objects.create(name='Futuristic Casket', slug='futuristic-casket',
-                                                           Assortment=self.eyelid_movies)
+                                                           record=self.eyelid_movies)
         self.electropop_musician = Musician.objects.create(genre='electropop', creator='Phantogram',
                                                            slug='phantogram', record=self.futuristic_casket)
     def test_retrieve_record(self):
