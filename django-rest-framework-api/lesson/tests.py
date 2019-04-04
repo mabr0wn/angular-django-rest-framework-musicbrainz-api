@@ -55,7 +55,7 @@ class UserTestCase(LiveServerTestCase):
         # She sees the inputs of the search form, including labels and placeholders.
         genre_input = self.browser.find_element_by_css_selector('input#mb-genre')
         self.assertIsNotNone(self.browser.find_element_by_css_selector('label[for="mb-genre"]'))
-        self.assertEqual(artist_input.get_attribute('placeholder'), 'Search Artist')
+        self.assertEqual(genre_input.get_attribute('placeholder'), 'Search Genre')
         
         artist_input = self.browser.find_element_by_css_selector('input#mb-artist')
         self.assertIsNotNone(self.browser.find_element_by_css_selector('label[for="mb-artist"]'))
