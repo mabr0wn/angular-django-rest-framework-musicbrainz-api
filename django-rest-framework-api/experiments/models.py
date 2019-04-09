@@ -1,13 +1,17 @@
+# Django
 from django.db import models
-from assortment.models import Assortment, Record
+from django.urls import reverse
+from django.utils.text import slugify
+# Pygments
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
-from django.urls import reverse
+# Local
+from assortment.models import Assortment, Record
+# Musicbrainz
 import musicbrainzngs as mb
-from django.utils.text import slugify
 
 """
 A Lexer splits the source into tokens, fragments of the source that have a 

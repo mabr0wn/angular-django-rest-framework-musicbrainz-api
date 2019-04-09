@@ -1,5 +1,6 @@
+# Django rest
 from rest_framework import serializers
-
+# Local
 from .models import Assortment, Record
 
 class AssortmentSerializer(serializers.HyperlinkedModelSerializer):

@@ -1,10 +1,13 @@
+# Django
 from django.utils.text import slugify
-
+# Celery
 from celery import shared_task
-import musicbrainzngs as mb
-
+# Local
 from .models import Musician
 from assortment.models import Collection, Record
+# Musicbrainz
+import musicbrainzngs as mb
+
 
 mb.set_useragent('Set Content', version='0.0.1')
 

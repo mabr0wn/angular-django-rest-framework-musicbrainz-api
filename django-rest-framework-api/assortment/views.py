@@ -1,5 +1,6 @@
+# Django rest
 from rest_framework import viewsets, mixins
-
+# Local
 from .models import Assortment, Record
 from .serializers import AssortmentSerializer, RecordSerializer
 

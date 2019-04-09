@@ -1,7 +1,8 @@
+# Django
 from django.urls import resolve
-
+# Django rest
 from rest_framework.test import APITestCase
-
+# Local
 from assortment.models import Assortment, Record
 from experiments.models import Musician
 
