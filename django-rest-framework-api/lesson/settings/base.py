@@ -136,6 +136,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-REST_FRAMEWORK = {
-    'PAGE_SIZE': 10
-}
+# REST_FRAMEWORK = {
+#     'PAGE_SIZE': 10
+# }
