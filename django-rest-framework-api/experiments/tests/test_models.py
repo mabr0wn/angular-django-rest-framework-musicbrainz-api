@@ -1,7 +1,8 @@
+# Mock
 from unittest.mock import patch
-
+# Django
 from django.test import TestCase
-
+# Local
 from experiments.models import Musician, Experiment
 from assortment.model import Assortment, Record
 
@@ -15,14 +16,14 @@ class MusicianModelTestCase(TestCase):
             creator='Daft Punk',
             slug='random-access-memories'
          )
-         self.record = Musician.objects.create(
+        self.record = Musician.objects.create(
              name='Give Life Back to Music',
              assortment=self.assortment,
              track_number=1,
              slug='give-life-back-to-music'
          )
          
-         self.musician = Musician.objects.create(
+        self.musician = Musician.objects.create(
              record=self.reord,
              creator='Daft Punk',
              genre='electronic',
@@ -46,7 +47,7 @@ class MusicianModelTestCase(TestCase):
         mock_mb_search_artists.return_value = {
             'artist-list': [
                 {
-                    'name': 'Maroon 5'
+                    'name': 'Maroon 5',
                     'ext:score': '100',
                     'id': '0ab49580-c84f-44d4-875f-d83760ea2cfe',
                     'tag-list': [

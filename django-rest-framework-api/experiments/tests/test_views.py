@@ -1,8 +1,9 @@
+# Mock
 from unittest.mock import patch, Mock
-
+# Django
 from django.test import TestCase, RequestFactory
 from django.db.models.query import QuerySet
-
+# Local
 from experiments.views import index, musician_detail
 from experiments.models import Musician
 from assortment.models import Assortment, Record

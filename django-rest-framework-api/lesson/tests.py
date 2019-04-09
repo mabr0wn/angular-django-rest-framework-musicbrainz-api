@@ -1,10 +1,11 @@
+# Django
 from django.test import LiveServerTestCase
 # Not guarentee that the user model is loaded into app cache.
 from django.contrib.auth import get_user_model
-
 import time
+# Selenium
 from selenium import webdriver
-
+# Local
 from experiments.models import Musician
 from assortment.models import Assortment, Record
 
