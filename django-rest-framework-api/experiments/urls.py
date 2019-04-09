@@ -1,11 +1,11 @@
-from django.conf.urls import url, include
-from experiments import views
+# Django
+from django.urls import path, include
+# Django rest
 from rest_framework.schemas import get_schema_view
-
 from rest_framework import routers
-
+# Local
 from assortment.views import AssortmentViewSet, RecordViewSet
-# from experiments.views import MusicianViewSet
+from experiments import views
 
 """
 Create a router and register our viewsets with it.
@@ -15,7 +15,6 @@ from views, no longer required.
 router = routers.SimpleRouter()
 router.register(r'experiments', views.ExperimentViewSet)
 router.register(r'users', views.UserViewSet)
-# router.register(r'musicians', MusicianViewSet)
 router.register(r'assortment', AssortmentViewSet)
 router.register(r'records', RecordViewSet)
 
@@ -26,11 +25,10 @@ The API URLs are now determined automatically by the router.
 Additionally, we include the login URLs for the browsable API.
 """
 urlpatterns = [
-	url(r'^api/', include(router.urls)),
-	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-	url(r'^schema/$', schema_view),
-	
-	url(r'^recordings/(?P<album>[\w-]+)/(?P<track>[\w-]+)/(?P<artist>[\w-]+)/$',
-    	views.musician_detail, name='musician_detail_view'),
-	url(r'^$', views.index),
+	# angular view
+	path(r'', views.Index.as_view(), name='index'),
+	# api
+	path(r'api/', include(router.urls)),
+	path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+	path(r'schema/', schema_view)
 ]
