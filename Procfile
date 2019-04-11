@@ -1,1 +1,1 @@
-web: gunicorn lesson.wsgi --log-file –
+web: gunicorn django-rest-framework-api/lesson.wsgi --log-file –
