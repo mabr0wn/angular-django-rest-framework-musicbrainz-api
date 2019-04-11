@@ -2,6 +2,7 @@ import os
 import dj_database_url
 
 BASE_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..'))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 
@@ -134,7 +135,7 @@ DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
