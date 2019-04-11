@@ -6,3 +6,7 @@ Markdown==2.6.3
 musicbrainzngs==0.5
 coreapi 
 pyyaml
+gunicorn
+dj-database-url
+whitenoise
+psycopg2

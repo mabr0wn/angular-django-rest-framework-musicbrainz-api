@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 BASE_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
@@ -13,7 +14,7 @@ SECRET_KEY ='(v5kipuf2llre&(-li-o)2*g-*zaz863oomk7l57k97z)*0j%u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com']
 
 ### Celery
 # not ready yet, in localhost program
@@ -53,6 +54,7 @@ WEBPACK_LOADER = {
 }
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,6 +128,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Update database configuration with $DATABASE_URL.
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -136,3 +141,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+ 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
