@@ -22,3 +22,99 @@ ImportError: Import by filename is not supported.
 [2019-04-11 18:30:13 -0400] [11204] [INFO] Worker exiting (pid: 11204)
 [2019-04-11 18:30:13 -0400] [11201] [INFO] Shutting down: Master
 [2019-04-11 18:30:13 -0400] [11201] [INFO] Reason: Worker failed to boot.
+[2019-04-11 18:35:53 -0400] [11645] [INFO] Starting gunicorn 19.6.0
+[2019-04-11 18:35:53 -0400] [11645] [INFO] Listening at: http://0.0.0.0:5000 (11645)
+[2019-04-11 18:35:53 -0400] [11645] [INFO] Using worker: sync
+[2019-04-11 18:35:53 -0400] [11648] [INFO] Booting worker with pid: 11648
+[2019-04-11 18:35:53 -0400] [11648] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+ImportError: Import by filename is not supported.
+[2019-04-11 18:35:53 -0400] [11648] [INFO] Worker exiting (pid: 11648)
+[2019-04-11 18:35:53 -0400] [11645] [INFO] Shutting down: Master
+[2019-04-11 18:35:53 -0400] [11645] [INFO] Reason: Worker failed to boot.
+[2019-04-11 18:45:19 -0400] [12320] [INFO] Starting gunicorn 19.6.0
+[2019-04-11 18:45:19 -0400] [12320] [INFO] Listening at: http://0.0.0.0:5000 (12320)
+[2019-04-11 18:45:19 -0400] [12320] [INFO] Using worker: sync
+[2019-04-11 18:45:19 -0400] [12323] [INFO] Booting worker with pid: 12323
+[2019-04-11 18:45:19 -0400] [12323] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+ImportError: Import by filename is not supported.
+[2019-04-11 18:45:19 -0400] [12323] [INFO] Worker exiting (pid: 12323)
+[2019-04-11 18:45:19 -0400] [12320] [INFO] Shutting down: Master
+[2019-04-11 18:45:19 -0400] [12320] [INFO] Reason: Worker failed to boot.
+[2019-04-11 18:48:48 -0400] [12607] [INFO] Starting gunicorn 19.6.0
+[2019-04-11 18:48:48 -0400] [12607] [INFO] Listening at: http://0.0.0.0:5000 (12607)
+[2019-04-11 18:48:48 -0400] [12607] [INFO] Using worker: sync
+[2019-04-11 18:48:48 -0400] [12611] [INFO] Booting worker with pid: 12611
+[2019-04-11 18:48:48 -0400] [12611] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+ImportError: Import by filename is not supported.
+[2019-04-11 18:48:48 -0400] [12611] [INFO] Worker exiting (pid: 12611)
+[2019-04-11 18:48:48 -0400] [12607] [INFO] Shutting down: Master
+[2019-04-11 18:48:48 -0400] [12607] [INFO] Reason: Worker failed to boot.
+[2019-04-11 18:49:06 -0400] [12659] [INFO] Starting gunicorn 19.6.0
+[2019-04-11 18:49:06 -0400] [12659] [INFO] Listening at: http://0.0.0.0:5000 (12659)
+[2019-04-11 18:49:06 -0400] [12659] [INFO] Using worker: sync
+[2019-04-11 18:49:06 -0400] [12663] [INFO] Booting worker with pid: 12663
+[2019-04-11 18:49:06 -0400] [12663] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+    worker.init_process()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/Library/Python/2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/Library/Python/2.7/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+ImportError: Import by filename is not supported.
+[2019-04-11 18:49:06 -0400] [12663] [INFO] Worker exiting (pid: 12663)
+[2019-04-11 18:49:06 -0400] [12659] [INFO] Shutting down: Master
+[2019-04-11 18:49:06 -0400] [12659] [INFO] Reason: Worker failed to boot.
