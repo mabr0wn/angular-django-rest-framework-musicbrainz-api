@@ -9,8 +9,4 @@ from artists.models import Artist
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Artist
-        read_only_fields = ('slug',)
-
-    def validate(self, data):
-        data['slug'] = slugify(data['artist'])
-        return data
+        fields = '__all__'
