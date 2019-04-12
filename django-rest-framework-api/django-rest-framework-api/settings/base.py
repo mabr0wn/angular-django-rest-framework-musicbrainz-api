@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     # third-party apps
     'rest_framework',
     'webpack_loader',
+    'graphene_django',
+
 
 ]
 
@@ -52,6 +54,11 @@ WEBPACK_LOADER = {
         'BUNDLE_DIR_NAME': 'bundles/',
         'STATS_FILE': os.path.join(BASE_DIR, '../webpack-stats.json')
     }
+}
+
+# GraphQL
+GRAPHENE = {
+    'SCHEMA': 'django-rest-framework-api.schema.schema'
 }
 
 MIDDLEWARE = [

@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 # Django rest
 from rest_framework import serializers
 
+
+
 """
 Now we need to add a User serializer to work with Users, we will add a representation of those users
 to our API.  We create this to see how many JSON each user has created, it will display the id, username

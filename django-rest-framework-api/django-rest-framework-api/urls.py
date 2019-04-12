@@ -16,14 +16,20 @@ Including another URLconf
 # Django
 from django.urls import path, include
 from django.contrib import admin
+from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.conf.urls.static import static
+# Graphene for GraphQL
+from graphene_django.views import GraphQLView
+from .schema import schema
 
 
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'', include('artists.urls')),
     path(r'', include('auth.urls')),
+    # graphql
+    path(r'graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
