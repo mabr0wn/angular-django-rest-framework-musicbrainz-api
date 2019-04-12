@@ -6,7 +6,7 @@ import time
 # Selenium
 from selenium import webdriver
 # Local
-from experiments.models import Musician
+from artists.models import Artist
 from albums.models import Album, Record
 
 class UserTestCase(LiveServerTestCase):
@@ -18,19 +18,19 @@ class UserTestCase(LiveServerTestCase):
         
         self.album1 = Album.objects.create(name='The Fame', slug='the-fame')
         self.record1 = Record.objects.create(name='Just Dance', slug='the-fame')
-        self.musician1 = Musician.objects.create(genre='pop', artist='Lady Gag', record=self.record1,
+        self.artist1 = Artist.objects.create(genre='pop', artist='Lady Gag', record=self.record1,
                                                  slug='lady-gaga')
         self.album2 = Album.objects.create(name='Voices', slug='voices')
         self.record2 = Record.objects.create(name='Black Out Days')
-        self.musician2 = Musician.objects.create(genre='electronic', artist='Phantogram', record=self.record2,
+        self.artist2 = Artist.objects.create(genre='electronic', artist='Phantogram', record=self.record2,
                                                  slug='phantogram')
         self.album3 = Album.objects.create(name='Late Registration', slug='late-registration')
         self.record3 = Record.objects.create(name='I Need to Know')
         # self.record3 = Record.objects.create(name='I Need to Know', slug='i-need-to-know')
-        self.musicians3 = Musician.objects.create(genre='hiphop', artist='Kanye West', record=self.record3,
+        self.artists3 = Artist.objects.create(genre='hiphop', artist='Kanye West', record=self.record3,
                                                  slug='kayne-west')
         
-        self.musician4 = Musician.objects.create(genre='electropop', artist='Gorillaz', record=self.track2,
+        self.artist4 = Artist.objects.create(genre='electropop', artist='Gorillaz', record=self.track2,
                                                  slug='gorillaz', start_time='0:25', end_time='3:47')
         record4 = Record.objects.create(name='My Only Friend', album=self.album2, record_number=11)
         record5 = Record.objects.create(name='Never Going Home', album=self.album2, record_number=4)
@@ -44,9 +44,9 @@ class UserTestCase(LiveServerTestCase):
     def find_search_results(self):
         return self.browser.find_elements_by_css_selector('.mb-search-result a')
     
-    def test_user_find_musicians(self):
+    def test_user_find_artists(self):
         """
-        Test that a user can search for Musicians
+        Test that a user can search for artists
         """
         # Sarah is a promoter who would like to find more hip hop composers so she can book new talent.
         # Visits the homepage of website

@@ -1,13 +1,13 @@
 # Mock
 from unittest import TestCase
 # Local
-from experiments.serializers import MusicianSerializer
+from artists.serializers import ArtistSerializer
 
-class MusicianSerialierTestCase(TestCase):
+class ArtistSerialierTestCase(TestCase):
   
     def test_validate(self):
-        ''' Test that MusicianSerializer.validate() adds a slugged version of the artist attribute to the data '''
-        serializer = MusicianSerializer()
+        ''' Test that ArtistSerializer.validate() adds a slugged version of the artist attribute to the data '''
+        serializer = ArtistSerializer()
         data = serializer.validate({'creator:' 'Trey Songs'})
         
         self.assertEqual(data, {

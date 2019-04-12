@@ -3,7 +3,7 @@ from django.utils.text import slugify
 # Celery
 from celery import shared_task
 # Local
-from .models import Musician
+from .models import Artist
 from albums.models import Collection, Record
 # Musicbrainz
 import musicbrainzngs as mb
@@ -22,18 +22,18 @@ having any concrete app instance.
 @share_task
 def get_artist_tracks_from_musicbrianz_api(artist):
     """
-    Create Collection, Record, and Musician records for artists we find in the MusicBrainzNGS API
+    Create Collection, Record, and Artist records for artists we find in the MusicBrainzNGS API
     
     :param artist: an artist's name as a string to search for
-    :return: Queryset of Musicians
+    :return: Queryset of Artists
     """
     search_results = mb.search_artists(artist)
     best_result = search_results['artist-list'][0]
     
     if 'pop' not in [d['name'] for d in best_result['tag-list']]:
-        return Musician.objects.none()
+        return Artist.objects.none()
       
-    genre = Musician.get_instrument_from_musicbrainz_tag_list(best_result['tag-list'])
+    genre = Artist.get_instrument_from_musicbrainz_tag_list(best_result['tag-list'])
     
     for collection_dict in mb.browse_releases(best_result['id'], includes=['recordings'])['release-list']:
         collection = Collection.objects.create(name=collection_dict['title'], artist=artist, slug=slugify(collection_dict['title']))
@@ -43,6 +43,6 @@ def get_artist_tracks_from_musicbrianz_api(artist):
                                            record_number=record_dict['position'],
                                            slug=slugify(record_dict['recording']['title']))
             
-            Musician.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))
+            Artist.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))
             
-    return Musician.objects.filter(artist=artist)
+    return Artist.objects.filter(artist=artist)

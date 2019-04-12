@@ -26,7 +26,7 @@ STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 mb.set_useragent('Mbrown - mattd429@gmail.com', version='0.0.1')
 
-class Musician(models.Model):
+class Artist(models.Model):
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
     artist = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
@@ -38,7 +38,7 @@ class Musician(models.Model):
         ordering = ['record', 'start_time']
     
     def get_absolute_url(self):
-        return reverse('musician_detail_view', kwargs={'album': self.record.album.slug, 'record': self.record.slug,
+        return reverse('artist_detail_view', kwargs={'album': self.record.album.slug, 'record': self.record.slug,
                                                        'artist': self.slug})
     def get_period_of_play_time(self):
         play_string = ''
@@ -49,15 +49,15 @@ class Musician(models.Model):
     @classmethod
     def get_artist_records_from_musicbrainz_api(cls, artist):
         """
-        Create album, Record, and Musician reords for artists we find
+        Create album, Record, and artist reords for artists we find
         in the MusicBrainzNGS API
         
         :param artist: an artist's name as a string to search for
-        :return: Queryset of Musicians
+        :return: Queryset of artists
         """
         search = mb.search_artists(artist)
         results = search['artist-list'][0]
-        genre = Musician.get_genre_from_musicbrainz_tag_list(results['tag-list'])
+        genre = Artist.get_genre_from_musicbrainz_tag_list(results['tag-list'])
         
         for album_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
             album = Album.objects.create(name=album_dict['title'], artist=artist, slug=slugify(album['title']))
@@ -74,9 +74,9 @@ class Musician(models.Model):
                 record = Record.objects.create(album=album, name=record_dict['recording']['title'],
                                                record_number=record_dict['position'],
                                                slug=slugify(record_dict['recording']['title']))
-                Musician.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))
+                Artist.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))
                 
-            return Musician.objects.filter(artist=artist)
+            return Artist.objects.filter(artist=artist)
     @classmethod
     def get_genre_from_musicbrainz_tag_list(cls, tag_list):
         """
@@ -91,7 +91,7 @@ class Musician(models.Model):
     
 
 class Experiment(models.Model):
-    owner = models.ForeignKey('auth.User', related_name='experiments', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='artists', on_delete=models.CASCADE)
     highlighted = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')

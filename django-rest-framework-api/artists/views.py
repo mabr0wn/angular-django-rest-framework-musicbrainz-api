@@ -8,8 +8,8 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework import renderers, viewsets
 # Local
-from experiments.models import Experiment
-from experiments.serializers import ExperimentSerializer, UserSerializer
+from artists.models import Experiment
+from artists.serializers import ArtistSerializer, UserSerializer
 # Musicbrainz
 import musicbrainzngs as mb
 mb.set_useragent('PUT_EMAIL_HERE', version='0.0.1')
@@ -27,7 +27,7 @@ class ExperimentViewSet(viewsets.ModelViewSet):
     additionally we also provide an extra 'highlight' action
     """
     queryset = Experiment.objects.all()
-    serializer_class = ExperimentSerializer
+    serializer_class = ArtistSerializer
     """
     Notice that we've also used the @detail_route decorator to create a custom action, 
     named highlight. This decorator can be used to add any custom endpoints that don't fit 

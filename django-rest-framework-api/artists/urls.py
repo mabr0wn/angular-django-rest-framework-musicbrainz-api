@@ -5,7 +5,7 @@ from rest_framework.schemas import get_schema_view
 from rest_framework import routers
 # Local
 from albums.views import AlbumViewSet, RecordViewSet
-from experiments import views
+from artists import views
 
 """
 Create a router and register our viewsets with it.
@@ -13,7 +13,7 @@ DefaultRouter() automatically created the api_root
 from views, no longer required.
 """
 router = routers.SimpleRouter()
-router.register(r'experiments', views.ExperimentViewSet)
+router.register(r'artists', views.ExperimentViewSet)
 router.register(r'users', views.UserViewSet)
 router.register(r'album', AlbumViewSet)
 router.register(r'records', RecordViewSet)

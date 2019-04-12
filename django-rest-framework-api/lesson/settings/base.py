@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # django default apps
-    'experiments',
+    'artists',
     'albums',
 
     # third-party apps

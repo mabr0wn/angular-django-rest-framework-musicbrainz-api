@@ -2,7 +2,7 @@
 from django.test import TestCase
 from django.urls import resolve
 # Local
-from experiments.views import Index
+from artists.views import Index
 
 class ExperimentURLsTestCase(TestCase):
     

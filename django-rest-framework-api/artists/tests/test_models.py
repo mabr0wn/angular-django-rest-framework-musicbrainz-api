@@ -3,12 +3,12 @@ from unittest.mock import patch
 # Django
 from django.test import TestCase
 # Local
-from experiments.models import Musician, Experiment
+from artists.models import Artist, Experiment
 from albums.model import Album, Record
 
 """ SetUp the TestCase """
 
-class MusicianModelTestCase(TestCase):
+class ArtistModelTestCase(TestCase):
     
     def setUp(self):
         self.album = Album.objects.create(
@@ -16,14 +16,14 @@ class MusicianModelTestCase(TestCase):
             creator='Daft Punk',
             slug='random-access-memories'
          )
-        self.record = Musician.objects.create(
+        self.record = Artist.objects.create(
              name='Give Life Back to Music',
              album=self.album,
              track_number=1,
              slug='give-life-back-to-music'
          )
          
-        self.musician = Musician.objects.create(
+        self.artist = Artist.objects.create(
              record=self.reord,
              creator='Daft Punk',
              genre='electronic',
@@ -31,19 +31,19 @@ class MusicianModelTestCase(TestCase):
              end_time='4:34',
              slug='daft-punk'
          )
-    def test_musician_basic(self):
-        ''' Test the basic functionality of Musician '''
-        self.assertEqual(self.musician.creator, 'Daft Punk'),
-        self.assertEqual(self.musician.end_time, '4:34')
+    def test_artist_basic(self):
+        ''' Test the basic functionality of artist '''
+        self.assertEqual(self.artist.creator, 'Daft Punk'),
+        self.assertEqual(self.artist.end_time, '4:34')
         
     def test_get_absolute_url(self):
         ''' Test that we can build a URL for a composer '''
         self.assertEqual(
-            self.musician.get_abosolute_url(),
+            self.artist.get_abosolute_url(),
             '/recordings/random-access-memories/give-life-back-to-music/daft-punk/')
         
     def test_get_period_of_play_time(self):
-        '''Test that we can make Musicians from the MusicBrainz API '''
+        '''Test that we can make artists from the MusicBrainz API '''
         mock_mb_search_artists.return_value = {
             'artist-list': [
                 {
@@ -98,18 +98,18 @@ class MusicianModelTestCase(TestCase):
             ]
         }
         
-        created_musicians = Musician.get_artist_tracks_from_musicbrianz_api('Maroon 5')
+        created_artists = Artist.get_artist_tracks_from_musicbrianz_api('Maroon 5')
         
         mock_mb_search_artists.assert_called_with('Maroon 5')
-        self.assertEqual(len(created_musicians), 2)
-        self.assertEqual(created_musicians[0].artist, 'Maroon 5')
+        self.assertEqual(len(created_artists), 2)
+        self.assertEqual(created_artists[0].artist, 'Maroon 5')
         self.assertEqual(created_composers[1].record.name, 'Goodnight Goodnight')
     
     def test_get_genre_from_musicbrainz_tag_list(self):
         ''' Test that we can map tags from musicbrainz to genres '''
         tag_list = [{'count': '3', 'name': 'electropop'}, {'count': '2', 'name': 'pop'}, {'count': '2', 'name': 'electronic'}]
         
-        self.assertEqual(Musician.get_genre_from_musicbrainz_tag_list(tag_list), 'electropop')
+        self.assertEqual(Artist.get_genre_from_musicbrainz_tag_list(tag_list), 'electropop')
         
 class ExperimentModelTestCase(TestCase):
     

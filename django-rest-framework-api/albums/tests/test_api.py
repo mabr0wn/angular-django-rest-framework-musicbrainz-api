@@ -4,7 +4,7 @@ from django.urls import resolve
 from rest_framework.test import APITestCase
 # Local
 from Album.models import Album, Record
-from experiments.models import Musician
+from artists.models import Artist
 
 class AlbumAPITestCase(APITestCase):
     
@@ -33,7 +33,7 @@ class RecordAPITestCase(APITestCase):
         self.eyelid_movies = Album.objects.create(name='Eyelid Movies', slug='eyelig-movies')
         self.futuristic_casket = Album.objects.create(name='Futuristic Casket', slug='futuristic-casket',
                                                            record=self.eyelid_movies)
-        self.electropop_musician = Musician.objects.create(genre='electropop', creator='Phantogram',
+        self.electropop_artist = Artist.objects.create(genre='electropop', creator='Phantogram',
                                                            slug='phantogram', record=self.futuristic_casket)
     def test_retrieve_record(self):
         ''' Test that we can get a list of records '''
