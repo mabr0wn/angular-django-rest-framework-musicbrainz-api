@@ -1,6 +1,10 @@
+# Django
 from django.shortcuts import render
-from auth.serializers import UserSerializer
 from django.contrib.auth.models import User
+# Django rest
+from rest_framework import viewsets, mixins
+# Local
+from auth.serializers import UserSerializer
 
 
 # Create your views here.

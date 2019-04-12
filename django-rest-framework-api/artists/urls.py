@@ -14,7 +14,6 @@ from views, no longer required.
 """
 router = routers.SimpleRouter()
 router.register(r'artists', views.ArtistViewSet)
-# router.register(r'users', views.UserViewSet)
 router.register(r'album', AlbumViewSet)
 router.register(r'records', RecordViewSet)
 
@@ -29,6 +28,5 @@ urlpatterns = [
 	path(r'', views.Index.as_view(), name='index'),
 	# api
 	path(r'api/', include(router.urls)),
-	path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 	path(r'schema/', schema_view)
 ]
