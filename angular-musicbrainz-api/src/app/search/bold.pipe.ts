@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BoldPipe implements PipeTransform {
 
-  transform(text: string, search: string): string {
+
+  transform(text: string, search: string, patter): string {
     if (!text || !search) {
       return text;
     }
@@ -16,10 +17,10 @@ export class BoldPipe implements PipeTransform {
       .map(escapeRegExp)
       .map(x => `(\\s|^)${x}`)
       .join('|');
-
+    
     const regex = new RegExp(searchRegex, 'gi');
-    const bolded = text.replace(regex, match => `<b>${match}</b> `);
-
+    const bolded = text.replace(regex, match => `</b>${match}<b>`);
+  
     return `<b>${bolded}</b>`;
   }
 }

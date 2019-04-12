@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MatAutocompleteModule } from '@angular/material';
+import { MatAutocompleteModule, MatFormFieldModule} from '@angular/material';
 // Local
 import { AppComponent } from './views/app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatFormFieldModule,
     MatAutocompleteModule
   ],
   providers: [],
