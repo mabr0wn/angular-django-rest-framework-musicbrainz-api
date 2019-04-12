@@ -13,8 +13,8 @@ DefaultRouter() automatically created the api_root
 from views, no longer required.
 """
 router = routers.SimpleRouter()
-router.register(r'artists', views.ExperimentViewSet)
-router.register(r'users', views.UserViewSet)
+router.register(r'artists', views.ArtistViewSet)
+# router.register(r'users', views.UserViewSet)
 router.register(r'album', AlbumViewSet)
 router.register(r'records', RecordViewSet)
 
