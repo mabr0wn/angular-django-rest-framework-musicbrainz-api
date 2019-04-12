@@ -10,7 +10,6 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-
   searchControl: FormControl;
 
   filteredResults$: Observable<string[]>;

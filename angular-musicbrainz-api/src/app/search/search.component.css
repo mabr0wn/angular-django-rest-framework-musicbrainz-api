@@ -1,3 +1,6 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
 :host {
     display: flex;
     flex-direction: column;
@@ -5,10 +8,6 @@
     justify-content: center;
     height: 100%;
   } 
-
-  ::ng-deep .mat-autocomplete-panel {
-    margin-left: 40rem;
-  }
   
   h1 {
     font-weight: 300;
@@ -28,9 +27,13 @@
     font-size: 16px;
     line-height: 34px;
   }
+  .fa-search {
+    margin-left: 27rem;
+    margin-top: -2.25rem;
+  }
   
   .spacer {
     height: 200px;
   }
-
+  
   
