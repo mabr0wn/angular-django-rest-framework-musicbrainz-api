@@ -3,12 +3,12 @@ import os
 from celery import Celery
 
 # Set the default Django, settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lesson.settings.test')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django-rest-framework-api.settings.test')
 
 from django.conf import settings
 
 # Pointing to the instance of the library
-app = Celery('lesson')
+app = Celery('django-rest-framework-api')
 
 """
 Using a string here means worker doesn't have to serialize

@@ -1,5 +1,5 @@
 """
-WSGI config for lesson project.
+WSGI config for django-rest-framework-api project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lesson.settings.base")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django-rest-framework-api.settings.base")
 
 application = get_wsgi_application()
 

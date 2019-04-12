@@ -1,1 +1,1 @@
-web: gunicorn --log-file=- --pythonpath django-rest-framework-api lesson.wsgi
+web: gunicorn --log-file=log.txt --pythonpath django-rest-framework-api django-rest-framework-api.wsgi

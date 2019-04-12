@@ -23,7 +23,7 @@ ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com', '*']
 ''' This will allow you to transfer message to one server to another.'''
 BROKER_URL = 'redis://localhost'
 CELERY_RESULT_BACKEND = 'redis://locahost'
-ROOT_URLCONF = 'lesson.urls'
+ROOT_URLCONF = 'django-rest-framework-api.urls'
 
 
 # Application definition
@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'lesson.urls'
+ROOT_URLCONF = 'django-rest-framework-api.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'lesson.wsgi.application'
+WSGI_APPLICATION = 'django-rest-framework-api.wsgi.application'
 
 
 # Database
