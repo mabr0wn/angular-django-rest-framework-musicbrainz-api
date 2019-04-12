@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # django default apps
     'experiments',
-    'assortment',
+    'albums',
 
     # third-party apps
     'rest_framework',

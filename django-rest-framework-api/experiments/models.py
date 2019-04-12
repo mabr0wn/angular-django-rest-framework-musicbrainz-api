@@ -9,7 +9,7 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters.html import HtmlFormatter
 from pygments import highlight
 # Local
-from assortment.models import Assortment, Record
+from albums.models import Album, Record
 # Musicbrainz
 import musicbrainzngs as mb
 
@@ -38,7 +38,7 @@ class Musician(models.Model):
         ordering = ['record', 'start_time']
     
     def get_absolute_url(self):
-        return reverse('musician_detail_view', kwargs={'assortment': self.record.assortment.slug, 'record': self.record.slug,
+        return reverse('musician_detail_view', kwargs={'album': self.record.album.slug, 'record': self.record.slug,
                                                        'artist': self.slug})
     def get_period_of_play_time(self):
         play_string = ''
@@ -49,7 +49,7 @@ class Musician(models.Model):
     @classmethod
     def get_artist_records_from_musicbrainz_api(cls, artist):
         """
-        Create Assortment, Record, and Musician reords for artists we find
+        Create album, Record, and Musician reords for artists we find
         in the MusicBrainzNGS API
         
         :param artist: an artist's name as a string to search for
@@ -59,8 +59,8 @@ class Musician(models.Model):
         results = search['artist-list'][0]
         genre = Musician.get_genre_from_musicbrainz_tag_list(results['tag-list'])
         
-        for assortment_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
-            assortment = Assortment.objects.create(name=assortment_dict['title'], artist=artist, slug=slugify(assortment['title']))
+        for album_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
+            album = Album.objects.create(name=album_dict['title'], artist=artist, slug=slugify(album['title']))
             
             """
                 Medium-list results from dearch having an additional 
@@ -70,8 +70,8 @@ class Musician(models.Model):
 
             """
             
-            for record_dict in assortment_dict['medium-list'][0]['track-list']:
-                record = Record.objects.create(assortment=assortment, name=record_dict['recording']['title'],
+            for record_dict in album_dict['medium-list'][0]['track-list']:
+                record = Record.objects.create(album=album, name=record_dict['recording']['title'],
                                                record_number=record_dict['position'],
                                                slug=slugify(record_dict['recording']['title']))
                 Musician.objects.create(record=record, artist=artist, genre=genre, slug=slugify(artist))

@@ -4,7 +4,7 @@ from django.urls import path, include
 from rest_framework.schemas import get_schema_view
 from rest_framework import routers
 # Local
-from assortment.views import AssortmentViewSet, RecordViewSet
+from albums.views import AlbumViewSet, RecordViewSet
 from experiments import views
 
 """
@@ -15,7 +15,7 @@ from views, no longer required.
 router = routers.SimpleRouter()
 router.register(r'experiments', views.ExperimentViewSet)
 router.register(r'users', views.UserViewSet)
-router.register(r'assortment', AssortmentViewSet)
+router.register(r'album', AlbumViewSet)
 router.register(r'records', RecordViewSet)
 
 schema_view = get_schema_view(title='Pastebin API')

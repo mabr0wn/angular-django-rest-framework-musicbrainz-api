@@ -1,11 +1,11 @@
 # Django rest
 from rest_framework import serializers
 # Local
-from .models import Assortment, Record
+from .models import Album, Record
 
-class AssortmentSerializer(serializers.HyperlinkedModelSerializer):
+class AlbumSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Assortment
+        model = Album
         fields = '__all__'
         
 class RecordSerializer(serializers.HyperlinkedModelSerializer):

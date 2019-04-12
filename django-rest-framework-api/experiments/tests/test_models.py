@@ -4,21 +4,21 @@ from unittest.mock import patch
 from django.test import TestCase
 # Local
 from experiments.models import Musician, Experiment
-from assortment.model import Assortment, Record
+from albums.model import Album, Record
 
 """ SetUp the TestCase """
 
 class MusicianModelTestCase(TestCase):
     
     def setUp(self):
-        self.assortment = Assortment.objects.create(
+        self.album = Album.objects.create(
             name='Random Access Memories',
             creator='Daft Punk',
             slug='random-access-memories'
          )
         self.record = Musician.objects.create(
              name='Give Life Back to Music',
-             assortment=self.assortment,
+             album=self.album,
              track_number=1,
              slug='give-life-back-to-music'
          )

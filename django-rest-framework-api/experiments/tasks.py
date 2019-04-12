@@ -4,7 +4,7 @@ from django.utils.text import slugify
 from celery import shared_task
 # Local
 from .models import Musician
-from assortment.models import Collection, Record
+from albums.models import Collection, Record
 # Musicbrainz
 import musicbrainzngs as mb
 

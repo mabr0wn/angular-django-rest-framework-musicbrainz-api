@@ -4,13 +4,13 @@ from django.urls import resolve
 from rest_framework.test import APITestCase
 # Local
 from experiments.models import Experiment, LANGUAGE_CHOICES, STYLE_CHOICES
-from assortment.models import assortment, Record
+from albums.models import Album, Record
 
 class MusicianAPITestCase(APITestCase):
     
     def setUp(self):
-        self.movement = assortment.objects.create(name='Movement', slug='movement')
-        self.dreams_never_end = Record.objects.create(name='Dreams Never End', slug='dreams-never-end', assortment=self.movement)
+        self.movement = Album.objects.create(name='Movement', slug='movement')
+        self.dreams_never_end = Record.objects.create(name='Dreams Never End', slug='dreams-never-end', album=self.movement)
 
     def test_create_musician(self):
         """
