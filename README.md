@@ -42,7 +42,7 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Experiment(models.Model):
-	owner = models.ForeignKey('auth.User', related_name='experiments', on_delete=models.CASCADE)
+	owner = models.ForeignKey('auth.User', related_name='artists', on_delete=models.CASCADE)
 	highlighted = models.TextField()
 	created = models.DateTimeField(auto_now_add=True)
 	title = models.CharField(max_length=100, blank=True, default='')
@@ -67,7 +67,7 @@ class Experiment(models.Model):
 - Create a `serializers.py` to serialize the db fields in `models.py` into `JSON`
 
 ```python
-class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
+class Artisterializer(serializers.HyperlinkedModelSerializer):
 
 	owner = serializers.ReadOnlyField(source='owner.username')
 	highlight = serializers.HyperlinkedIdentityField(view_name='experiment-highlight', format='html')
@@ -78,7 +78,7 @@ class ExperimentSerializer(serializers.HyperlinkedModelSerializer):
 				  'title', 'code', 'linenos', 'language', 'style', )
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-	experiments = serializers.HyperlinkedRelatedField(many=True, view_name='experiment-detail', read_only=True)
+	artists = serializers.HyperlinkedRelatedField(many=True, view_name='experiment-detail', read_only=True)
 
 	class Meta:
 		model = User
@@ -124,10 +124,10 @@ Below is what the HTML file will look like at the home-page of your project.
   <button type="submit">Search MB</button>
 </form>
 
-{% for musician in musicians %}
+{% for artist in artists %}
   <div class="mb-search-result">
       <a href="{{ composer.get_absolute_url }}">
-        {{ musician.track }}: {{ musician.artist }} on {{ musician.genre }}
+        {{ artist.track }}: {{ artist.artist }} on {{ artist.genre }}
       </a>
   </div>
 {% endfor %}
