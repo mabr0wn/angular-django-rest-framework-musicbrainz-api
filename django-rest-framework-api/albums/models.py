@@ -18,6 +18,8 @@ class Record(models.Model):
     name = models.CharField(max_length=255)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     record_number = models.PositiveIntegerField(blank=True, null=True)
+    slug = models.SlugField()
+
     
     class Meta:
         ordering = ['album', 'record_number']
