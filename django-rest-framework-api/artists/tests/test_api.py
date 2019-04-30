@@ -17,20 +17,20 @@ class ArtistAPITestCase(APITestCase):
         """
         Test that we can create a artist
         """
-        post_data = {'record': '/api/records/1/', 'artist': 'New Order', 'genre': 'electronic',
+        post_data = {'record': '/api/records/1/', 'artist': 'New Order', 'slug': 'new-order', 'genre': 'electronic',
                      'start_time': '0:16', 'end_time': '3:15'}
         ''' Post the data into artists in the format of json '''
         response = self.client.post('/api/artists/', data=post_data, format='json')
         
         self.assertEqual(response.status_code, 201, response.data)
         self.assertEqual(response.data, {
-            'url': 'http://127.0.0.1:8000/api/artists/1/',
+            'url': 'http://testserver/api/artists/1/',
             'artist': 'New Order',
             'slug': 'new-order',
             'genre': 'electronic',
             'start_time': '0:16',
             'end_time': '3:15',
-            'record':  'http://127.0.0.1:8000/api/records/1/'
+            'record':  'http://testserver/api/records/1/'
         })
     
     def test_artist_list_route(self):
