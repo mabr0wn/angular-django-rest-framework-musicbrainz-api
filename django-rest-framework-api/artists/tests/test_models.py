@@ -13,7 +13,7 @@ class ArtistModelTestCase(TestCase):
     def setUp(self):
         self.album = Album.objects.create(
             name='Random Access Memories',
-            creator='Daft Punk',
+            artist='Daft Punk',
             slug='random-access-memories'
          )
         self.record = Record.objects.create(

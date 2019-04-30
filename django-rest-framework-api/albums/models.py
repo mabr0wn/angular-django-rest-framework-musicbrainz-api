@@ -4,7 +4,7 @@ from django.db import models
 ''' Create a model class Album '''
 class Album(models.Model):
     name = models.CharField(max_length=255)
-    creator = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
     slug = models.SlugField()
     
     class Meta:
