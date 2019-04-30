@@ -43,7 +43,7 @@ class Artist(models.Model):
         genre = Artist.get_genre_from_musicbrainz_tag_list(results['tag-list'])
         
         for album_dict in mb.browse_releases(results['id'], includes=['recordings'])['release-list']:
-            album = Album.objects.create(name=album_dict['title'], artist=artist, slug=slugify(album['title']))
+            album = Album.objects.create(name=album_dict['title'], artist=artist, slug=slugify(album_dict['title']))
             
             """
                 Medium-list results from dearch having an additional 
