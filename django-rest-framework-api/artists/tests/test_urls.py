@@ -1,12 +1,13 @@
-# Django
-from django.test import TestCase
-from django.urls import resolve
-# Local
-from artists.views import Index
+import pytest
+from django.conf import settings
+from django.utils.encoding import force_text
 
-class ExperimentURLsTestCase(TestCase):
-    
-    def test_root_url_uses_index_view(self):
-       ''' Test that the root of the site resolves to the correct view function '''
-       root = resolve('/')
-       self.assertEqual(root.func, Index)
+@pytest.mark.urls("django-rest-framework-api.urls")
+def test_urls():
+    try:
+        from django.urls import is_valid_path
+    except ImportError:
+        from django.core.urlresolvers import is_valid_path
+    assert settings.ROOT_URLCONF == 'django-rest-framework-api.urls'
+    assert is_valid_path('/')
+
