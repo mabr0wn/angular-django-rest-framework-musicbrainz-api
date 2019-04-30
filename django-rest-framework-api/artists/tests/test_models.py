@@ -39,7 +39,7 @@ class ArtistModelTestCase(TestCase):
     def test_get_absolute_url(self):
         ''' Test that we can build a URL for a composer '''
         self.assertEqual(
-            self.artist.get_abosolute_url(),
+            self.artist.get_absolute_url(),
             '/recordings/random-access-memories/give-life-back-to-music/daft-punk/')
 
     @patch('musicbrainzngs.browse_releases')
