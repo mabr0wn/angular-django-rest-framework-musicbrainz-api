@@ -44,10 +44,10 @@ class ArtistModelTestCase(TestCase):
     #     self.assertEqual(
     #         self.artist.get_absolute_url(),
     #         '/recordings/random-access-memories/give-life-back-to-music/daft-punk/')
-
+    
+    @pytest.mark.django_db
     @patch('musicbrainzngs.browse_releases')
     @patch('musicbrainzngs.search_artists')
-    @pytest.mark.django_db
     def test_get_artist_tracks_from_musicbrainz(self, mock_mb_search_artists, mock_mb_browse_releases):
         '''Test that we can make artists from the MusicBrainz API '''
         mock_mb_search_artists.return_value = {
