@@ -24,7 +24,7 @@ export class SearchComponent {
       map(val => val.slice(0, 4)));
   }
 
-  private filterResults(val: string): string[] {
+  filterResults(val: string): string[] {
     return val ? this.results.filter(v => v.toLowerCase().indexOf(val.toLowerCase()) === 0) : [];
   }
 

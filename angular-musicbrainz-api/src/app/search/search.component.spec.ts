@@ -1,4 +1,5 @@
 // Angular Testing
+import { Component } from '@angular/core';
 import {
   async,
   ComponentFixture,
@@ -6,6 +7,7 @@ import {
 } from '@angular/core/testing';
 // Components
 import { SearchComponent } from './search.component';
+import { SAMPLE_RESULTS } from '../sample-results';
 // Pipe
 import { BoldPipe } from '../pipe/bold.pipe';
 // Modules
@@ -15,8 +17,10 @@ import {
 } from '@angular/material';
 import {
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  FormControl
 } from '@angular/forms';
+
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -44,7 +48,17 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create search component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should filter Sample results array',(() => {
+    component.results = [
+      'What\'s the weather in San Francisco?',
+      'did you see the game?'
+    ];
+    expect(component.filterResults('What\'s the weather in San Francisco?').length).toBe(1);
+    expect(component.filterResults('did you see the game?').length).toBe(1);
+    expect(component.filterResults('').length).toBe(0);
+  }))
 });
