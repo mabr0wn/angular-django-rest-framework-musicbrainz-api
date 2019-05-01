@@ -1,4 +1,5 @@
 # Mock
+import pytest
 from unittest.mock import patch
 # Django
 from django.test import TestCase
@@ -31,6 +32,8 @@ class ArtistModelTestCase(TestCase):
              end_time='4:34',
              slug='daft-punk'
          )
+
+    @pytest.mark.django_db
     def test_artist_basic(self):
         ''' Test the basic functionality of artist '''
         self.assertEqual(self.artist.artist, 'Daft Punk'),
@@ -44,6 +47,7 @@ class ArtistModelTestCase(TestCase):
 
     @patch('musicbrainzngs.browse_releases')
     @patch('musicbrainzngs.search_artists')
+    @pytest.mark.django_db
     def test_get_artist_tracks_from_musicbrainz(self, mock_mb_search_artists, mock_mb_browse_releases):
         '''Test that we can make artists from the MusicBrainz API '''
         mock_mb_search_artists.return_value = {
@@ -106,7 +110,7 @@ class ArtistModelTestCase(TestCase):
         self.assertEqual(len(created_artists), 1)
         self.assertEqual(created_artists[0].artist, 'Maroon 5')
         # self.assertEqual(created_artists[1].record.name, 'Goodnight Goodnight')
-    
+    @pytest.mark.django_db
     def test_get_genre_from_musicbrainz_tag_list(self):
         ''' Test that we can map tags from musicbrainz to genres '''
         tag_list = [{'count': '3', 'name': 'electropop'}, {'count': '2', 'name': 'electropop'}, {'count': '2', 'name': 'electropop'}]
