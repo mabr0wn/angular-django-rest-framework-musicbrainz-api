@@ -7,7 +7,7 @@ import {
 import { AppComponent } from './app.component';
 import { SearchComponent } from '../search/search.component';
 // pipe
-import { BoldPipe } from '../search/bold.pipe';
+import { BoldPipe } from '../pipe/bold.pipe';
 // Modules
 import {
   MatAutocompleteModule,

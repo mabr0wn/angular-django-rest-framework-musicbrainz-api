@@ -8,7 +8,7 @@ import { MatAutocompleteModule, MatFormFieldModule} from '@angular/material';
 import { AppComponent } from './views/app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './search/search.component';
-import { BoldPipe } from './search/bold.pipe';
+import { BoldPipe } from './pipe/bold.pipe';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
