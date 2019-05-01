@@ -1,10 +1,18 @@
+// Angular Testing
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+// Components
 import { SearchComponent } from './search.component';
+// Pipe
 import { BoldPipe } from './bold.pipe';
-
-import { MatAutocompleteModule, MatFormFieldModule } from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// Modules
+import {
+  MatAutocompleteModule,
+  MatFormFieldModule
+} from '@angular/material';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;

@@ -1,10 +1,19 @@
+// Angular testing
 import { TestBed, async } from '@angular/core/testing';
+// Components
 import { AppComponent } from './app.component';
 import { SearchComponent } from '../search/search.component';
+// pipe
 import { BoldPipe } from '../search/bold.pipe';
-
-import { MatAutocompleteModule, MatFormFieldModule } from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// Modules
+import {
+  MatAutocompleteModule,
+  MatFormFieldModule
+} from '@angular/material';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
