@@ -1,5 +1,4 @@
 // Angular Testing
-import { Component } from '@angular/core';
 import {
   async,
   ComponentFixture,
@@ -7,7 +6,6 @@ import {
 } from '@angular/core/testing';
 // Components
 import { SearchComponent } from './search.component';
-import { SAMPLE_RESULTS } from '../sample-results';
 // Pipe
 import { BoldPipe } from '../pipe/bold.pipe';
 // Modules
@@ -18,7 +16,6 @@ import {
 import {
   FormsModule,
   ReactiveFormsModule,
-  FormControl
 } from '@angular/forms';
 
 
@@ -52,7 +49,7 @@ describe('SearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should filter Sample results array',(() => {
+  it('should filter new sample results array',(() => {
     component.results = [
       'What\'s the weather in San Francisco?',
       'did you see the game?'
