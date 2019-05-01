@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --prod && ng run angular-musicbrainz-api:server:production"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +27,10 @@
     "@angular/platform-browser-dynamic": "^7.2.10",
     "@angular/platform-server": "^7.2.10",
     "@angular/router": "^7.2.10",
+    "@nguniversal/express-engine": "^7.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "0.0.0",
     "core-js": "^3.0.0",
+    "express": "^4.15.2",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "webpack-bundle-tracker": "^0.4.2-beta",
@@ -50,9 +57,11 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "^6.0.0",
     "rxjs-tslint": "^0.1.7",
+    "ts-loader": "^5.2.0",
     "ts-node": "~8.0.3",
     "tslint": "^5.14.0",
     "typescript": "3.2.4",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.1.0"
   }
 }
