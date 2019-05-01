@@ -110,6 +110,7 @@ class ArtistModelTestCase(TestCase):
         self.assertEqual(len(created_artists), 1)
         self.assertEqual(created_artists[0].artist, 'Maroon 5')
         # self.assertEqual(created_artists[1].record.name, 'Goodnight Goodnight')
+        
     @pytest.mark.django_db
     def test_get_genre_from_musicbrainz_tag_list(self):
         ''' Test that we can map tags from musicbrainz to genres '''
