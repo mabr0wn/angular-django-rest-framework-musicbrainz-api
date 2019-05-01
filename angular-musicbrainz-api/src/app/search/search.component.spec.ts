@@ -1,5 +1,9 @@
 // Angular Testing
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 // Components
 import { SearchComponent } from './search.component';
 // Pipe

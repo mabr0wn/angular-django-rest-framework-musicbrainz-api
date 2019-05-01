@@ -1,5 +1,8 @@
 // Angular testing
-import { TestBed, async } from '@angular/core/testing';
+import {
+  TestBed,
+  async
+} from '@angular/core/testing';
 // Components
 import { AppComponent } from './app.component';
 import { SearchComponent } from '../search/search.component';
