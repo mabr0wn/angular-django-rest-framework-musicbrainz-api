@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BoldPipe implements PipeTransform {
 
 
-  transform(text: string, search: string, patter): string {
+  transform(text: string, search: string ): string {
     if (!text || !search) {
       return text;
     }
