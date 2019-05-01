@@ -17,14 +17,14 @@ export class BoldPipe implements PipeTransform {
       .map(escapeRegExp)
       .map(x => `(\\s|^)${x}`)
       .join('|');
-    
+
     const regex = new RegExp(searchRegex, 'gi');
     const bolded = text.replace(regex, match => `</b>${match}<b>`);
-  
+
     return `<b>${bolded}</b>`;
   }
 }
 
 function escapeRegExp(val: string): string {
-  return val.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+  return val.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
 }

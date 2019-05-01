@@ -8,4 +8,4 @@ export const SAMPLE_RESULTS: string[] = [
     'what does the fox say',
     'what do turtles eat',
     'where\'s my refund',
-  ]
+  ];

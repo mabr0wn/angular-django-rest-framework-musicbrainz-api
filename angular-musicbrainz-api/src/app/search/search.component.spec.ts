@@ -24,15 +24,15 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ 
+      imports: [
         MatAutocompleteModule,
         MatFormFieldModule,
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [ 
+      declarations: [
         BoldPipe,
-        SearchComponent 
+        SearchComponent
       ]
     })
     .compileComponents();

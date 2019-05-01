@@ -21,7 +21,7 @@ import {
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ 
+      imports: [
         MatAutocompleteModule,
         MatFormFieldModule,
         FormsModule,
