@@ -11,6 +11,7 @@ class ArtistModelTestCase(TestCase):
         self.album = Album.objects.create(
             name='Random Access Memories',
             artist='Daft Punk',
+            image='https://www.wearevinyl.co.uk/collections/artists/products/daft-punk-random-access-memories',
             slug='random-access-memories'
          )
         self.track = Track.objects.create(

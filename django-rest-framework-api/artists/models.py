@@ -8,6 +8,7 @@ import musicbrainzngs as mb
 class Album(models.Model):
     name = models.CharField(max_length=255)
     artist = models.CharField(max_length=255)
+    image = models.URLField(blank=True, default='')
     slug = models.SlugField()
     
     class Meta:
