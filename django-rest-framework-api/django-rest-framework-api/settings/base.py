@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # django default apps
     'artists',
-    
+        
     # third-party apps
     'rest_framework',
     'webpack_loader',
