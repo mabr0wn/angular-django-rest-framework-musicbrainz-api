@@ -37,7 +37,6 @@ router.register(r'tracks', TrackViewSet)
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
-    path(r'api-auth/', include('rest_framework.urls')),
     # angular view
     re_path('.*', TemplateView.as_view(template_name='index.html')),
     # graphql
