@@ -18,7 +18,7 @@ class SoloTaskTestCase(TestCase):
 
         self.assertEqual(len(created_solos), 135)
         self.assertEqual(created_solos[0].artist, 'Madonna')
-        self.assertEqual(created_solos[1].record.name, 'Angel')
+        self.assertEqual(created_solos[1].track.name, 'Angel')
 
     def test_slugify_max_length(self):
         """

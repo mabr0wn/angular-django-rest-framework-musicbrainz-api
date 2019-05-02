@@ -16,14 +16,14 @@ class Album(models.Model):
     def __str__(self):
         return self.name
       
-class Record(models.Model):
+class Track(models.Model):
     name = models.CharField(max_length=255)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    record_number = models.PositiveIntegerField(blank=True, null=True)
+    track_number = models.PositiveIntegerField(blank=True, null=True)
     slug = models.SlugField()
 
 class Artist(models.Model):
-    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+    track = models.ForeignKey(Track, on_delete=models.CASCADE)
     artist = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
     start_time = models.CharField(max_length=20, blank=True, null=True)
@@ -31,7 +31,7 @@ class Artist(models.Model):
     slug = models.SlugField()
     
     class Meta:
-        ordering = ['record', 'start_time']
+        ordering = ['track', 'start_time']
     
     def get_period_of_play_time(self):
         play_string = ''

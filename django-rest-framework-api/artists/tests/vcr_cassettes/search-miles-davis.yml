@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><metadata\
-        \ created=\"2019-05-02T19:37:22.271Z\" xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
+        \ created=\"2019-05-02T19:54:37.929Z\" xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
         \ xmlns:ns2=\"http://musicbrainz.org/ns/ext#-2.0\"><artist-list count=\"2210\"\
         \ offset=\"0\"><artist id=\"561d854a-6a28-4aa7-8c99-323e6ce46c2a\" type=\"\
         Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\" ns2:score=\"100\"\
@@ -159,19 +159,19 @@ interactions:
       Content-Type:
       - application/xml; charset=UTF-8
       Date:
-      - Thu, 02 May 2019 19:37:22 GMT
+      - Thu, 02 May 2019 19:54:37 GMT
       ETag:
-      - '"M2IyN2YwMDAwMDAwMDAwMFNvbHI="'
+      - '"Yjc0N2YwMDAwMDAwMDAwMFNvbHI="'
       Last-Modified:
-      - Thu, 02 May 2019 19:37:02 GMT
+      - Thu, 02 May 2019 19:54:22 GMT
       Vary:
       - Accept-Encoding
       X-RateLimit-Limit:
       - '1200'
       X-RateLimit-Remaining:
-      - '746'
+      - '1054'
       X-RateLimit-Reset:
-      - '1556825842'
+      - '1556826879'
     status:
       code: 200
       message: OK
@@ -217,7 +217,7 @@ interactions:
         \ count=\"1\"><release-event><date>1956</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list count=\"7\" offset=\"0\"><track id=\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"7\"><track id=\"\
         bbc0ffdd-55fc-3c5d-9d36-69bfe1f5f491\"><position>1</position><number>A1</number><length>421440</length><recording\
         \ id=\"0255f999-8742-4ac7-b1b8-5f9b8f5002b4\"><title>Serpents Tooth (take\
         \ 1)</title><length>421000</length></recording></track><track id=\"22997ef3-777a-378b-a22c-e6077d44dcd6\"\
@@ -241,7 +241,7 @@ interactions:
         \ count=\"1\"><release-event><date>1956</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"12\"><track id=\"\
+        >12&quot; Vinyl</format><track-list count=\"12\" offset=\"0\"><track id=\"\
         a16d5de2-3a64-4d94-b3f1-c52205a24f5a\"><position>1</position><number>A1</number><length>172986</length><recording\
         \ id=\"bef88252-7ed5-439e-947a-be6ceba79247\"><title>Odjenar</title><length>172466</length></recording></track><track\
         \ id=\"74038d49-9d0c-4ce1-a33b-f2232e7794ad\"><position>2</position><number>A2</number><length>186640</length><recording\
@@ -389,7 +389,7 @@ interactions:
         \ count=\"1\"><release-event><date>1955</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"4\"><track id=\"\
+        >12&quot; Vinyl</format><track-list count=\"4\" offset=\"0\"><track id=\"\
         43c8e259-6f3f-346a-bd56-65939a28416b\"><position>1</position><number>A1</number><length>380840</length><recording\
         \ id=\"6068dc3e-3f44-469e-b978-5fa5624d43d0\"><title>Nature Boy</title><length>378080</length></recording></track><track\
         \ id=\"4b7e6084-55da-399b-92ef-8f8d0c6f8248\"><position>2</position><number>A2</number><length>442200</length><recording\
@@ -447,7 +447,7 @@ interactions:
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode\
         \ /><cover-art-archive><artwork>true</artwork><count>2</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"6954724d-b8f3-39a4-b724-d2eec6ac674b\"\
-        >10&quot; Shellac</format><track-list offset=\"0\" count=\"2\"><track id=\"\
+        >10&quot; Shellac</format><track-list count=\"2\" offset=\"0\"><track id=\"\
         7550ae96-12a6-3af4-ac62-b90a7110d123\"><position>1</position><number>A</number><length>151000</length><recording\
         \ id=\"fd2724c6-e5b3-4b89-8111-41e905db5568\"><title>Budo</title><length>154800</length></recording></track><track\
         \ id=\"10aa3507-ce7a-3736-b4ee-ad6f8b37a910\"><position>2</position><number>B</number><length>152000</length><recording\
@@ -459,7 +459,7 @@ interactions:
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode\
         \ /><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"12\"><track id=\"\
+        >12&quot; Vinyl</format><track-list count=\"12\" offset=\"0\"><track id=\"\
         f6aed270-d19b-4f60-84a2-8f1dfd336eee\"><position>1</position><number>A1</number><length>229000</length><recording\
         \ id=\"b65487de-d814-49b6-bb5c-3cc283195b39\"><title>Tempus Fugit</title><length>229000</length></recording></track><track\
         \ id=\"a14d7446-06d9-420c-9979-340eb64ff5d0\"><position>2</position><number>A2</number><length>197000</length><recording\
@@ -511,7 +511,7 @@ interactions:
         \ count=\"1\"><release-event><date>1957-03-04</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"10e17707-9751-3aaf-95b2-2432acd5374c\"\
-        >Vinyl</format><track-list offset=\"0\" count=\"6\"><track id=\"7bc07b6b-12de-3f5d-81d5-cd56c37be3d2\"\
+        >Vinyl</format><track-list count=\"6\" offset=\"0\"><track id=\"7bc07b6b-12de-3f5d-81d5-cd56c37be3d2\"\
         ><position>1</position><number>1</number><title>'Round Midnight</title><length>355933</length><recording\
         \ id=\"0ba4f516-252b-45cd-a6b5-1de7bf843769\"><title>\u2019round Midnight</title><length>357000</length><disambiguation>studio\
         \ session, 1956-9-10: Columbia Studio, New York, US</disambiguation></recording></track><track\
@@ -551,7 +551,7 @@ interactions:
         \ count=\"1\"><release-event><date>1952</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3155d2b6-52fd-3952-bda3-bd7c429d038d\"\
-        >10&quot; Vinyl</format><track-list offset=\"0\" count=\"6\"><track id=\"\
+        >10&quot; Vinyl</format><track-list count=\"6\" offset=\"0\"><track id=\"\
         278f69d6-f5a1-44c5-b2b9-d2b392cffd2e\"><position>1</position><number>A1</number><length>251013</length><recording\
         \ id=\"36398c22-29ee-40d3-8a1a-d49e9f0936b4\"><title>Dear Old Stockholm</title><length>253000</length></recording></track><track\
         \ id=\"807007c6-5696-4345-834d-e353aee85462\"><position>2</position><number>A2</number><length>182440</length><recording\
@@ -571,7 +571,7 @@ interactions:
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode\
         \ /><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list count=\"11\" offset=\"0\"><track id=\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"11\"><track id=\"\
         dcdebf09-90fd-40bf-b63d-28a028054b87\"><position>1</position><number>A1</number><title>Take\u2010\
         Off</title><recording id=\"87434ca9-475c-4af9-92c2-2ef7a0258f96\"><title>Take-Off</title><length>219000</length></recording></track><track\
         \ id=\"e48f4c54-18e6-41ae-a25e-edc70ba1578c\"><position>2</position><number>A2</number><recording\
@@ -604,7 +604,7 @@ interactions:
         \ count=\"1\"><release-event><date>1953</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3155d2b6-52fd-3952-bda3-bd7c429d038d\"\
-        >10&quot; Vinyl</format><track-list offset=\"0\" count=\"3\"><track id=\"\
+        >10&quot; Vinyl</format><track-list count=\"3\" offset=\"0\"><track id=\"\
         3640c392-787a-40f4-afbd-fe8ed5bc17e6\"><position>1</position><number>A1</number><length>596240</length><recording\
         \ id=\"2fc112f4-975b-4991-bd2c-ba83fa85cbab\"><title>Bluing</title><length>596240</length></recording></track><track\
         \ id=\"6923bbc6-768d-4d3d-8470-635b3b9b84d6\"><position>2</position><number>B1</number><length>169733</length><recording\
@@ -616,7 +616,7 @@ interactions:
         \ count=\"1\"><release-event><date>1954</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"10e17707-9751-3aaf-95b2-2432acd5374c\"\
-        >Vinyl</format><track-list count=\"7\" offset=\"0\"><track id=\"2909070a-ed1a-45df-8b8d-584a43fd2347\"\
+        >Vinyl</format><track-list offset=\"0\" count=\"7\"><track id=\"2909070a-ed1a-45df-8b8d-584a43fd2347\"\
         ><position>1</position><number>1</number><length>204000</length><recording\
         \ id=\"957aefbf-718a-4e86-9c22-44f2ca6bd801\"><title>When Lights Are Low</title><length>207493</length></recording></track><track\
         \ id=\"3757df59-8ddd-44c0-ad17-a45accde920f\"><position>2</position><number>2</number><length>233000</length><recording\
@@ -651,7 +651,7 @@ interactions:
         \ count=\"1\"><release-event><date>1957</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list count=\"7\" offset=\"0\"><track id=\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"7\"><track id=\"\
         a4202dc0-6ad4-43f5-abcc-a2beb7c9df2a\"><position>1</position><number>A1</number><title>Bags'\
         \ Groove (take 1)</title><length>670493</length><recording id=\"43c4b1b7-e047-4b6c-96e5-477f3c70cc7b\"\
         ><title>Bags\u2019 Groove</title><length>670493</length><disambiguation>take\
@@ -675,7 +675,7 @@ interactions:
         \ count=\"1\"><release-event><date>1952</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3155d2b6-52fd-3952-bda3-bd7c429d038d\"\
-        >10&quot; Vinyl</format><track-list offset=\"0\" count=\"8\"><track id=\"\
+        >10&quot; Vinyl</format><track-list count=\"8\" offset=\"0\"><track id=\"\
         349c924b-fad6-46fd-84a5-0258f6130389\"><position>1</position><number>A1</number><recording\
         \ id=\"59ea7cf4-7a1b-4703-b073-a83bf226d024\"><title>Dynamo</title></recording></track><track\
         \ id=\"e6725350-c1f4-41d6-9836-7adf94a0d7f6\"><position>2</position><number>A2</number><recording\
@@ -699,7 +699,7 @@ interactions:
         \ count=\"1\"><release-event><date>1955</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"4\"><track id=\"\
+        >12&quot; Vinyl</format><track-list count=\"4\" offset=\"0\"><track id=\"\
         b0f19fbc-4ae3-41be-8c24-a354f30e9442\"><position>1</position><number>A1</number><length>534000</length><recording\
         \ id=\"ae84cda1-d79c-4ccf-95f7-9441efd43ea9\"><title>Dr. Jackle</title><length>539573</length></recording></track><track\
         \ id=\"e2286906-71d3-40d2-8684-a3af0cd32a33\"><position>2</position><number>A2</number><length>397000</length><recording\
@@ -738,9 +738,9 @@ interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Thu, 02 May 2019 19:37:23 GMT
+      - Thu, 02 May 2019 19:54:38 GMT
       ETag:
-      - '"05bd6bc6aba45cdbb2ccb2c538d6eaee"'
+      - '"b6fb0085616670393b9a4c5e590187ce"'
       Server:
       - Plack::Handler::Starlet
       Vary:
@@ -748,9 +748,9 @@ interactions:
       X-RateLimit-Limit:
       - '1200'
       X-RateLimit-Remaining:
-      - '1010'
+      - '1013'
       X-RateLimit-Reset:
-      - '1556825844'
+      - '1556826879'
     status:
       code: 200
       message: OK

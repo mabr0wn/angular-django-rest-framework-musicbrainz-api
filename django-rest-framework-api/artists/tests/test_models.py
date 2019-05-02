@@ -5,7 +5,7 @@ from unittest.mock import patch
 # Django
 from django.test import TestCase
 # Local
-from artists.models import Artist, Album, Record
+from artists.models import Artist, Album, Track
 
 class ArtistModelTestCase(TestCase):
     
@@ -15,15 +15,15 @@ class ArtistModelTestCase(TestCase):
             artist='Daft Punk',
             slug='random-access-memories'
          )
-        self.record = Record.objects.create(
+        self.track = Track.objects.create(
              name='Give Life Back to Music',
              album=self.album,
-             record_number=1,
+             track_number=1,
              slug='give-life-back-to-music'
          )
          
         self.artist = Artist.objects.create(
-             record=self.record,
+             track=self.track,
              artist='Daft Punk',
              genre='electronic',
              start_time='0:16',

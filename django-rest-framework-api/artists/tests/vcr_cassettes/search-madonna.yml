@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><metadata\
-        \ created=\"2019-05-02T19:37:24.263Z\" xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
+        \ created=\"2019-05-02T19:54:39.195Z\" xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
         \ xmlns:ns2=\"http://musicbrainz.org/ns/ext#-2.0\"><artist-list count=\"42\"\
         \ offset=\"0\"><artist id=\"79239441-bfd5-4981-a70c-55c3f15c1287\" type=\"\
         Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\" ns2:score=\"100\"\
@@ -143,19 +143,19 @@ interactions:
       Content-Type:
       - application/xml; charset=UTF-8
       Date:
-      - Thu, 02 May 2019 19:37:24 GMT
+      - Thu, 02 May 2019 19:54:39 GMT
       ETag:
-      - '"YWUyN2YwMDAwMDAwMDAwMFNvbHI="'
+      - '"YTUyN2YwMDAwMDAwMDAwMFNvbHI="'
       Last-Modified:
-      - Thu, 02 May 2019 19:37:02 GMT
+      - Thu, 02 May 2019 19:54:22 GMT
       Vary:
       - Accept-Encoding
       X-RateLimit-Limit:
       - '1200'
       X-RateLimit-Remaining:
-      - '785'
+      - '1198'
       X-RateLimit-Reset:
-      - '1556825844'
+      - '1556826881'
     status:
       code: 200
       message: OK
@@ -183,7 +183,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-11</date><area id=\"2db42837-c832-3c27-b4a3-08198f75693c\"\
         ><name>Japan</name><sort-name>Japan</sort-name><iso-3166-1-code-list><iso-3166-1-code>JP</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992515726</barcode><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
-        >CD</format><track-list count=\"9\" offset=\"0\"><track id=\"23450919-f8b5-4b89-8a62-a5b6571e0b33\"\
+        >CD</format><track-list offset=\"0\" count=\"9\"><track id=\"23450919-f8b5-4b89-8a62-a5b6571e0b33\"\
         ><position>1</position><number>1</number><length>240706</length><recording\
         \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
         \ id=\"a015d08e-33ef-4d13-8064-7a5c7534486f\"><position>2</position><number>2</number><length>236133</length><recording\
@@ -207,8 +207,8 @@ interactions:
         \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1982-10</date><country>US</country><release-event-list\
         \ count=\"1\"><release-event><date>1982-10</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
-        \ count=\"1\"><medium><position>1</position><track-list offset=\"0\" count=\"\
-        2\"><track id=\"edf5557b-aa43-3058-9c6f-c5b9843b84e5\"><position>1</position><number>1</number><recording\
+        \ count=\"1\"><medium><position>1</position><track-list count=\"2\" offset=\"\
+        0\"><track id=\"edf5557b-aa43-3058-9c6f-c5b9843b84e5\"><position>1</position><number>1</number><recording\
         \ id=\"50e0c10a-8e49-4c23-9754-a3849db20493\"><title>Everybody</title></recording></track><track\
         \ id=\"3f166765-6076-3e0e-b657-e6224b59db76\"><position>2</position><number>2</number><recording\
         \ id=\"a42baf35-b89f-4324-b976-b8b90e636103\"><title>Everybody (dub version)</title></recording></track></track-list></medium></medium-list></release><release\
@@ -219,7 +219,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
-        >CD</format><track-list count=\"8\" offset=\"0\"><track id=\"054195f0-1de9-44ee-aaf9-82b07d1de450\"\
+        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"054195f0-1de9-44ee-aaf9-82b07d1de450\"\
         ><position>1</position><number>1</number><length>338000</length><recording\
         \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
         \ id=\"d1d97570-0c71-4f64-a768-2faa430f74a4\"><position>2</position><number>2</number><length>321893</length><recording\
@@ -243,7 +243,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
-        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"3c718b32-06c4-47bf-ad96-5d041956865c\"\
+        >CD</format><track-list count=\"8\" offset=\"0\"><track id=\"3c718b32-06c4-47bf-ad96-5d041956865c\"\
         ><position>1</position><number>1</number><length>337106</length><recording\
         \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
         \ id=\"d6168de5-5aec-41ca-8af1-f7f3d8e89c22\"><position>2</position><number>2</number><length>321893</length><recording\
@@ -277,7 +277,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983-07-26</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><asin>B000002KZ3</asin><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
-        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"8c007bfd-4a97-326e-9ae8-4ddc87ca9972\"\
+        >CD</format><track-list count=\"8\" offset=\"0\"><track id=\"8c007bfd-4a97-326e-9ae8-4ddc87ca9972\"\
         ><position>1</position><number>1</number><length>337106</length><recording\
         \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
         \ id=\"1ee67271-6e5a-313f-a492-7efaa67fc0ed\"><position>2</position><number>2</number><length>321893</length><recording\
@@ -300,7 +300,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983-07-26</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>07599238674</barcode><asin>B000002KZ4</asin><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"f5e6e254-8f39-331c-936b-9c69d686dc47\"\
-        >Cassette</format><track-list count=\"8\" offset=\"0\"><track id=\"7e288713-649b-323a-951d-69fd3a564c6d\"\
+        >Cassette</format><track-list offset=\"0\" count=\"8\"><track id=\"7e288713-649b-323a-951d-69fd3a564c6d\"\
         ><position>1</position><number>1</number><length>337106</length><recording\
         \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
         \ id=\"53589a46-1f51-3055-b108-e454a5daf042\"><position>2</position><number>2</number><length>321893</length><recording\
@@ -323,7 +323,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
         ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
-        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"9b5aeb8b-1a54-3c2a-a02a-3361997cc4bf\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"9b5aeb8b-1a54-3c2a-a02a-3361997cc4bf\"\
         ><position>1</position><number>A</number><length>215000</length><recording\
         \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
         \ id=\"2d1f8092-2a7c-306e-8e2e-44a1483c870b\"><position>2</position><number>B</number><length>244000</length><recording\
@@ -371,7 +371,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-05-21</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
         ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
-        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"b0f76336-0c40-37fa-89a0-d37418ec71bb\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"b0f76336-0c40-37fa-89a0-d37418ec71bb\"\
         ><position>1</position><number>A</number><title>Borderline (edit)</title><recording\
         \ id=\"37276b3a-2a7c-4d1e-a53f-846475d48460\"><title>Borderline</title><length>238000</length></recording></track><track\
         \ id=\"986575c2-0013-3be4-b7ca-a3434ccc8c52\"><position>2</position><number>B</number><recording\
@@ -381,7 +381,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"85752fda-13c4-31a3-bee5-0e5cb1f51dad\"\
         ><name>Germany</name><sort-name>Germany</sort-name><iso-3166-1-code-list><iso-3166-1-code>DE</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
-        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"2f66bc4f-c43d-39a3-87ce-79747cf01a06\"\
+        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"2f66bc4f-c43d-39a3-87ce-79747cf01a06\"\
         ><position>1</position><number>A</number><length>215000</length><recording\
         \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
         \ id=\"04e1d231-8edc-356f-b2d7-7772bc2bc36e\"><position>2</position><number>B</number><length>244000</length><recording\
@@ -476,7 +476,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983-07-27</date><area id=\"2db42837-c832-3c27-b4a3-08198f75693c\"\
         ><name>Japan</name><sort-name>Japan</sort-name><iso-3166-1-code-list><iso-3166-1-code>JP</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"f5e6e254-8f39-331c-936b-9c69d686dc47\"\
-        >Cassette</format><track-list offset=\"0\" count=\"8\"><track id=\"a4a97d09-bb48-39d3-9fd2-0fbe60e72747\"\
+        >Cassette</format><track-list count=\"8\" offset=\"0\"><track id=\"a4a97d09-bb48-39d3-9fd2-0fbe60e72747\"\
         ><position>1</position><number>1</number><length>337106</length><recording\
         \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
         \ id=\"6774bae1-e0db-31fe-a499-b198bdcdf02b\"><position>2</position><number>2</number><length>321893</length><recording\
@@ -498,7 +498,7 @@ interactions:
         \ count=\"1\"><release-event><date>1983-09-07</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
         ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"\
+        >12&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"\
         8865cb83-2112-3dec-97ea-6a73213584b0\"><position>1</position><number>A</number><title>Holiday\
         \ (full length version)</title><length>367000</length><recording id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"\
         ><title>Holiday</title><length>369493</length></recording></track><track id=\"\
@@ -511,7 +511,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-11-13</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
         ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992515726</barcode><asin>B000002L6P</asin><cover-art-archive><artwork>true</artwork><count>9</count><front>true</front><back>true</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
-        >CD</format><track-list count=\"9\" offset=\"0\"><track id=\"17433f81-f19a-3f0d-b215-d922d703a18e\"\
+        >CD</format><track-list offset=\"0\" count=\"9\"><track id=\"17433f81-f19a-3f0d-b215-d922d703a18e\"\
         ><position>1</position><number>1</number><length>240706</length><recording\
         \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
         \ id=\"5bd24970-1ee0-35f0-b651-2548bdac4748\"><position>2</position><number>2</number><length>236133</length><recording\
@@ -536,7 +536,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984-01-02</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
         ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
-        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"683244a6-b7b8-3ef4-a4f2-096b4b3e31a9\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"683244a6-b7b8-3ef4-a4f2-096b4b3e31a9\"\
         ><position>1</position><number>A</number><length>230000</length><recording\
         \ id=\"4fa094bc-ea78-410f-b7ab-46b4799bd3a6\"><title>Holiday (edit)</title><length>230000</length></recording></track><track\
         \ id=\"a3cfbf1a-226f-385d-8ba7-1e67a938e7e3\"><position>2</position><number>B</number><length>293000</length><recording\
@@ -571,7 +571,7 @@ interactions:
         \ count=\"1\"><release-event><date>1984</date><area id=\"89a675c2-3e37-3518-b83c-418bad59a85a\"\
         ><name>Europe</name><sort-name>Europe</sort-name><iso-3166-1-code-list><iso-3166-1-code>XE</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>07599251571</barcode><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
         \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
-        >12&quot; Vinyl</format><track-list count=\"9\" offset=\"0\"><track id=\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"9\"><track id=\"\
         06548c62-5fd7-33c0-b4a1-5927e96d943b\"><position>1</position><number>A1</number><length>240706</length><recording\
         \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
         \ id=\"04d71ef7-3c29-3ec6-b361-d2afc011ab74\"><position>2</position><number>A2</number><length>236133</length><recording\
@@ -635,9 +635,9 @@ interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Date:
-      - Thu, 02 May 2019 19:37:25 GMT
+      - Thu, 02 May 2019 19:54:40 GMT
       ETag:
-      - '"4c1336d8bc76ebde00845dd1d16435dd"'
+      - '"1db1d117cd0ae6789d0b949c4382df00"'
       Server:
       - Plack::Handler::Starlet
       Vary:
@@ -645,9 +645,9 @@ interactions:
       X-RateLimit-Limit:
       - '1200'
       X-RateLimit-Remaining:
-      - '1005'
+      - '976'
       X-RateLimit-Reset:
-      - '1556825846'
+      - '1556826881'
     status:
       code: 200
       message: OK

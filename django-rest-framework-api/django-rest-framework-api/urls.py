@@ -26,12 +26,12 @@ from .schema import schema
 # Django rest framework
 from rest_framework import routers
 # Views
-from artists.views import ArtistViewSet, AlbumViewSet, RecordViewSet
+from artists.views import ArtistViewSet, AlbumViewSet, TrackViewSet
 # Router
 router = routers.SimpleRouter()
 router.register(r'artists', ArtistViewSet)
 router.register(r'albums', AlbumViewSet)
-router.register(r'records', RecordViewSet)
+router.register(r'tracks', TrackViewSet)
 
 
 urlpatterns = [

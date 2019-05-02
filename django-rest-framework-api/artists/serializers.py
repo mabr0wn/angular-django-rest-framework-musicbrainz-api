@@ -3,7 +3,7 @@ from django.utils.text import slugify
 # Django rest
 from rest_framework import serializers
 # Local
-from artists.models import Album, Artist, Record
+from artists.models import Album, Artist, Track
 
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -15,7 +15,7 @@ class AlbumSerializer(serializers.HyperlinkedModelSerializer):
         model = Album
         fields = '__all__'
         
-class RecordSerializer(serializers.HyperlinkedModelSerializer):
+class TrackSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Record
+        model = Track
         fields = '__all__'
