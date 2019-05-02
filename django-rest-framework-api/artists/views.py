@@ -7,7 +7,6 @@ from artists.models import Artist
 from artists.serializers import ArtistSerializer
 # Musicbrainz
 import musicbrainzngs as mb
-mb.set_useragent('PUT_EMAIL_HERE', version='0.0.1')
 
 
 class Index(TemplateView):

@@ -9,7 +9,6 @@ from albums.models import Collection, Record
 import musicbrainzngs as mb
 
 
-mb.set_useragent('Set Content', version='0.0.1')
 
 """
 The tasks you write will probably live in a reusable apps,

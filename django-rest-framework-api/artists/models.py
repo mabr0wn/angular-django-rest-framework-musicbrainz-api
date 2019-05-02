@@ -7,7 +7,6 @@ from albums.models import Album, Record
 # Musicbrainz
 import musicbrainzngs as mb
 
-mb.set_useragent('Mbrown - mattd429@gmail.com', version='0.0.1')
 
 class Artist(models.Model):
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
