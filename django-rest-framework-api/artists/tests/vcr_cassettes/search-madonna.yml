@@ -1,0 +1,654 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '0'
+      Host:
+      - musicbrainz.org
+      User-Agent:
+      - Mbrown - mattd429@gmail.com/1.0.1 python-musicbrainzngs/0.5
+    method: GET
+    uri: http://musicbrainz.org/ws/2/artist/?query=Madonna
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><metadata\
+        \ created=\"2019-05-02T19:37:24.263Z\" xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
+        \ xmlns:ns2=\"http://musicbrainz.org/ns/ext#-2.0\"><artist-list count=\"42\"\
+        \ offset=\"0\"><artist id=\"79239441-bfd5-4981-a70c-55c3f15c1287\" type=\"\
+        Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\" ns2:score=\"100\"\
+        ><name>Madonna</name><sort-name>Madonna</sort-name><gender>female</gender><country>US</country><area\
+        \ id=\"489ce91b-6658-3307-9877-795b68554c98\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United States</name><sort-name>United\
+        \ States</sort-name><life-span><ended>false</ended></life-span></area><begin-area\
+        \ id=\"903111d9-9dc2-4129-b08a-3cf52bc72757\" type=\"City\" type-id=\"6fd8f29a-3d0a-32fc-980d-ea697b69da78\"\
+        ><name>Bay City</name><sort-name>Bay City</sort-name><life-span><ended>false</ended></life-span></begin-area><disambiguation>American\
+        \ singer-songwriter, actress, businesswoman, \"Queen of Pop\"</disambiguation><ipi-list><ipi>00125053706</ipi><ipi>00128246872</ipi><ipi>00211854787</ipi></ipi-list><life-span><begin>1958-08-16</begin><ended>false</ended></life-span><alias-list><alias\
+        \ locale=\"ja\" sort-name=\"\u30DE\u30C9\u30F3\u30CA\" type=\"Artist name\"\
+        \ type-id=\"894afba6-2816-3c24-8072-eadb66bd04bc\" primary=\"primary\">\u30DE\
+        \u30C9\u30F3\u30CA</alias><alias sort-name=\"Ciccone-Ritchie, Madonna\">Madonna\
+        \ Ciccone-Ritchie</alias><alias sort-name=\"Ciccone, Madonna Louise\" type=\"\
+        Legal name\" type-id=\"d4dcd0c0-b341-3612-a332-c0ce797b25cf\">Madonna Louise\
+        \ Ciccone</alias><alias sort-name=\"Madonna\">Madonna</alias><alias sort-name=\"\
+        M. Ciccone\" type=\"Search hint\" type-id=\"1937e404-b981-3cb7-8151-4c86ebfc8d8e\"\
+        >M. Ciccone</alias><alias sort-name=\"Ciccone, Madonna Louise Veronica\">Madonna\
+        \ Louise Veronica Ciccone</alias></alias-list><tag-list><tag count=\"1\"><name>electronic</name></tag><tag\
+        \ count=\"1\"><name>downtempo</name></tag><tag count=\"11\"><name>pop</name></tag><tag\
+        \ count=\"1\"><name>jazz</name></tag><tag count=\"0\"><name>dance</name></tag><tag\
+        \ count=\"0\"><name>american</name></tag><tag count=\"0\"><name>arabic</name></tag><tag\
+        \ count=\"0\"><name>singer</name></tag><tag count=\"0\"><name>usa</name></tag><tag\
+        \ count=\"3\"><name>electropop</name></tag><tag count=\"0\"><name>am\xE9ricain</name></tag><tag\
+        \ count=\"4\"><name>dance-pop</name></tag><tag count=\"0\"><name>chanteur</name></tag><tag\
+        \ count=\"0\"><name>greatest hits</name></tag><tag count=\"0\"><name>tell\
+        \ me</name></tag><tag count=\"0\"><name>pop and chart</name></tag><tag count=\"\
+        0\"><name>multiple ipi</name></tag><tag count=\"1\"><name>art pop</name></tag><tag\
+        \ count=\"1\"><name>secret</name></tag></tag-list></artist><artist id=\"3fd13140-6857-489a-9e53-a4e112b8354b\"\
+        \ type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\" ns2:score=\"\
+        84\"><name>Madonna</name><sort-name>Madonna</sort-name><gender>female</gender><country>LB</country><area\
+        \ id=\"8138206e-5786-3f86-a53b-19a7303e7419\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>Lebanon</name><sort-name>Lebanon</sort-name><life-span><ended>false</ended></life-span></area><disambiguation>Lebanese\
+        \ singer</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"a03e6851-a046-4599-85f0-5977905f8e8a\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"72\"><name>Madonna Nash</name><sort-name>Nash, Madonna</sort-name><gender>female</gender><country>US</country><area\
+        \ id=\"489ce91b-6658-3307-9877-795b68554c98\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United States</name><sort-name>United\
+        \ States</sort-name><life-span><ended>false</ended></life-span></area><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"ccf25bc1-0864-4b90-bb26-9e74c187975e\" type=\"Group\" type-id=\"e431f5f6-b5d2-343d-8b36-72607fffb74b\"\
+        \ ns2:score=\"71\"><name>Fortress Madonna</name><sort-name>Fortress Madonna</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"61087575-51f3-404f-b22a-d76a3385bc5e\" type=\"Group\" type-id=\"e431f5f6-b5d2-343d-8b36-72607fffb74b\"\
+        \ ns2:score=\"71\"><name>Madonna 303</name><sort-name>Madonna 303</sort-name><life-span><begin>1992</begin><ended>false</ended></life-span></artist><artist\
+        \ id=\"8353a6a9-815a-4c65-b495-c45fed04568f\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Luigi Madonna</name><sort-name>Madonna, Luigi</sort-name><gender>male</gender><country>IT</country><area\
+        \ id=\"c6500277-9a3d-349b-bf30-41afdbf42add\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>Italy</name><sort-name>Italy</sort-name><life-span><ended>false</ended></life-span></area><disambiguation>Italian\
+        \ DJ and producer</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"53202bda-728e-47fe-9316-b988a26abd50\" ns2:score=\"71\"><name>Madonna\
+        \ Martin</name><sort-name>Madonna Martin</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"afe9e530-c9b6-42b8-b878-fa56fb0b19fc\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Buffalo Madonna</name><sort-name>Buffalo Madonna</sort-name><gender>male</gender><country>US</country><area\
+        \ id=\"489ce91b-6658-3307-9877-795b68554c98\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United States</name><sort-name>United\
+        \ States</sort-name><life-span><ended>false</ended></life-span></area><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"e8e3fb47-d041-42d3-8903-7fe7b2d137e9\" type=\"Group\" type-id=\"e431f5f6-b5d2-343d-8b36-72607fffb74b\"\
+        \ ns2:score=\"71\"><name>Sweet Madonna</name><sort-name>Sweet Madonna</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"e004b36a-867a-4144-8d66-02689b04ec93\" ns2:score=\"71\"><name>Raw Madonna</name><sort-name>Raw\
+        \ Madonna</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"fad93057-dba3-4234-a5d2-30a1367e0ddc\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Madonna Sebastian</name><sort-name>Sebastian, Madonna</sort-name><gender>female</gender><country>IN</country><area\
+        \ id=\"d31a9a15-537f-3669-ad53-25753ddd2772\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>India</name><sort-name>India</sort-name><life-span><ended>false</ended></life-span></area><disambiguation>Actress</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"d44c9bc0-53fd-4638-bd50-54a95b2cd250\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Annalisa Madonna</name><sort-name>Madonna, Annalisa</sort-name><gender>female</gender><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"b1aff435-d6d1-42e6-aec4-27da3ec04d36\" ns2:score=\"71\"><name>Pre Madonna</name><sort-name>Pre\
+        \ Madonna</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"89156c85-ebce-460b-bf5f-4fe1957bd2f0\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Matthew Madonna</name><sort-name>Madonna, Matthew</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"911df6c2-1584-41f9-a000-28c45961bcb5\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"71\"><name>Ray Madonna</name><sort-name>Madonna, Ray</sort-name><gender>male</gender><country>US</country><area\
+        \ id=\"489ce91b-6658-3307-9877-795b68554c98\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United States</name><sort-name>United\
+        \ States</sort-name><life-span><ended>false</ended></life-span></area><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"3f351696-75a2-4167-86b1-c5cd37770600\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"63\"><name>The Black Madonna</name><sort-name>Black Madonna,\
+        \ The</sort-name><gender>female</gender><country>US</country><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        \ type=\"Country\" type-id=\"06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United\
+        \ States</name><sort-name>United States</sort-name><life-span><ended>false</ended></life-span></area><disambiguation>house/disco\
+        \ artist Marea Stamper</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"f68a6f65-4371-4d89-a51b-a3ec3405c69b\" ns2:score=\"62\"><name>Madonna\
+        \ Over Yorkshire</name><sort-name>Madonna Over Yorkshire</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"60c083b5-e3c9-4410-9f9a-0b5f4b4d5c2c\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"62\"><name>Madonna Wayne Gacy</name><sort-name>Gacy, Madonna\
+        \ Wayne</sort-name><gender>male</gender><country>US</country><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        \ type=\"Country\" type-id=\"06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>United\
+        \ States</name><sort-name>United States</sort-name><life-span><ended>false</ended></life-span></area><begin-area\
+        \ id=\"a2993fdb-6cc6-49da-abe6-831142053fd1\" type=\"City\" type-id=\"6fd8f29a-3d0a-32fc-980d-ea697b69da78\"\
+        ><name>Fort Lauderdale</name><sort-name>Fort Lauderdale</sort-name><life-span><ended>false</ended></life-span></begin-area><life-span><begin>1964-03-06</begin><ended>false</ended></life-span><alias-list><alias\
+        \ sort-name=\"Bier, Stephen Gregory, Jr.\" type=\"Legal name\" type-id=\"\
+        d4dcd0c0-b341-3612-a332-c0ce797b25cf\">Stephen Gregory Bier, Jr.</alias><alias\
+        \ sort-name=\"Bier, Stephen, Jr.\">Stephen Bier, Jr.</alias><alias sort-name=\"\
+        Pogo\" type=\"Artist name\" type-id=\"894afba6-2816-3c24-8072-eadb66bd04bc\"\
+        >Pogo</alias></alias-list><tag-list><tag count=\"1\"><name>american</name></tag><tag\
+        \ count=\"1\"><name>usa</name></tag><tag count=\"1\"><name>musician</name></tag><tag\
+        \ count=\"1\"><name>keyboardist</name></tag></tag-list></artist><artist id=\"\
+        17c7867e-ee1a-40ad-b981-1283c7f05c26\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"61\"><name>\u0645\u0627\u062F\u0648\u0646\u0627 \u0639\u0631\
+        \u0646\u064A\u0637\u0627</name><sort-name>Arnita, Madonna</sort-name><gender>female</gender><country>LB</country><area\
+        \ id=\"8138206e-5786-3f86-a53b-19a7303e7419\" type=\"Country\" type-id=\"\
+        06dd0ae4-8c74-30bb-b43d-95dcedf961de\"><name>Lebanon</name><sort-name>Lebanon</sort-name><life-span><ended>false</ended></life-span></area><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"71851a56-9a92-422f-9ce2-c16ed0dc6938\" ns2:score=\"60\"><name>Madonna\
+        \ Hip Hop Massaker</name><sort-name>Madonna Hip Hop Massaker</sort-name><life-span><ended>false</ended></life-span><alias-list><alias\
+        \ sort-name=\"madonna hip hop massaker\">madonna hip hop massaker</alias></alias-list></artist><artist\
+        \ id=\"a315fb0f-b25d-4efc-b70e-d6d99587ec87\" type=\"Group\" type-id=\"e431f5f6-b5d2-343d-8b36-72607fffb74b\"\
+        \ ns2:score=\"52\"><name>Shrine for the Black Madonna</name><sort-name>Shrine\
+        \ for the Black Madonna</sort-name><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"1ac7b90d-d35c-49aa-8d74-366e617799bf\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"45\"><name>Melissa Totten</name><sort-name>Melissa Totten</sort-name><gender>female</gender><disambiguation>Madonna\
+        \ Tribute</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"3b251564-89fb-40b1-ac8c-f2391e6989f8\" ns2:score=\"45\"><name>Klark\
+        \ Kent</name><sort-name>Klark Kent</sort-name><disambiguation>Madonna cover</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"b384c616-bfff-45e4-8cfa-cd23f501b908\" ns2:score=\"44\"><name>Sorcery</name><sort-name>Sorcery</sort-name><disambiguation>Madonna\
+        \ cover</disambiguation><life-span><ended>false</ended></life-span></artist><artist\
+        \ id=\"382b3203-cc7e-44d3-9451-7980f5273d12\" type=\"Person\" type-id=\"b6e035f4-3ce9-331c-97df-83397230b0df\"\
+        \ ns2:score=\"44\"><name>Caresse Henry</name><sort-name>Henry, Caresse</sort-name><disambiguation>Madonna's\
+        \ manager</disambiguation><life-span><ended>false</ended></life-span></artist></artist-list></metadata>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - close
+      Content-Length:
+      - '11727'
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Thu, 02 May 2019 19:37:24 GMT
+      ETag:
+      - '"YWUyN2YwMDAwMDAwMDAwMFNvbHI="'
+      Last-Modified:
+      - Thu, 02 May 2019 19:37:02 GMT
+      Vary:
+      - Accept-Encoding
+      X-RateLimit-Limit:
+      - '1200'
+      X-RateLimit-Remaining:
+      - '785'
+      X-RateLimit-Reset:
+      - '1556825844'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '0'
+      Host:
+      - musicbrainz.org
+      User-Agent:
+      - Mbrown - mattd429@gmail.com/1.0.1 python-musicbrainzngs/0.5
+    method: GET
+    uri: http://musicbrainz.org/ws/2/release/?artist=79239441-bfd5-4981-a70c-55c3f15c1287&inc=recordings
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?><metadata xmlns=\"http://musicbrainz.org/ns/mmd-2.0#\"\
+        ><release-list count=\"821\"><release id=\"070ccfd1-fae6-49cc-8b43-9f5a3d8de56d\"\
+        ><title>Like a Virgin</title><status id=\"4e304316-386d-3409-af2e-78857eec5cfe\"\
+        >Official</status><quality>normal</quality><disambiguation>First Japanese\
+        \ release with Stickered OBI-strip.</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11</date><country>JP</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11</date><area id=\"2db42837-c832-3c27-b4a3-08198f75693c\"\
+        ><name>Japan</name><sort-name>Japan</sort-name><iso-3166-1-code-list><iso-3166-1-code>JP</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992515726</barcode><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list count=\"9\" offset=\"0\"><track id=\"23450919-f8b5-4b89-8a62-a5b6571e0b33\"\
+        ><position>1</position><number>1</number><length>240706</length><recording\
+        \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
+        \ id=\"a015d08e-33ef-4d13-8064-7a5c7534486f\"><position>2</position><number>2</number><length>236133</length><recording\
+        \ id=\"eab5aa69-6487-4376-b136-9209fb25ea21\"><title>Angel</title><length>236040</length></recording></track><track\
+        \ id=\"3dbfb331-e4d4-4694-b100-0fc1cab803ac\"><position>3</position><number>3</number><length>218626</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"b9e39237-332c-473b-ae44-d3e5d381005a\"><position>4</position><number>4</number><length>252506</length><recording\
+        \ id=\"30b98027-19d0-4b40-a6d8-d7e5b05b1c58\"><title>Over and Over</title><length>252466</length></recording></track><track\
+        \ id=\"4f820e1c-a8fc-43f7-946c-8cf3292141c1\"><position>5</position><number>5</number><length>290226</length><recording\
+        \ id=\"d779b9c3-4515-40e0-8df1-e5be7cead3bb\"><title>Love Don\u2019t Live\
+        \ Here Anymore</title><length>289773</length></recording></track><track id=\"\
+        86316bc0-46d2-4bfa-8f41-159b879b2275\"><position>6</position><number>6</number><length>241600</length><recording\
+        \ id=\"618d931c-332c-4c3e-a036-37790c80017e\"><title>Dress You Up</title><length>241600</length></recording></track><track\
+        \ id=\"d7b53264-8fbf-4463-831f-591ee6f4230c\"><position>7</position><number>7</number><title>Shoo-Bee-Doo</title><length>317240</length><recording\
+        \ id=\"886468b5-2c0c-4525-aef9-7f713e811f8c\"><title>Shoo\u2010Bee\u2010Doo</title><length>317240</length></recording></track><track\
+        \ id=\"4847b648-2b28-4c8b-9de0-4fa17a276145\"><position>8</position><number>8</number><length>270426</length><recording\
+        \ id=\"ea247a5f-b641-4486-8d1d-f29af33d9a77\"><title>Pretender</title><length>270426</length></recording></track><track\
+        \ id=\"5f9d7fdf-9275-4f0b-9e13-d399d884cb8a\"><position>9</position><number>9</number><length>246400</length><recording\
+        \ id=\"46ab6b22-effd-4f46-9bb9-bbd406c3ac87\"><title>Stay</title><length>247000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"1088500f-43b7-4c5a-a873-613bcc92c6a3\"><title>Everybody</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1982-10</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1982-10</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><track-list offset=\"0\" count=\"\
+        2\"><track id=\"edf5557b-aa43-3058-9c6f-c5b9843b84e5\"><position>1</position><number>1</number><recording\
+        \ id=\"50e0c10a-8e49-4c23-9754-a3849db20493\"><title>Everybody</title></recording></track><track\
+        \ id=\"3f166765-6076-3e0e-b657-e6224b59db76\"><position>2</position><number>2</number><recording\
+        \ id=\"a42baf35-b89f-4324-b976-b8b90e636103\"><title>Everybody (dub version)</title></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"23e718a7-1925-4b62-8a9d-582398aad7fa\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>made\
+        \ in Japan</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list count=\"8\" offset=\"0\"><track id=\"054195f0-1de9-44ee-aaf9-82b07d1de450\"\
+        ><position>1</position><number>1</number><length>338000</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"d1d97570-0c71-4f64-a768-2faa430f74a4\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"8a23b076-6fb2-4ec8-8f90-3a875690bb68\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"64539980-6f6c-4ba6-9944-d5445de0716e\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"6d41f13f-2f9c-4bd9-9b9d-156357331a5d\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"e4fe680c-884c-4fe6-99be-f8f0b4c1502e\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"c5fe3abf-2818-4023-b317-a018f4453d45\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"804645ee-1141-4c5d-be7e-98e65688ff4e\"><position>8</position><number>8</number><length>296000</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"4dede492-7b1f-4163-a668-710854c3d188\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>made\
+        \ in West Germany</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"3c718b32-06c4-47bf-ad96-5d041956865c\"\
+        ><position>1</position><number>1</number><length>337106</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"d6168de5-5aec-41ca-8af1-f7f3d8e89c22\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"a4e1b27c-5c30-4120-8268-a1f4289c9f30\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"1c4e0b73-8fba-4fa9-8065-b09b3f9d293f\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"b1f34026-efb6-405f-aa74-bb08fb23f999\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"2881d408-97e2-4dab-85c6-da6bd33754d8\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"b897ab7a-c5b9-4482-8632-e5cd7f3084bc\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"72dac2bd-c123-4a5d-906a-fe03893d6770\"><position>8</position><number>8</number><length>294640</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"595d6c5e-8da4-4a8c-9fe6-7f89d827f400\"><title>Burning Up</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-03-09</date><country>AU</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-03-09</date><area id=\"106e0bec-b638-3b37-b731-f53d507dc00e\"\
+        ><name>Australia</name><sort-name>Australia</sort-name><iso-3166-1-code-list><iso-3166-1-code>AU</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"bd8c5fd8-a743-4cc9-94a7-5d2c6e47e91e\"\
+        ><position>1</position><number>Side 1</number><length>285000</length><recording\
+        \ id=\"bb782400-f56e-4b5a-95f6-7b0d93298ad3\"><title>Burning Up</title><length>285000</length></recording></track><track\
+        \ id=\"b1ec5abb-b83b-464a-adbe-0254080ab3e8\"><position>2</position><number>Side\
+        \ 2</number><length>395000</length><recording id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"\
+        ><title>Physical Attraction</title><length>400000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"5d9a5a55-e75f-4282-906b-1141f94f1885\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-07-26</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-07-26</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><asin>B000002KZ3</asin><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"8c007bfd-4a97-326e-9ae8-4ddc87ca9972\"\
+        ><position>1</position><number>1</number><length>337106</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"1ee67271-6e5a-313f-a492-7efaa67fc0ed\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"ed5b7b09-99cc-3c69-ab1f-f7ef30d608e3\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"7067edd8-db37-383b-b7fe-a471b4beaff6\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"2f174ce5-4f3b-3556-bd7a-478bf32947d4\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"4e0ec204-d236-3f1b-9406-001b0fca150d\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"7e2c78ca-0211-39c9-8c7f-9d5098607e65\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"05ceebcc-f16a-30dd-a3e0-dde7683531c1\"><position>8</position><number>8</number><length>294640</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"6239ef92-bd00-373f-b18e-12be2918b933\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"c70b737a-0114-39a9-88f7-82843e54f906\">Cassette Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-07-26</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-07-26</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>07599238674</barcode><asin>B000002KZ4</asin><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"f5e6e254-8f39-331c-936b-9c69d686dc47\"\
+        >Cassette</format><track-list count=\"8\" offset=\"0\"><track id=\"7e288713-649b-323a-951d-69fd3a564c6d\"\
+        ><position>1</position><number>1</number><length>337106</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"53589a46-1f51-3055-b108-e454a5daf042\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"2e84ba59-278d-3e96-a0df-ab94fc6e189c\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"5af0fc93-eddb-30c7-9833-06201dc32d91\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"d61e55b0-6edf-3fa6-b910-d0ae119f1301\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"d712cd1c-2e7d-3d4a-8e29-42959fdd6c66\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"db802b42-a2b6-38ef-8ece-5eda5df57fda\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"316c3445-5873-39e4-bdd0-d20bb52f5d7c\"><position>8</position><number>8</number><length>294640</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"64a178ad-2873-4baf-bbfb-fd46bd61fc20\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-05</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"9b5aeb8b-1a54-3c2a-a02a-3361997cc4bf\"\
+        ><position>1</position><number>A</number><length>215000</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"2d1f8092-2a7c-306e-8e2e-44a1483c870b\"><position>2</position><number>B</number><length>244000</length><recording\
+        \ id=\"854eb2d4-8fe6-48a6-9459-e187f9959392\"><title>Stay</title><length>244000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"662ebe35-f168-4e4c-bf0d-0a3d828dd8f2\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1980</date><release-event-list\
+        \ count=\"1\"><release-event><date>1980</date></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>2</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"f5e6e254-8f39-331c-936b-9c69d686dc47\"\
+        >Cassette</format><track-list offset=\"0\" count=\"5\"><track id=\"fbd3a7bb-ccd5-45fd-b6f3-f654f08463fe\"\
+        ><position>1</position><number>Side A 1</number><recording id=\"a642e3d6-f597-4777-a776-499c3468afba\"\
+        ><title>Hear Me</title></recording></track><track id=\"6d505fe8-cafb-4f11-9fee-bbf239090a98\"\
+        ><position>2</position><number>Side A 2</number><recording id=\"cbad685e-5ec3-4e17-b640-58f3c5f5aabb\"\
+        ><title>Safe Neighborhood</title></recording></track><track id=\"aeda4bad-3b95-4f24-b69f-68b8be121b03\"\
+        ><position>3</position><number>Side A 3</number><recording id=\"2c257c43-9346-4aa1-a41e-6a92ac38d226\"\
+        ><title>Little Boy Lost</title></recording></track><track id=\"c417ddce-d012-4346-87be-1a94a7e1c3b8\"\
+        ><position>4</position><number>Side A 4</number><recording id=\"efdf2d36-0d2e-4a50-95a1-aaa8eacf9292\"\
+        ><title>I'm a Prisoner</title></recording></track><track id=\"64955026-4bf6-4042-a4a0-91ecd3d2b7eb\"\
+        ><position>5</position><number>Side A 5</number><recording id=\"ffd08430-20d0-4217-be5a-f75d3ace0944\"\
+        ><title>Rehearsal Cuts</title></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"6c70998d-412c-4c5a-9a75-f3270ce45eb3\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983</date><country>XE</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983</date><area id=\"89a675c2-3e37-3518-b83c-418bad59a85a\"\
+        ><name>Europe</name><sort-name>Europe</sort-name><iso-3166-1-code-list><iso-3166-1-code>XE</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386715</barcode><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
+        >12&quot; Vinyl</format><track-list count=\"8\" offset=\"0\"><track id=\"\
+        1f0f1eca-4c05-4e88-bc43-d61dac0cd369\"><position>1</position><number>A1</number><length>330000</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"f3ab08cc-bbc2-4fff-a44f-4855472812d3\"><position>2</position><number>A2</number><length>318000</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"1587d51c-8766-4a9f-8258-adbcab40e73a\"><position>3</position><number>A3</number><length>226000</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"c222c54e-f782-4e84-b411-ccb226356499\"><position>4</position><number>A4</number><length>225000</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"d6dcaa02-5918-4439-9ea8-554a6f6c3fcd\"><position>5</position><number>B1</number><length>368000</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"cb42d2d7-9db0-4889-8ee5-8399e83a12e0\"><position>6</position><number>B2</number><length>293000</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"6c0ddf4e-5de7-412f-b477-6c01a4d048a7\"><position>7</position><number>B3</number><length>395000</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"9f6e45b3-3095-489f-a54e-c336454bcebe\"><position>8</position><number>B4</number><length>297000</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"7b0c5165-2b66-499f-9a76-37a9b52b1fd9\"><title>Borderline</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-05-21</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-05-21</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"b0f76336-0c40-37fa-89a0-d37418ec71bb\"\
+        ><position>1</position><number>A</number><title>Borderline (edit)</title><recording\
+        \ id=\"37276b3a-2a7c-4d1e-a53f-846475d48460\"><title>Borderline</title><length>238000</length></recording></track><track\
+        \ id=\"986575c2-0013-3be4-b7ca-a3434ccc8c52\"><position>2</position><number>B</number><recording\
+        \ id=\"7487e8d5-f701-4175-bd98-c058df0f0a46\"><title>Physical Attraction</title></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"8451d447-cda3-3b38-91aa-25c8c3bde2ad\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-05</date><country>DE</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"85752fda-13c4-31a3-bee5-0e5cb1f51dad\"\
+        ><name>Germany</name><sort-name>Germany</sort-name><iso-3166-1-code-list><iso-3166-1-code>DE</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"2f66bc4f-c43d-39a3-87ce-79747cf01a06\"\
+        ><position>1</position><number>A</number><length>215000</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"04e1d231-8edc-356f-b2d7-7772bc2bc36e\"><position>2</position><number>B</number><length>244000</length><recording\
+        \ id=\"854eb2d4-8fe6-48a6-9459-e187f9959392\"><title>Stay</title><length>244000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"8b3c9503-02d1-4328-9427-95dcd40872a3\"><title>Burning Up / Physical\
+        \ Attraction</title><status id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-03-09</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-03-09</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"\
+        44e20334-8fb6-433c-9c25-3d0a0c37d058\"><position>1</position><number>A</number><title>Burning\
+        \ Up</title><length>356000</length><recording id=\"514221b3-7347-4e6d-95b5-0e0eca1be047\"\
+        ><title>Burning Up (extended version)</title><length>359533</length></recording></track><track\
+        \ id=\"3c732ca3-be11-42d7-bc4e-ccd5b1bed99a\"><position>2</position><number>B</number><length>395000</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"95300a36-4670-34b9-9db5-c9adb2b1cb88\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-07-26</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-07-26</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386715</barcode><asin>B000066C1Z</asin><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
+        >12&quot; Vinyl</format><track-list count=\"8\" offset=\"0\"><track id=\"\
+        143aa3b4-6c1b-3e23-86ab-93bd9892ea1c\"><position>1</position><number>A1</number><length>337106</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"3357ba44-2fe6-312e-a84d-48b5979fd1bc\"><position>2</position><number>A2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"878d9c73-fa1b-331b-a303-23c4fc9c6b39\"><position>3</position><number>A3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"ac0a6759-b26e-345f-b907-40a3c1ee5b12\"><position>4</position><number>A4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"8ae2a921-e0bf-3bf2-a8f7-8f4cdb6ad533\"><position>5</position><number>B1</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"68be2605-172b-34a1-95c3-9a77d102b364\"><position>6</position><number>B2</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"3caff1cc-5777-3cd0-a090-fbc496b4f2f0\"><position>7</position><number>B3</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"9c823776-e149-31d4-9ff6-721ff4cfdefb\"><position>8</position><number>B4</number><length>294640</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"9b30c4a2-92f9-42b0-bc0a-d1f694bfa10d\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>made\
+        \ in Japan</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-13</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-13</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992515726</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list count=\"9\" offset=\"0\"><track id=\"fad050a7-1d3e-4b71-911f-eabc67c64a0d\"\
+        ><position>1</position><number>1</number><length>242000</length><recording\
+        \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
+        \ id=\"78831eb6-56ae-4ca3-97be-5e1ac890ee0d\"><position>2</position><number>2</number><length>236133</length><recording\
+        \ id=\"eab5aa69-6487-4376-b136-9209fb25ea21\"><title>Angel</title><length>236040</length></recording></track><track\
+        \ id=\"b4898987-4355-4828-99f5-e372d27820dc\"><position>3</position><number>3</number><length>218626</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"38a2ae40-df1b-4f1e-b46f-74639b4bf8dd\"><position>4</position><number>4</number><length>252506</length><recording\
+        \ id=\"30b98027-19d0-4b40-a6d8-d7e5b05b1c58\"><title>Over and Over</title><length>252466</length></recording></track><track\
+        \ id=\"43c43d69-706f-40d1-99e0-b81778049bf6\"><position>5</position><number>5</number><length>289000</length><recording\
+        \ id=\"d779b9c3-4515-40e0-8df1-e5be7cead3bb\"><title>Love Don\u2019t Live\
+        \ Here Anymore</title><length>289773</length></recording></track><track id=\"\
+        ea968674-a71c-4e05-bc39-53b91df4bb2a\"><position>6</position><number>6</number><length>241000</length><recording\
+        \ id=\"618d931c-332c-4c3e-a036-37790c80017e\"><title>Dress You Up</title><length>241600</length></recording></track><track\
+        \ id=\"cd4c995e-c5f7-4c78-9040-88ffcf4944fa\"><position>7</position><number>7</number><title>Shoo-Bee-Doo</title><length>317240</length><recording\
+        \ id=\"886468b5-2c0c-4525-aef9-7f713e811f8c\"><title>Shoo\u2010Bee\u2010Doo</title><length>317240</length></recording></track><track\
+        \ id=\"307061a3-6e0a-4ca1-a9d0-42e47150a2a8\"><position>8</position><number>8</number><length>270426</length><recording\
+        \ id=\"ea247a5f-b641-4486-8d1d-f29af33d9a77\"><title>Pretender</title><length>270426</length></recording></track><track\
+        \ id=\"2aceb647-fb1b-4d33-bad9-5d1cfb3641c2\"><position>9</position><number>9</number><length>247000</length><recording\
+        \ id=\"46ab6b22-effd-4f46-9bb9-bbd406c3ac87\"><title>Stay</title><length>247000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"9c86870d-3d93-4345-a980-c8e11d35f09a\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>Made\
+        \ in Japan, Target CD</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list count=\"8\" offset=\"0\"><track id=\"46fed3d6-d944-4a79-8da9-610f450e94e4\"\
+        ><position>1</position><number>1</number><length>338000</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"18a6add3-fcb7-4466-ad8b-5efa312bf4f7\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"6cacbf68-4386-4136-9572-14dcf5c985d4\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"1cfcdad6-a7d0-4455-a2ce-7611d13101c9\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"254e45b0-da22-4caf-a085-ab40191c1343\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"ca38e325-cc3f-429e-ab51-507c1c93d65f\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"8bec252e-3bd0-4319-8024-256b77c16fa6\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"7baacb61-5271-4a73-9147-663927fd3a80\"><position>8</position><number>8</number><length>296000</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"b1238084-2b85-3e45-9438-e54a4883fdc3\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-07-27</date><country>JP</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-07-27</date><area id=\"2db42837-c832-3c27-b4a3-08198f75693c\"\
+        ><name>Japan</name><sort-name>Japan</sort-name><iso-3166-1-code-list><iso-3166-1-code>JP</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"f5e6e254-8f39-331c-936b-9c69d686dc47\"\
+        >Cassette</format><track-list offset=\"0\" count=\"8\"><track id=\"a4a97d09-bb48-39d3-9fd2-0fbe60e72747\"\
+        ><position>1</position><number>1</number><length>337106</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"6774bae1-e0db-31fe-a499-b198bdcdf02b\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"0982fc92-6464-3143-9550-da46b9a0ce05\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"c9b5ea21-423b-3a92-becd-af31301bc209\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"9103f9a2-b976-316f-b5e3-5396e1e41d3a\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"49afac7f-1f7c-3899-abf4-31033b0f5083\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"2bd1dcfe-d63f-39b8-b012-46385e848dd1\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"471d876f-4105-3d14-a970-5fd36419ff58\"><position>8</position><number>8</number><length>294640</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"c260966d-e66b-4b03-aadb-cc4fa6c05f9f\"><title>Holiday</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983-09-07</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983-09-07</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
+        >12&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"\
+        8865cb83-2112-3dec-97ea-6a73213584b0\"><position>1</position><number>A</number><title>Holiday\
+        \ (full length version)</title><length>367000</length><recording id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"\
+        ><title>Holiday</title><length>369493</length></recording></track><track id=\"\
+        796d0813-6b83-383a-aaa6-f8db1e8a0ccf\"><position>2</position><number>B</number><length>293000</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"c7465f57-1908-4b72-88e6-0d1d87992453\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>made\
+        \ in West Germany</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-13</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-13</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992515726</barcode><asin>B000002L6P</asin><cover-art-archive><artwork>true</artwork><count>9</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list count=\"9\" offset=\"0\"><track id=\"17433f81-f19a-3f0d-b215-d922d703a18e\"\
+        ><position>1</position><number>1</number><length>240706</length><recording\
+        \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
+        \ id=\"5bd24970-1ee0-35f0-b651-2548bdac4748\"><position>2</position><number>2</number><length>236133</length><recording\
+        \ id=\"eab5aa69-6487-4376-b136-9209fb25ea21\"><title>Angel</title><length>236040</length></recording></track><track\
+        \ id=\"04b427e9-abc7-3e86-a8b8-3cd4f6303d9a\"><position>3</position><number>3</number><length>218626</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"dff54b37-6593-302a-9126-4354f6ff9ed4\"><position>4</position><number>4</number><length>252506</length><recording\
+        \ id=\"30b98027-19d0-4b40-a6d8-d7e5b05b1c58\"><title>Over and Over</title><length>252466</length></recording></track><track\
+        \ id=\"a5491b56-0ae1-32dc-adb1-0c1ffbbeed78\"><position>5</position><number>5</number><length>290226</length><recording\
+        \ id=\"d779b9c3-4515-40e0-8df1-e5be7cead3bb\"><title>Love Don\u2019t Live\
+        \ Here Anymore</title><length>289773</length></recording></track><track id=\"\
+        44c703cc-820b-3679-8e12-7341400a662a\"><position>6</position><number>6</number><length>241600</length><recording\
+        \ id=\"618d931c-332c-4c3e-a036-37790c80017e\"><title>Dress You Up</title><length>241600</length></recording></track><track\
+        \ id=\"b7850c8f-8f52-3dfd-9144-e73668de5fa5\"><position>7</position><number>7</number><title>Shoo-Bee-Doo</title><length>317240</length><recording\
+        \ id=\"886468b5-2c0c-4525-aef9-7f713e811f8c\"><title>Shoo\u2010Bee\u2010Doo</title><length>317240</length></recording></track><track\
+        \ id=\"0d9fd3e2-0756-354c-a563-69141346a909\"><position>8</position><number>8</number><length>270426</length><recording\
+        \ id=\"ea247a5f-b641-4486-8d1d-f29af33d9a77\"><title>Pretender</title><length>270426</length></recording></track><track\
+        \ id=\"7790b2bf-76cb-3c5b-91d6-fe703c0308d6\"><position>9</position><number>9</number><length>246400</length><recording\
+        \ id=\"46ab6b22-effd-4f46-9bb9-bbd406c3ac87\"><title>Stay</title><length>247000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"d0a7fba7-2aab-4cde-add1-8e57cc0b231c\"><title>Holiday</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-01-02</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-01-02</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"683244a6-b7b8-3ef4-a4f2-096b4b3e31a9\"\
+        ><position>1</position><number>A</number><length>230000</length><recording\
+        \ id=\"4fa094bc-ea78-410f-b7ab-46b4799bd3a6\"><title>Holiday (edit)</title><length>230000</length></recording></track><track\
+        \ id=\"a3cfbf1a-226f-385d-8ba7-1e67a938e7e3\"><position>2</position><number>B</number><length>293000</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"d0bfb1cd-fae0-4f2e-97a7-00bebd0f7efd\"><title>Madonna</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>made\
+        \ in Switzerland</disambiguation><packaging id=\"ec27701a-4a22-37f4-bfac-6616e0f9750a\"\
+        >Jewel Case</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1983</date><country>US</country><release-event-list\
+        \ count=\"1\"><release-event><date>1983</date><area id=\"489ce91b-6658-3307-9877-795b68554c98\"\
+        ><name>United States</name><sort-name>United States</sort-name><iso-3166-1-code-list><iso-3166-1-code>US</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>075992386722</barcode><cover-art-archive><artwork>true</artwork><count>3</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"9712d52a-4509-3d4b-a1a2-67c88c643e31\"\
+        >CD</format><track-list offset=\"0\" count=\"8\"><track id=\"6c770c35-a842-4447-ae5d-c3c0fe184874\"\
+        ><position>1</position><number>1</number><length>338000</length><recording\
+        \ id=\"9a501c4e-c7cb-40f8-ae2d-6cd92807f9a8\"><title>Lucky Star</title><length>337733</length></recording></track><track\
+        \ id=\"f3d603bf-3c7d-4674-b788-2e3f2814c6ea\"><position>2</position><number>2</number><length>321893</length><recording\
+        \ id=\"516012bf-ff23-4fb9-ae18-d70f35fa8603\"><title>Borderline</title><length>321893</length></recording></track><track\
+        \ id=\"e3e37971-4dec-47eb-a3aa-c987dedf788d\"><position>3</position><number>3</number><length>225533</length><recording\
+        \ id=\"a17afcb2-d983-40d4-af7a-c9a2d803fe48\"><title>Burning Up</title><length>225533</length></recording></track><track\
+        \ id=\"1df8b8f8-d892-4db9-9f84-a8d5a166ef4e\"><position>4</position><number>4</number><length>226973</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track><track\
+        \ id=\"0665bbd4-9ab5-456c-9a06-a769d9751bf1\"><position>5</position><number>5</number><length>370693</length><recording\
+        \ id=\"d4708b79-62e7-4ce4-a6ca-247237d4ef4e\"><title>Holiday</title><length>369493</length></recording></track><track\
+        \ id=\"f169a27c-cbc8-4800-a78b-183a93e35816\"><position>6</position><number>6</number><length>296173</length><recording\
+        \ id=\"ebebef4c-8016-4602-8e65-bbcdb418d14c\"><title>Think of Me</title><length>296133</length></recording></track><track\
+        \ id=\"32a24e6f-cff5-4638-9c24-9a0ab3b3d401\"><position>7</position><number>7</number><length>400093</length><recording\
+        \ id=\"d4f61112-4bc2-4109-a56c-ba63acb9465f\"><title>Physical Attraction</title><length>400000</length></recording></track><track\
+        \ id=\"3e043c9e-6f3f-4388-93dd-31adf83a3c18\"><position>8</position><number>8</number><length>295000</length><recording\
+        \ id=\"e9493fd6-f337-4e57-ae21-1bb597b9bdbf\"><title>Everybody</title><length>295040</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"d8f882d9-697f-42ed-89dc-a52c943bbc5f\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><packaging\
+        \ id=\"f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984</date><country>XE</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984</date><area id=\"89a675c2-3e37-3518-b83c-418bad59a85a\"\
+        ><name>Europe</name><sort-name>Europe</sort-name><iso-3166-1-code-list><iso-3166-1-code>XE</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode>07599251571</barcode><cover-art-archive><artwork>true</artwork><count>1</count><front>true</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"3e9080b0-5e6c-34ab-bd15-f526b6306a64\"\
+        >12&quot; Vinyl</format><track-list count=\"9\" offset=\"0\"><track id=\"\
+        06548c62-5fd7-33c0-b4a1-5927e96d943b\"><position>1</position><number>A1</number><length>240706</length><recording\
+        \ id=\"9607fd1a-19c6-45b8-9445-cb351d4405c2\"><title>Material Girl</title><length>240706</length></recording></track><track\
+        \ id=\"04d71ef7-3c29-3ec6-b361-d2afc011ab74\"><position>2</position><number>A2</number><length>236133</length><recording\
+        \ id=\"eab5aa69-6487-4376-b136-9209fb25ea21\"><title>Angel</title><length>236040</length></recording></track><track\
+        \ id=\"75058a25-4f96-38e5-b6a4-cf21ed29aa98\"><position>3</position><number>A3</number><length>218626</length><recording\
+        \ id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"115a55fd-d86a-330f-ae1f-275a74aa554b\"><position>4</position><number>A4</number><length>252506</length><recording\
+        \ id=\"30b98027-19d0-4b40-a6d8-d7e5b05b1c58\"><title>Over and Over</title><length>252466</length></recording></track><track\
+        \ id=\"6325c9ad-beee-3c3d-bbcf-c4664c64c673\"><position>5</position><number>A5</number><length>290226</length><recording\
+        \ id=\"d779b9c3-4515-40e0-8df1-e5be7cead3bb\"><title>Love Don\u2019t Live\
+        \ Here Anymore</title><length>289773</length></recording></track><track id=\"\
+        370f209a-5aa0-3bae-8077-11f0f4e0f663\"><position>6</position><number>B1</number><length>241600</length><recording\
+        \ id=\"618d931c-332c-4c3e-a036-37790c80017e\"><title>Dress You Up</title><length>241600</length></recording></track><track\
+        \ id=\"808e07b1-9df2-3bd7-bdab-3aee7585ee71\"><position>7</position><number>B2</number><title>Shoo-Bee-Doo</title><length>317240</length><recording\
+        \ id=\"886468b5-2c0c-4525-aef9-7f713e811f8c\"><title>Shoo\u2010Bee\u2010Doo</title><length>317240</length></recording></track><track\
+        \ id=\"d01dbe1c-a3ae-3c22-93e5-49137968ef55\"><position>8</position><number>B3</number><length>270426</length><recording\
+        \ id=\"ea247a5f-b641-4486-8d1d-f29af33d9a77\"><title>Pretender</title><length>270426</length></recording></track><track\
+        \ id=\"d39912e2-37b2-37ef-9e78-4ce91645bee4\"><position>9</position><number>B4</number><length>246400</length><recording\
+        \ id=\"46ab6b22-effd-4f46-9bb9-bbd406c3ac87\"><title>Stay</title><length>247000</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"d942f261-973b-4a2f-a8db-2fb7d56f2571\"><title>Lucky Star</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-03-05</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-03-05</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><cover-art-archive><artwork>true</artwork><count>2</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"e3b8b087-5a13-3766-8ff7-942dc6eaa07f\"\
+        ><position>1</position><number>A</number><length>224000</length><recording\
+        \ id=\"829d27a6-343c-4350-86d1-031b086cd475\"><title>Lucky Star</title><length>224000</length><disambiguation>edit</disambiguation></recording></track><track\
+        \ id=\"c593e29b-c257-3cfa-9b09-8288f9848525\"><position>2</position><number>B</number><length>225000</length><recording\
+        \ id=\"69c1c7e0-4bd5-40d5-9e35-857142fa64df\"><title>I Know It</title><length>226973</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"f52fa442-3039-36a2-a028-ad53535dcbf5\"><title>Like a Virgin</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-05</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><asin>B0000071SP</asin><cover-art-archive><artwork>false</artwork><count>0</count><front>false</front><back>false</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"10e17707-9751-3aaf-95b2-2432acd5374c\"\
+        >Vinyl</format><track-list count=\"2\" offset=\"0\"><track id=\"9686dae8-62d0-3aa4-bf2d-d3450131c1b7\"\
+        ><position>1</position><number>1</number><length>369600</length><recording\
+        \ id=\"14f6b7b0-aad1-433e-b120-52ff409fee3e\"><title>Like a Virgin (extended\
+        \ dance remix)</title><length>369693</length></recording></track><track id=\"\
+        86485ee6-4f9c-3d6f-b344-db9172d19678\"><position>2</position><number>2</number><length>244893</length><recording\
+        \ id=\"8ebb84f9-08ef-4f09-a7b0-2a6b0e88c258\"><title>Stay</title><length>244893</length></recording></track></track-list></medium></medium-list></release><release\
+        \ id=\"fd2f181d-db68-4a1a-8e30-095b03747dc7\"><title>Like A Virgin / Stay</title><status\
+        \ id=\"4e304316-386d-3409-af2e-78857eec5cfe\">Official</status><quality>normal</quality><disambiguation>Blue\
+        \ Injection Labels, Thick gloss card sleeve</disambiguation><packaging id=\"\
+        f7101ce3-0384-39ce-9fde-fbbd0044d35f\">Cardboard/Paper Sleeve</packaging><text-representation><language>eng</language><script>Latn</script></text-representation><date>1984-11-05</date><country>GB</country><release-event-list\
+        \ count=\"1\"><release-event><date>1984-11-05</date><area id=\"8a754a16-0027-3a29-b6d7-2b40ea0481ed\"\
+        ><name>United Kingdom</name><sort-name>United Kingdom</sort-name><iso-3166-1-code-list><iso-3166-1-code>GB</iso-3166-1-code></iso-3166-1-code-list></area></release-event></release-event-list><barcode\
+        \ /><cover-art-archive><artwork>true</artwork><count>4</count><front>true</front><back>true</back></cover-art-archive><medium-list\
+        \ count=\"1\"><medium><position>1</position><format id=\"1d5a48e4-e94a-36dc-84e2-0c5f9f880aa7\"\
+        >7&quot; Vinyl</format><track-list offset=\"0\" count=\"2\"><track id=\"2608540c-024b-4301-8024-2ad6362e2308\"\
+        ><position>1</position><number>A</number><recording id=\"9436c9cc-c96d-4296-aa63-1fcea5e91fa3\"\
+        ><title>Like a Virgin</title><length>218626</length></recording></track><track\
+        \ id=\"edd27d2d-cd1e-4469-8f8a-0e9ed1b33441\"><position>2</position><number>B</number><recording\
+        \ id=\"46ab6b22-effd-4f46-9bb9-bbd406c3ac87\"><title>Stay</title><length>247000</length></recording></track></track-list></medium></medium-list></release></release-list></metadata>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - close
+      Content-Length:
+      - '56335'
+      Content-Type:
+      - application/xml; charset=utf-8
+      Date:
+      - Thu, 02 May 2019 19:37:25 GMT
+      ETag:
+      - '"4c1336d8bc76ebde00845dd1d16435dd"'
+      Server:
+      - Plack::Handler::Starlet
+      Vary:
+      - Accept-Encoding
+      X-RateLimit-Limit:
+      - '1200'
+      X-RateLimit-Remaining:
+      - '1005'
+      X-RateLimit-Reset:
+      - '1556825846'
+    status:
+      code: 200
+      message: OK
+version: 1

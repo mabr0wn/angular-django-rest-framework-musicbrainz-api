@@ -1,4 +1,6 @@
+# Pytest
 import pytest
+# Django
 from django.conf import settings
 from django.utils.encoding import force_text
 

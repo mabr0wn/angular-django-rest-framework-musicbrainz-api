@@ -1,7 +1,8 @@
 # Django
 from django.urls import resolve
-# Django rest
+# Pytest
 import pytest
+# Django rest
 from rest_framework.test import APITestCase
 # Local
 from artists.models import Artist, Album, Record
