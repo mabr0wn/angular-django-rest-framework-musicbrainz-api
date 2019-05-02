@@ -14,20 +14,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 # Django
-from django.urls import path, include
+from django.urls import include, path, re_path
 from django.contrib import admin
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.conf.urls.static import static
 # Graphene for GraphQL
 from graphene_django.views import GraphQLView
 from .schema import schema
+# Django rest framework
+from rest_framework import routers
+# Views
+from albums.views import AlbumViewSet, RecordViewSet
+from artists.views import ArtistViewSet
+# Router
+router = routers.SimpleRouter()
+router.register(r'artists', ArtistViewSet)
+router.register(r'albums', AlbumViewSet)
+router.register(r'records', RecordViewSet)
 
 
 urlpatterns = [
     path(r'admin/', admin.site.urls),
-    path(r'', include('artists.urls')),
-    path(r'', include('auth.urls')),
+    path(r'api/', include(router.urls)),
+    path(r'api-auth/', include('rest_framework.urls')),
+    # angular view
+    re_path('.*', TemplateView.as_view(template_name='index.html')),
     # graphql
     path(r'graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
 

@@ -9,9 +9,6 @@ from artists.serializers import ArtistSerializer
 import musicbrainzngs as mb
 
 
-class Index(TemplateView):
-    template_name = "base.html"
-
 class ArtistViewSet(viewsets.GenericViewSet, mixins.CreateModelMixin, mixins.RetrieveModelMixin):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
