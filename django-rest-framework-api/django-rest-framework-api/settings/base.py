@@ -39,7 +39,6 @@ INSTALLED_APPS = [
 
     # django default apps
     'artists',
-    'albums',
 
     # third-party apps
     'rest_framework',

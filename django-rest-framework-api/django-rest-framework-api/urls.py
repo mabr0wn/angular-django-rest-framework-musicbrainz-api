@@ -26,8 +26,7 @@ from .schema import schema
 # Django rest framework
 from rest_framework import routers
 # Views
-from albums.views import AlbumViewSet, RecordViewSet
-from artists.views import ArtistViewSet
+from artists.views import ArtistViewSet, AlbumViewSet, RecordViewSet
 # Router
 router = routers.SimpleRouter()
 router.register(r'artists', ArtistViewSet)

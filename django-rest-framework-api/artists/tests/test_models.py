@@ -4,8 +4,7 @@ from unittest.mock import patch
 # Django
 from django.test import TestCase
 # Local
-from artists.models import Artist
-from albums.models import Album, Record
+from artists.models import Artist, Album, Record
 
 """ SetUp the TestCase """
 

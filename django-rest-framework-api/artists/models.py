@@ -3,10 +3,26 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 # Local
-from albums.models import Album, Record
+# from albums.models import Album, Record
 # Musicbrainz
 import musicbrainzngs as mb
 
+class Album(models.Model):
+    name = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
+    slug = models.SlugField()
+    
+    class Meta:
+        ordering = ['name']
+        
+    def __str__(self):
+        return self.name
+      
+class Record(models.Model):
+    name = models.CharField(max_length=255)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    record_number = models.PositiveIntegerField(blank=True, null=True)
+    slug = models.SlugField()
 
 class Artist(models.Model):
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
