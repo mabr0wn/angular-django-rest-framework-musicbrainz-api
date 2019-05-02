@@ -14,7 +14,7 @@ from views, no longer required.
 """
 router = routers.SimpleRouter()
 router.register(r'artists', views.ArtistViewSet)
-router.register(r'album', AlbumViewSet)
+router.register(r'albums', AlbumViewSet)
 router.register(r'records', RecordViewSet)
 
 schema_view = get_schema_view(title='Pastebin API')
