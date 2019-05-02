@@ -1,5 +1,3 @@
-# Pytest
-import pytest
 # Mock
 from unittest.mock import patch
 # Django
@@ -31,7 +29,6 @@ class ArtistModelTestCase(TestCase):
              slug='daft-punk'
          )
 
-    @pytest.mark.django_db
     def test_artist_basic(self):
         ''' Test the basic functionality of artist '''
         self.assertEqual(self.artist.artist, 'Daft Punk'),
@@ -43,7 +40,6 @@ class ArtistModelTestCase(TestCase):
         """
         self.assertEqual(self.artist.get_period_of_play_time(), '0:16-4:34')
         
-    @pytest.mark.django_db
     def test_get_genre_from_musicbrainz_tag_list(self):
         ''' Test that we can map tags from musicbrainz to genres '''
         tag_list = [{'count': '3', 'name': 'electro'}]
