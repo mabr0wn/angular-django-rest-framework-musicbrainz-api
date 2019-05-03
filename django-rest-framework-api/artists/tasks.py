@@ -3,7 +3,7 @@ from django.utils.text import slugify
 # Celery
 from celery import shared_task
 # Local
-from .models import Artist, Album, Track
+from artists.models import Artist, Album, Track
 # Musicbrainz
 import musicbrainzngs as mb
 

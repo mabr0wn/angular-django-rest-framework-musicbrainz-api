@@ -19,7 +19,10 @@ app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 """
 # Load task modules from all register information.
-app.autodiscover_tasks()
+# Using a string here means the worker will not have to
+# pickle the object when using Windows.
+app.config_from_object('django.conf:settings')
+app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 # Will dump its own request information.
 @app.task(bind=True)

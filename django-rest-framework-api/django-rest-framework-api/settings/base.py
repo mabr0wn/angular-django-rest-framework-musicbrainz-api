@@ -13,7 +13,7 @@ BASE_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SECRET_KEY ='(v5kipuf2llre&(-li-o)2*g-*zaz863oomk7l57k97z)*0j%u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com', '*']
 
@@ -21,8 +21,12 @@ ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com', '*']
 # not ready yet, in localhost program
 
 ''' This will allow you to transfer message to one server to another.'''
-BROKER_URL = 'redis://localhost'
-CELERY_RESULT_BACKEND = 'redis://locahost'
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
 ROOT_URLCONF = 'django-rest-framework-api.urls'
 
 
