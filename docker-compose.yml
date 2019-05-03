@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    server:
+      build: django-rest-framework-api
+      restart: on-failure
+      environment:
+        - PYTHONUNBUFFERED=0
+      ports:
+        - "8000:8000"
+      volumes:
+        - ./server/server/static/
+        - ./:/server/
+      command: >
+          bash -c "
+                   pip install -r requirements.txt &&
+                   python django-rest-framework-api/manage.py makemigrations && 
+                   python django-rest-framework-api/manage.py migrate && 
+                   python django-rest-framework-api/manage.py runserver 0.0.0.0:8000"
+    # Web server
+    nginx:
+      restart: always
+      build: ./nginx/
+      ports:
+        - "80:80"
+      volumes:
+        - .:/server
+        - ./nginx/proxy/conf.d/:/etc/nginx/conf.d/
+      links:
+        - server
