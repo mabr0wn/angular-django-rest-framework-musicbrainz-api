@@ -2,7 +2,7 @@
 node_modules
 build
 dist
-webpack-stats.json
+# webpack-stats.json
 npm-debug.log
 
 # Logs and databases #
