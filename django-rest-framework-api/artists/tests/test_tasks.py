@@ -14,11 +14,11 @@ class SoloTaskTestCase(TestCase):
         Test that we can make Solos from the MusicBrainz API
         """
         with albums_vcr.use_cassette('search-madonna.yml'):
-            created_solos = get_artist_tracks_from_musicbrianz_api('Madonna')
+            creates_artists = get_artist_tracks_from_musicbrianz_api('Madonna')
 
-        self.assertEqual(len(created_solos), 135)
-        self.assertEqual(created_solos[0].artist, 'Madonna')
-        self.assertEqual(created_solos[1].track.name, 'Angel')
+        self.assertEqual(len(creates_artists), 135)
+        self.assertEqual(creates_artists[0].artist, 'Madonna')
+        self.assertEqual(creates_artists[1].track.name, 'Angel')
 
     def test_slugify_max_length(self):
         """
