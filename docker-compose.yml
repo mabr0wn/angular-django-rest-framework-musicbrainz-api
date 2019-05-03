@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+    client:
+      restart: always
+      build: angular-musicbrainz-api
+      working_dir: /usr/src/app
+      command: node dist/server.js
+      ports:
+        - "4000:4000"
+      volumes:
+        - './angular-musicbrainz-api:/usr/src/app'
+        - '/usr/src/app/node_modules'
+      environment:
+        - NODE_ENV=development
+        - PORT=4000
     server:
       build: django-rest-framework-api
       restart: on-failure
@@ -8,6 +21,8 @@ services:
         - PYTHONUNBUFFERED=0
       ports:
         - "8000:8000"
+      links:
+        - client
       volumes:
         - ./server/server/static/
         - ./:/server/
