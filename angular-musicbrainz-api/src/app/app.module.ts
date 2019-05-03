@@ -2,24 +2,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule, MatFormFieldModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // Local
 import { AppComponent } from './views/app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './search/search.component';
-import { BoldPipe } from './core/pipe/bold.pipe';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+// Modules
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    BoldPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    CommonModule,
+    CoreModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
