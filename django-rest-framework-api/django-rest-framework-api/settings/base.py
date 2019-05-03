@@ -13,7 +13,7 @@ BASE_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 SECRET_KEY ='(v5kipuf2llre&(-li-o)2*g-*zaz863oomk7l57k97z)*0j%u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com', '*']
 
