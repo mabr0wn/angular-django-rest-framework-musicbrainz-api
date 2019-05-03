@@ -18,9 +18,7 @@ SECRET_KEY ='(v5kipuf2llre&(-li-o)2*g-*zaz863oomk7l57k97z)*0j%u'
 ALLOWED_HOSTS = ['murmuring-bastion-26669.herokuapp.com', '*']
 
 ### Celery
-# not ready yet, in localhost program
 
-''' This will allow you to transfer message to one server to another.'''
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
@@ -142,6 +140,7 @@ USE_TZ = True
 
 # Update database configuration with $DATABASE_URL.
 import dj_database_url
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
