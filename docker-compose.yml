@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    client:
+    angular-musicbrainz-api:
       restart: always
       build: angular-musicbrainz-api
       working_dir: /usr/src/app
@@ -14,7 +14,7 @@ services:
       environment:
         - NODE_ENV=development
         - PORT=4000
-    server:
+    django-rest-framework-api:
       build: django-rest-framework-api
       restart: on-failure
       environment:
