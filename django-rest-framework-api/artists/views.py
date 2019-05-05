@@ -30,10 +30,6 @@ class ArtistViewSet(viewsets.ModelViewSet):
            artists = [artist]
         return artists
 
-
-
-
-
 class AlbumViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
