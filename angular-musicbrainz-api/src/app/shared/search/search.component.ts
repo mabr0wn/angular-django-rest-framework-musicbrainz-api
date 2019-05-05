@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { SAMPLE_RESULTS } from '../sample-results';
+import { SAMPLE_RESULTS } from '../../sample-results';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({

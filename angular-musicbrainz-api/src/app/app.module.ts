@@ -9,20 +9,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // Local
 import { AppComponent } from './views/app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchComponent } from './search/search.component';
 // Modules
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CommonModule,
     CoreModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
