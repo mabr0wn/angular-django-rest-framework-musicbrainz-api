@@ -31,12 +31,12 @@ describe('SearchService', () => {
     jest.spyOn(console, 'error').mockImplementation(() => undefined)
   });
 
-  it('should create an instance successfully', () => {
+  test('should create an instance successfully', () => {
     expect(service).toBeDefined()
   })
 
   describe('"searchAlbums" method', () => {
-    it('calls external api with supplied query value and field', inject([SearchService], (service: SearchService) => {
+    test('calls external api with supplied query value and field', inject([SearchService], (service: SearchService) => {
       expect(http.get).not.toHaveBeenCalled();
 
       let argUrl: string;
@@ -53,5 +53,46 @@ describe('SearchService', () => {
       expect(argOptions.params.get('query')).toContain(testValue);
       expect(argOptions.params.get('query')).toContain(testField);
     }));
+
+    test('returns only "id", "title" and "artistCredit" from each album in response', inject([SearchService], (service: SearchService) => {
+      const artist1 = {id: 'a1', name: 'one'};
+      const artist2 = {id: 'a2', name: 'two'};
+      const rg1: any = {
+        id: '1',
+        title: 'first',
+        'artist-credit': [{artist: artist1}],
+        someOtherField: 'something else'
+      };
+      const rg2: any = {
+        id: '2',
+        title: 'second',
+        'artist-credit': [{artist: artist2}],
+        anotherField: 123456,
+        yetAnotherField: {
+          moreStuff: ['a', 'b', 'c']
+        },
+        aBool: true
+      };
+      http.get.mockReturnValueOnce(of({'release-groups': [rg1, rg2]}));
+      let returned: any[];
+      service.searchAlbums('value', 'field').subscribe(data => returned = data);
+
+      expect(returned.length).toBe(2);
+      expect(returned[0].id).toBe(rg1.id);
+      expect(returned[0].title).toBe(rg1.title);
+      expect(returned[0].artistCredit).toEqual([artist1]);
+      expect(returned[0]).not.toBe(rg1);
+      expect(returned[0]).not.toEqual(rg1);
+      expect(returned[0].someOtherField).toBeUndefined();
+
+      expect(returned[1].id).toBe(rg2.id);
+      expect(returned[1].title).toBe(rg2.title);
+      expect(returned[1].artistCredit).toEqual([artist2]);
+      expect(returned[1]).not.toBe(rg2);
+      expect(returned[1]).not.toEqual(rg2);
+      expect(returned[1].anotherField).toBeUndefined();
+      expect(returned[1].yetAnotherField).toBeUndefined();
+      expect(returned[1].aBool).toBeUndefined();
+    }))
   })
 });
