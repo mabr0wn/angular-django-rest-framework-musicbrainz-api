@@ -22,9 +22,6 @@ export class SearchService {
     private errorService: ErrorHanlderService
   ) { }
 
-  private 
-
-
   searchAlbums(value:string, field: string): Observable<Album[]> {
     const options = {
       params: new HttpParams()
