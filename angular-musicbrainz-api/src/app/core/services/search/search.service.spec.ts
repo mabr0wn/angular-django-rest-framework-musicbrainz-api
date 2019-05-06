@@ -8,11 +8,11 @@ import { SearchService } from './search.service';
 import { ErrorHanlderService } from '../error-handler/error-hanlder.service';
 
 describe('SearchService', () => {
-  let service: SearchService
+  let service: SearchService;
 
   const http = {
-    get: jest.fn() 
-  }
+    get: jest.fn()
+  };
 
   beforeEach(() => {
 
@@ -23,26 +23,26 @@ describe('SearchService', () => {
         {provide: HttpClient, useValue: http}
       ]
     });
-    service = TestBed.get(SearchService)
+    service = TestBed.get(SearchService);
 
 
     // Mock implementation of console.error to
     // return undefined to stop printing out to console log during test
-    jest.spyOn(console, 'error').mockImplementation(() => undefined)
+    jest.spyOn(console, 'error').mockImplementation(() => undefined);
   });
 
   test('should create an instance successfully', () => {
-    expect(service).toBeDefined()
-  })
+    expect(service).toBeDefined();
+  });
 
   describe('"searchAlbums" method', () => {
-    test('calls external api with supplied query value and field', inject([SearchService], (service) => {
+    test('calls external api with supplied query value and field', () => {
       expect(http.get).not.toHaveBeenCalled();
 
       let argUrl: string;
       let argOptions: {params: HttpParams};
       http.get.mockImplementation(
-        (url, options) => { argUrl = url; argOptions = options; return of([])
+        (url, options) => { argUrl = url; argOptions = options; return of([]);
       });
       let testValue = 'testValue';
       let testField = 'testField';
@@ -52,9 +52,9 @@ describe('SearchService', () => {
       expect(argUrl).toContain('https://musicbrainz.org/');
       expect(argOptions.params.get('query')).toContain(testValue);
       expect(argOptions.params.get('query')).toContain(testField);
-    }));
+    });
 
-    test('returns only "id", "title" and "artistCredit" from each album in response', inject([SearchService], (service) => {
+    test('returns only "id", "title" and "artistCredit" from each album in response', () => {
       const artist1 = {id: 'a1', name: 'one'};
       const artist2 = {id: 'a2', name: 'two'};
       const rg1: any = {
@@ -93,6 +93,6 @@ describe('SearchService', () => {
       expect(returned[1].anotherField).toBeUndefined();
       expect(returned[1].yetAnotherField).toBeUndefined();
       expect(returned[1].aBool).toBeUndefined();
-    }));
+    });
   });
 });
