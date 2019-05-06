@@ -70,7 +70,6 @@
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist",
-      "<rootDir>/cypress/",
       "<rootDir>/node_modules/"
     ],
     "setupFilesAfterEnv": [
