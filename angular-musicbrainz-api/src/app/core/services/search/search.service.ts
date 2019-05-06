@@ -22,7 +22,7 @@ export class SearchService {
     private errorService: ErrorHanlderService
   ) { }
 
-  searchAlbums(value:string, field: string): Observable<Album[]> {
+  searchAlbums(value: string, field: string): Observable<Album[]> {
     const options = {
       params: new HttpParams()
                   .set('query', `${field}:${value}`)
@@ -33,10 +33,10 @@ export class SearchService {
         map(data => this.processData(data)),
         retry(3),
         catchError(this.errorService.handle<Album[]>('searchAlbums', []))
-      )
+      );
   }
 
-  private processData(raw: any):Album[] {
+  private processData(raw: any): Album[] {
     let processed = [];
     for (let group of raw['release-groups']) {
       let id = group.id;

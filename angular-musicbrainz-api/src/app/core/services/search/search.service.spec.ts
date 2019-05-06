@@ -36,7 +36,7 @@ describe('SearchService', () => {
   })
 
   describe('"searchAlbums" method', () => {
-    test('calls external api with supplied query value and field', inject([SearchService], (service: SearchService) => {
+    test('calls external api with supplied query value and field', inject([SearchService], (service) => {
       expect(http.get).not.toHaveBeenCalled();
 
       let argUrl: string;
@@ -44,8 +44,8 @@ describe('SearchService', () => {
       http.get.mockImplementation(
         (url, options) => { argUrl = url; argOptions = options; return of([])
       });
-      const testValue = 'testValue';
-      const testField = 'testField';
+      let testValue = 'testValue';
+      let testField = 'testField';
       service.searchAlbums(testValue, testField).subscribe();
 
       expect(http.get).toHaveBeenCalledTimes(1);
@@ -54,7 +54,7 @@ describe('SearchService', () => {
       expect(argOptions.params.get('query')).toContain(testField);
     }));
 
-    test('returns only "id", "title" and "artistCredit" from each album in response', inject([SearchService], (service: SearchService) => {
+    test('returns only "id", "title" and "artistCredit" from each album in response', inject([SearchService], (service) => {
       const artist1 = {id: 'a1', name: 'one'};
       const artist2 = {id: 'a2', name: 'two'};
       const rg1: any = {
@@ -93,6 +93,6 @@ describe('SearchService', () => {
       expect(returned[1].anotherField).toBeUndefined();
       expect(returned[1].yetAnotherField).toBeUndefined();
       expect(returned[1].aBool).toBeUndefined();
-    }))
-  })
+    }));
+  });
 });

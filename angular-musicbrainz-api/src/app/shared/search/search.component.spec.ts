@@ -49,7 +49,7 @@ describe('SearchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should filter new sample results array',(() => {
+  it('should filter new sample results array', (() => {
     component.results = [
       'What\'s the weather in San Francisco?',
       'did you see the game?'
@@ -57,5 +57,5 @@ describe('SearchComponent', () => {
     expect(component.filterResults('What\'s the weather in San Francisco?').length).toBe(1);
     expect(component.filterResults('did you see the game?').length).toBe(1);
     expect(component.filterResults('').length).toBe(0);
-  }))
+  }));
 });
