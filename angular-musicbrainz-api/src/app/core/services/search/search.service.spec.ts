@@ -1,17 +1,14 @@
 // Angular Testing
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
 // RxJS
 import { of } from 'rxjs';
 // Local
 import { SearchService } from './search.service';
 import { ErrorHanlderService } from '../error-handler/error-hanlder.service';
-import { Album } from '../../models/album';
 
 describe('SearchService', () => {
   let service: SearchService
-  let backend: HttpTestingController
 
   const http = {
     get: jest.fn() 
@@ -20,16 +17,12 @@ describe('SearchService', () => {
   beforeEach(() => {
 
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-      ],
       providers: [
         SearchService,
         ErrorHanlderService,
         {provide: HttpClient, useValue: http}
       ]
     });
-    backend = TestBed.get(HttpTestingController)
     service = TestBed.get(SearchService)
 
 
@@ -37,10 +30,6 @@ describe('SearchService', () => {
     // return undefined to stop printing out to console log during test
     jest.spyOn(console, 'error').mockImplementation(() => undefined)
   });
-
-  afterEach(inject([ HttpTestingController ], (_backend: HttpTestingController) => {
-    _backend.verify()
-  }))
 
   it('should create an instance successfully', () => {
     expect(service).toBeDefined()
