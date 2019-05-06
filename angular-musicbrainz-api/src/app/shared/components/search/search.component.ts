@@ -9,7 +9,7 @@ import { SAMPLE_RESULTS } from '../../../sample-results';
 
 
 @Component({
-  selector: 'app-search',
+  selector: 'app-search-component',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
