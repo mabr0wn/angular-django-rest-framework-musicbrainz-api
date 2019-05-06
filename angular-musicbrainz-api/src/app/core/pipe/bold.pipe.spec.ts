@@ -10,7 +10,7 @@ describe('Pipe: Bold', () => {
 
     it('should be instanciated', () => {
         expect(BoldPipe).toBeDefined();
-    })
+    });
     // text from sample-results.ts
     it('providing text search returns bold pattern', () => {
         expect(pipe.transform('what', 'time is it'))
@@ -19,5 +19,5 @@ describe('Pipe: Bold', () => {
     // random text...
     it('should allow searching against any test', () => {
         expect(pipe.transform('fee', 'fi fo fum')).toBe('<b>fee</b>', 'fi fo fum');
-    })
+    });
 });
