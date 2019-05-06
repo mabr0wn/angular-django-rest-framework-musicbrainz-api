@@ -11,6 +11,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     CommonModule,
     HttpClientModule
   ],
-  exports:[BoldPipe]
+  exports: [BoldPipe]
 })
 export class CoreModule { }
