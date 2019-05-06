@@ -10,11 +10,11 @@ import { ErrorHanlderService } from '../error-handler/error-hanlder.service';
 import { Album } from '../../models/album';
 
 describe('SearchService', () => {  
-  let getSpy: jasmine.Spy;
+  const http = {
+    get: jest.fn() 
+  }
 
   beforeEach(() => {
-    const http = jasmine.createSpyObj('HttpClient', ['get']);
-    getSpy = http.get;
 
     TestBed.configureTestingModule({
       providers: [
@@ -23,21 +23,25 @@ describe('SearchService', () => {
         {provide: HttpClient, useValue: http}
       ]
     });
+    
+    // Mock implementation of console.error to
+    // return undefined to stop printing out to console log during test
+    jest.spyOn(console, 'error').mockImplementation(() => undefined)
   });
   describe('"searchAlbums" method', () => {
     it('calls external api with supplied query value and field', inject([SearchService], (service: SearchService) => {
-      expect(getSpy).not.toHaveBeenCalled();
+      expect(http.get).not.toHaveBeenCalled();
 
       let argUrl: string;
       let argOptions: {params: HttpParams};
-      getSpy.and.callFake(
+      http.get.mockImplementation(
         (url, options) => { argUrl = url; argOptions = options; return of([])
       });
       const testValue = 'testValue';
       const testField = 'testField';
       service.searchAlbums(testValue, testField).subscribe();
 
-      expect(getSpy).toHaveBeenCalledTimes(1);
+      expect(http.get).toHaveBeenCalledTimes(1);
       expect(argUrl).toContain('https://musicbrainz.org/');
     }));
   })
