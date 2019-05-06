@@ -5,7 +5,7 @@ import {
 } from '@angular/core/testing';
 // Components
 import { AppComponent } from './app.component';
-import { SearchComponent } from '../shared/search/search.component';
+import { SearchComponent } from '../shared/components/search/search.component';
 // pipe
 import { BoldPipe } from '../core/pipe/bold.pipe';
 // Modules
