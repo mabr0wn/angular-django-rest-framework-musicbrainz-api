@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+// Angular
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import { SAMPLE_RESULTS } from '../../sample-results';
+// RxJs
+import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+// Dummy data
+import { SAMPLE_RESULTS } from '../../sample-results';
+
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   searchControl: FormControl;
 
   filteredResults$: Observable<string[]>;
 
   results = SAMPLE_RESULTS;
 
-  constructor() {
+  constructor() { }
+
+  ngOnInit() {
     this.searchControl = new FormControl('');
     this.filteredResults$ = this.searchControl.valueChanges.pipe(
       startWith(''),
