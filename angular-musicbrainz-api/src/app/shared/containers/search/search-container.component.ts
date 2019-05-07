@@ -1,3 +1,4 @@
+/* tslint:enable */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './search-container.component.html',
   styleUrls: ['./search-container.component.css']
 })
+/* tslint:disable */
 export class SearchContainer implements OnInit {
+  /* tslint:enable */
 
   constructor() { }
 

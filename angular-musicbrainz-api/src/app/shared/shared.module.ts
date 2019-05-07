@@ -4,7 +4,7 @@ import { SearchComponent } from './components/search/search.component';
 import { MatAutocompleteModule, MatFormFieldModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CoreModule } from '../core/core.module';
-import { SearchContainer } from './containers/search/search-container.component'; 
+import { SearchContainer } from './containers/search/search-container.component';
 @NgModule({
   declarations: [SearchComponent, SearchContainer],
   imports: [
