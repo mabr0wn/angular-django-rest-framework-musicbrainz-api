@@ -7,7 +7,7 @@ import { catchError, map, retry } from 'rxjs/operators';
 // Services
 import { ErrorHanlderService } from '../error-handler/error-hanlder.service';
 // Model
-import { Album } from '../../models/album';
+import { Album } from '@core/models/album';
 
 
 @Injectable({

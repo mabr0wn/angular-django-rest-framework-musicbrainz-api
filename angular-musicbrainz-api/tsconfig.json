@@ -16,7 +16,10 @@
     "paths": {
       "core-js/es7/reflect": [
         "node_modules/core-js/proposals/reflect-metadata"
-      ]
+      ],
+      "@core/*": ["src/app/core/*"],
+      "@environments/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"]
     },
     "typeRoots": [
       "node_modules/@types"
