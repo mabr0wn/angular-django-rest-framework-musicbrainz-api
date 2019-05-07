@@ -1,5 +1,9 @@
 // Angular
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit,
+  ChangeDetectionStrategy
+ } from '@angular/core';
 import { FormControl } from '@angular/forms';
 // RxJs
 import { Observable } from 'rxjs';
@@ -9,6 +13,7 @@ import { SAMPLE_RESULTS } from '../../../sample-results';
 
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-search-component',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']

@@ -74,6 +74,10 @@
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/jest-config/setupJest.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "@core/(.*)": "<rootDir>/src/app/core/$1",
+      "@shared/(.*)": "<rootDir>/src/app/shared/$1"
+    }
   }
 }

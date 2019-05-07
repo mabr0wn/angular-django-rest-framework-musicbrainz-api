@@ -1,5 +1,5 @@
 // Angular Testing
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpParams } from '@angular/common/http';
 // RxJS
 import { of } from 'rxjs';
