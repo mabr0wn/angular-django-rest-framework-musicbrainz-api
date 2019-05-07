@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 // Dummy data
 import { SAMPLE_RESULTS } from '../../../sample-results';
+// Model
+import { Album } from '@core/models/album';
 
 
 @Component({
@@ -19,10 +21,6 @@ import { SAMPLE_RESULTS } from '../../../sample-results';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  // search vars
-  queryString: string;
-  searching: boolean;
-  searchType: string;
   searchControl: FormControl;
 
   filteredResults$: Observable<string[]>;
@@ -32,7 +30,6 @@ export class SearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.searching = false;
     this.searchControl = new FormControl('');
     this.filteredResults$ = this.searchControl.valueChanges.pipe(
       startWith(''),

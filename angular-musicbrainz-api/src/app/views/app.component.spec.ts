@@ -3,9 +3,12 @@ import {
   TestBed,
   async
 } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 // Components
 import { AppComponent } from './app.component';
-import { SearchComponent } from '../shared/components/search/search.component';
+import { SearchComponent } from '@shared/components/search/search.component';
+import { SearchContainer } from '@shared/containers/search/search-container.component';
+
 // pipe
 import { BoldPipe } from '../core/pipe/bold.pipe';
 // Modules
@@ -25,12 +28,14 @@ describe('AppComponent', () => {
         MatAutocompleteModule,
         MatFormFieldModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientTestingModule
       ],
       declarations: [
         BoldPipe,
         AppComponent,
-        SearchComponent
+        SearchComponent,
+        SearchContainer
       ],
     }).compileComponents();
   }));

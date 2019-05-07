@@ -1,8 +1,11 @@
 
 <h1>Search Artist, Album, Track</h1>
-<input matInput type="search" [matAutocomplete]="auto" [formControl]="searchControl"><i class="fas fa-search fa-2x"></i>
+<!-- <input matInput type="search" [matAutocomplete]="auto" [formControl]="searchControl"><i class="fas fa-search fa-2x"></i> -->
+<input matInput [matAutocomplete]="auto"  id="search-input" [placeholder]="searchType === 'release' ? 'Album Title' : 'Artist Name'" [(ngModel)]="queryString" name="search" minlength="3" required #search="ngModel">
+<mat-hint *ngIf="search.invalid && (search.dirty || search.touched) && !searching" id="search-hint">Your search term must be at least 3 characters long.</mat-hint>
 <mat-autocomplete  #auto="matAutocomplete">
-    <mat-option *ngFor="let item of filteredResults$ | async" [value]="item">
+  <mat-option *ngFor="let item of filteredResults$ | async" [value]="item">
       <span [innerHTML]="item | bold:searchControl.value"></span>
-    </mat-option>
+  </mat-option>
 </mat-autocomplete>
+<button mat-raised-button color="accent" type="submit" id="run-search" (click)="runSearch()" [disabled]="search.invalid">Search</button>
