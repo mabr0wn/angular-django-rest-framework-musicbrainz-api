@@ -26,9 +26,8 @@ import { Album } from '@core/models/album';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-search-container',
   template: `
-    <app-search-component>
+    <app-search-component (query)="query()">
       [results]="results | async"
-      (query)="query()"
     </app-search-component>
   `
 })
