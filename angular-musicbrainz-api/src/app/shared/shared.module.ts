@@ -13,7 +13,7 @@ import { CoreModule } from '../core/core.module';
 import { MaterialModule } from './materials/material.module';
 
 @NgModule({
-  declarations: [SearchComponent, SearchContainer],
+  declarations: [SearchComponent, SearchContainer ],
   imports: [
     CommonModule,
     CoreModule,
