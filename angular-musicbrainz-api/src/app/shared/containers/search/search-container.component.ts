@@ -2,6 +2,7 @@
 import { 
   Component, 
   OnInit, 
+  OnDestroy,
   ChangeDetectionStrategy
 } from '@angular/core';
 // RxJS
@@ -11,6 +12,7 @@ import {
   Subject
  } from 'rxjs';
  import { 
+   map,
    switchMap,
    distinctUntilChanged 
   } from 'rxjs/operators';
@@ -26,11 +28,12 @@ import { Album } from '@core/models/album';
   template: `
     <app-search-component>
       [results]="results | async"
+      (query)="query()"
     </app-search-component>
   `
 })
 /* tslint:disable */
-export class SearchContainer implements OnInit {
+export class SearchContainer implements OnInit, OnDestroy {
   /* tslint:enable */
   albums: Observable<Album[]>;
 
@@ -45,7 +48,7 @@ export class SearchContainer implements OnInit {
 
   constructor(private searchService: SearchService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.searching = false;
     this.searchType = 'release';
     this.search.pipe(
@@ -55,9 +58,26 @@ export class SearchContainer implements OnInit {
         (_params, albums, _outerIdx, _innerIdx) => of(albums)
        )
     ).subscribe((albums) => {
+      console.log(albums);
       this.results = albums;
       this.searching = false;
     });
+  }
+
+  filterResults(title: string) {
+    return title ? this.results.pipe(
+      map(val => val.filter(v => v.title.indexOf(title) === 0))
+    ) : [];
+  }
+
+  query(): void {
+    this.search.next(new SearchParams(this.queryString, this.searchType));
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+    this.search.complete();
   }
 
 }

@@ -22,14 +22,15 @@ import { Album } from '@core/models/album';
 })
 export class SearchComponent implements OnInit {
   searchControl: FormControl;
+  queryString: string;
+  searching: boolean;
 
   filteredResults$: Observable<string[]>;
-
   results = SAMPLE_RESULTS;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.searchControl = new FormControl('');
     this.filteredResults$ = this.searchControl.valueChanges.pipe(
       startWith(''),
@@ -39,6 +40,14 @@ export class SearchComponent implements OnInit {
 
   filterResults(val: string): string[] {
     return val ? this.results.filter(v => v.toLowerCase().indexOf(val.toLowerCase()) === 0) : [];
+  }
+
+  query(): void {
+    this.queryString = this.queryString ? this.queryString.trim() : null;
+    if (this.queryString) {
+      this.searching = true;
+      this.queryString = null;
+    }
   }
 
 }

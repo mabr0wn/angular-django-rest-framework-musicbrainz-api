@@ -8,4 +8,4 @@
       <span [innerHTML]="item | bold:searchControl.value"></span>
   </mat-option>
 </mat-autocomplete>
-<button mat-raised-button color="accent" type="submit" id="run-search" (click)="runSearch()" [disabled]="search.invalid">Search</button>
+<button mat-raised-button color="accent" type="submit" id="run-search" (click)="query()" [disabled]="search.invalid">Search</button>
