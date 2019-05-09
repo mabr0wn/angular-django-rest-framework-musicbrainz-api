@@ -23,8 +23,8 @@ import { SAMPLE_RESULTS } from '../../../sample-results';
 // Model
 import { Album } from '@core/models/album';
 // Local
-import { SearchParams} from '../../containers/search/search-params';
-import { SearchPresenter } from '../../presenters/search.presenter';
+import { SearchParams} from '@shared/search-params';
+import { SearchPresenter } from '@shared/presenters/search.presenter';
 
 @Component({
   selector: 'app-search-component',

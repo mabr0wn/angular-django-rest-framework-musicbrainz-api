@@ -6,7 +6,7 @@ import {
   debounceTime, 
   distinctUntilChanged 
 } from 'rxjs/operators';
-import { SearchParams } from '../containers/search/search-params';
+import { SearchParams } from '@shared/search-params';
 
 export class SearchPresenter {
   private searchTerms: Subject<SearchParams> = new Subject<SearchParams>();

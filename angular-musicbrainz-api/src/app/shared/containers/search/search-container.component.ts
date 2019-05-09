@@ -18,7 +18,7 @@ import {
 // Services
 import { SearchService } from '@core/services/search/search.service';
 // Local
-import { SearchParams } from './search-params';
+import { SearchParams } from '@shared/search-params';
 import { Album } from '@core/models/album';
 
 @Component({
