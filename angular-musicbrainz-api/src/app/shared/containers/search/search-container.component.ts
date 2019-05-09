@@ -6,12 +6,10 @@ import {
 } from '@angular/core';
 // RxJS
 import {
-  of,
   Observable,
   Subject
  } from 'rxjs';
  import { 
-   map,
    switchMap,
    distinctUntilChanged 
   } from 'rxjs/operators';
