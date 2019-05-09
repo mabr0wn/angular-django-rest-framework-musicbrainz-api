@@ -44,6 +44,7 @@ export class SearchContainer implements OnInit {
   ngOnInit(): void {
     this.searchType = 'release';
     this.searchTerms.pipe(
+      // only emit when the current value is different than the last.
       distinctUntilChanged((params1, params2) => params2.equals(params1)),
       switchMap(
         (params) => this.searchService.searchAlbums(params.term, params.type))
