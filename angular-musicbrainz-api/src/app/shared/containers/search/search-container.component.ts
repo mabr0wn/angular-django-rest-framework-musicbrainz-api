@@ -31,14 +31,12 @@ import { Album } from '@core/models/album';
 /* tslint:disable */
 export class SearchContainer implements OnInit {
   /* tslint:enable */
+  private ngUnsubscribe: Subject<any> = new Subject();
+  searchTerms: Subject<SearchParams> = new Subject<SearchParams>();
   albums: Observable<Album[]>;
-
-  // search vars
   queryString: string;
   searchType: string;
-  searchTerms: Subject<SearchParams> = new Subject<SearchParams>();
 
-  private ngUnsubscribe: Subject<any> = new Subject();
 
   constructor(private searchService: SearchService) { }
 
