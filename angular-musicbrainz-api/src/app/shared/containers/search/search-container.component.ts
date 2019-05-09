@@ -49,6 +49,7 @@ export class SearchContainer implements OnInit {
       switchMap(
         (params) => this.searchService.searchAlbums(params.term, params.type))
     ).subscribe((albums) => {
+      // Log the albums for debugging purposes
       console.log(albums);
     });
   }
