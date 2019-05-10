@@ -6,8 +6,8 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 // Local
-import { SearchComponent } from './search/component/search/search.component';
-import { SearchContainer } from './search/container/search/search-container.component';
+import { SearchComponent } from './search/component/search.component';
+import { SearchContainer } from './search/container/search-container.component';
 // Modules
 import { CoreModule } from '../core/core.module';
 import { MaterialModule } from './materials/material.module';
