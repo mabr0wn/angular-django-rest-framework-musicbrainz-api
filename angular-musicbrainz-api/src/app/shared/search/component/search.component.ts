@@ -20,7 +20,7 @@ import {
   takeUntil 
 } from 'rxjs/operators';
 // Dummy data
-import { SAMPLE_RESULTS } from '@mock/sample-results';
+import { MOCK_SEARCH_RESULTS } from '@mock/mock-search-results';
 // Model
 import { Album } from '@core/models/album';
 // Local
@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   filteredResults$: Observable<string[]>;
   searchControl: FormControl;
 
-  results = SAMPLE_RESULTS;
+  results = MOCK_SEARCH_RESULTS;
   searchType: string;
 
   constructor(private presenter: SearchPresenter) {}

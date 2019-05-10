@@ -1,4 +1,4 @@
-export const SAMPLE_RESULTS: string[] = [
+export const MOCK_SEARCH_RESULTS: string[] = [
     'what time is it',
     'what is my ip',
     'what song is this',
