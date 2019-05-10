@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pipe: Bold providing text search returns bold pattern: <b>what</b> 1`] = `"<b>what</b>"`;
+
+exports[`Pipe: Bold should allow searching against any test: <b>fee</b> 1`] = `"<b>fee</b>"`;
+
+exports[`Pipe: Bold should be instanciated 1`] = `[Function]`;

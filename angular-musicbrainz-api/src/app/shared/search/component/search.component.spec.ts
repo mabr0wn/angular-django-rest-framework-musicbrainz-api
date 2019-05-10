@@ -46,7 +46,7 @@ describe('SearchComponent', () => {
   });
 
   it('should create search component', () => {
-    expect(component).toBeTruthy();
+    expect(component).toMatchSnapshot();
   });
 
   it('should filter new sample results array', (() => {

@@ -9,15 +9,15 @@ describe('Pipe: Bold', () => {
     });
 
     it('should be instanciated', () => {
-        expect(BoldPipe).toBeDefined();
+        expect(BoldPipe).toMatchSnapshot();
     });
     // text from sample-results.ts
     it('providing text search returns bold pattern', () => {
         expect(pipe.transform('what', 'time is it'))
-            .toBe('<b>what</b>', 'time is it');
+            .toMatchSnapshot('<b>what</b>', 'time is it');
     });
     // random text...
     it('should allow searching against any test', () => {
-        expect(pipe.transform('fee', 'fi fo fum')).toBe('<b>fee</b>', 'fi fo fum');
+        expect(pipe.transform('fee', 'fi fo fum')).toMatchSnapshot('<b>fee</b>', 'fi fo fum');
     });
 });
