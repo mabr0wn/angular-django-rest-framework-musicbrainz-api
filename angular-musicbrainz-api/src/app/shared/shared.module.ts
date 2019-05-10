@@ -11,7 +11,6 @@ import { SearchContainer } from './search/container/search-container.component';
 // Modules
 import { CoreModule } from '../core/core.module';
 import { MaterialModule } from './materials/material.module';
-
 @NgModule({
   declarations: [SearchComponent, SearchContainer ],
   imports: [
