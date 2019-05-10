@@ -26,10 +26,7 @@ import { Album } from '@core/models/album';
 // Local
 import { SearchParams} from '@shared/search-params';
 import { SearchPresenter } from '@shared/presenters/search.presenter';
-export class SearchP {
-  term: string;
-  type: string;
-}
+
 @Component({
   selector: 'app-search-component',
   templateUrl: './search.component.html',
@@ -63,11 +60,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     ).subscribe(_ => this.search.emit(new SearchParams(this.queryString, this.searchType)));
   }
 
-  ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
   searchFor(term): void {
     // Log the term for debugging purposes
     console.log(term, '@component');
@@ -76,5 +68,10 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   filterResults(val: string): string[] {
     return val ? this.results.filter(v => v.toLowerCase().indexOf(val.toLowerCase()) === 0) : [];
+  }
+
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 }

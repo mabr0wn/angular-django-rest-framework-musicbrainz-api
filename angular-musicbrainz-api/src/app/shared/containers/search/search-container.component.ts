@@ -17,11 +17,6 @@ import { SearchService } from '@core/services/search/search.service';
 // Local
 import { SearchParams } from '@shared/search-params';
 
-export class SearchP {
-  term: string;
-  type: string;
-}
-
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-search-container',
@@ -57,6 +52,7 @@ export class SearchContainer implements OnInit{
 
   // Push a search term into the observable stream.
   search(): void {
+    // Assigned static string for `this.queryString` until bug is located.
     this.queryString = this.queryString ? this.queryString.trim() : 'tupac';
     // Log the `this.query` for debugging purposes
     console.log(this.queryString, '@container');
