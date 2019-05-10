@@ -20,7 +20,6 @@ import { MaterialModule } from './materials/material.module';
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
-    
   ],
   exports: [SearchComponent, SearchContainer]
 })
