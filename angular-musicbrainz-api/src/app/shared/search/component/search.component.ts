@@ -20,7 +20,7 @@ import {
   takeUntil 
 } from 'rxjs/operators';
 // Dummy data
-import { SAMPLE_RESULTS } from '../../../sample-results';
+import { SAMPLE_RESULTS } from '@mock/sample-results';
 // Model
 import { Album } from '@core/models/album';
 // Local

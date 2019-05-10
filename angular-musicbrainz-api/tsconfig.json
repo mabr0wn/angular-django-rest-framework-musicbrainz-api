@@ -19,7 +19,8 @@
       ],
       "@core/*": ["src/app/core/*"],
       "@environments/*": ["src/environments/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@mock/*": ["src/app/mock/*"]
     },
     "typeRoots": [
       "node_modules/@types"
