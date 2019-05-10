@@ -1,7 +1,7 @@
 // RxJs
 import { Subject } from 'rxjs';
 // Local
-import { SearchParams } from '@shared/search-params';
+import { SearchParams } from '@shared/search/search-params';
 
 export class SearchPresenter {
   searchTerms: Subject<SearchParams> = new Subject();

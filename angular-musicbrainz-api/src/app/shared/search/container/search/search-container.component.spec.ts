@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchService } from '@core/services/search/search.service';
 // Local
 import { SearchContainer } from './search-container.component';
-import { SearchComponent } from '@shared/components/search/search.component';
+import { SearchComponent } from '@shared/search/component/search/search.component';
 // Pipe
 import { BoldPipe } from '@core/pipe/bold.pipe';
 // Modules
