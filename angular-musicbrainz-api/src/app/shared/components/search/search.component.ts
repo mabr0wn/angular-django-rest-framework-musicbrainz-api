@@ -5,7 +5,8 @@ import {
   OnDestroy,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  Input
  } from '@angular/core';
 import { FormControl } from '@angular/forms';
 // RxJs
@@ -13,9 +14,9 @@ import {
   Observable, 
   Subject
 } from 'rxjs';
-import {
+import { 
   map,
-  startWith, 
+  startWith,
   takeUntil 
 } from 'rxjs/operators';
 // Dummy data
@@ -25,7 +26,10 @@ import { Album } from '@core/models/album';
 // Local
 import { SearchParams} from '@shared/search-params';
 import { SearchPresenter } from '@shared/presenters/search.presenter';
-
+export class SearchP {
+  term: string;
+  type: string;
+}
 @Component({
   selector: 'app-search-component',
   templateUrl: './search.component.html',
@@ -34,54 +38,43 @@ import { SearchPresenter } from '@shared/presenters/search.presenter';
   providers: [SearchPresenter],
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  @Output() search: EventEmitter<SearchParams> = new EventEmitter<SearchParams>();
+  @Input() albums: Album[];
+  @Input() queryString: string;
+  @Output() search: EventEmitter<SearchParams> = new EventEmitter();
+
   private ngUnsubscribe: Subject<any> = new Subject();
-  //
-  queryString: string;
-  searching: boolean;
-  searchType: string;
-  searchTerms: Subject<SearchParams> = new Subject<SearchParams>();
-  //
-  searchControl: FormControl;
   filteredResults$: Observable<string[]>;
+  searchControl: FormControl;
+
   results = SAMPLE_RESULTS;
+  searchType: string;
 
-
-  constructor(private presenter: SearchPresenter) { }
-
-  // ngOnInit(): void {
-  //   this.searchControl = new FormControl('');
-  //   this.filteredResults$ = this.searchControl.valueChanges.pipe(
-  //     startWith(''),
-  //     map(val => this.filterResults(val)),
-  //     map(val => val.slice(0, 4)));
-  // }
+  constructor(private presenter: SearchPresenter) {}
 
   ngOnInit(): void {
-    this.presenter.searchTerms$.pipe(
+    this.searchControl = new FormControl('');
+    this.filteredResults$ = this.searchControl.valueChanges.pipe(
+      startWith(''),
+      map(val => this.filterResults(val)),
+      map(val => val.slice(0, 4)));
+    this.presenter.searchTerms.pipe(
       // complete when component is destroyed
-      takeUntil(this.searchTerms),
-    ).subscribe(() => this.search.emit());
+      takeUntil(this.ngUnsubscribe),
+    ).subscribe(_ => this.search.emit(new SearchParams(this.queryString, this.searchType)));
   }
 
-  searchFor(): void {
-    this.queryString = this.queryString ? this.queryString.trim() : null;
-    if (this.queryString) {
-      this.searching = true;
-      this.presenter.search();
-      this.queryString = null;
-    }
+  ngOnDestroy(): void {
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
+  }
+
+  searchFor(term): void {
+    // Log the term for debugging purposes
+    console.log(term, '@component');
+    this.presenter.search(term);
   }
 
   filterResults(val: string): string[] {
     return val ? this.results.filter(v => v.toLowerCase().indexOf(val.toLowerCase()) === 0) : [];
   }
-
-  ngOnDestroy() {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-    this.searchTerms.next();
-    this.searchTerms.complete();
-  }
-
 }

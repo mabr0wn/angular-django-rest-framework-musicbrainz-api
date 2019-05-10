@@ -1,23 +1,12 @@
-import { 
-  Observable, 
-  Subject 
-} from 'rxjs';
-import { 
-  debounceTime, 
-  distinctUntilChanged 
-} from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import { SearchParams } from '@shared/search-params';
 
 export class SearchPresenter {
-  private searchTerms: Subject<SearchParams> = new Subject<SearchParams>();
-  searchTerms$: Observable<SearchParams> = this.searchTerms;
-    // search vars
-    queryString: string;
-    searching: boolean;
-    searchType: string;
-  search(): void {
-    this.searchTerms.next(new SearchParams(this.queryString, this.searchType));
+  searchTerms: Subject<SearchParams> = new Subject();
+
+  search(term): void {
+    // Log the term for debugging purposes
+    console.log(term, '@presenter');
+    this.searchTerms.next(term);
   }
-
-
 }
