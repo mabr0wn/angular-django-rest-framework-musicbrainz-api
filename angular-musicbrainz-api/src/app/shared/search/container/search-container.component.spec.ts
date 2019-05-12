@@ -52,7 +52,7 @@ describe('SearchContainer', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should', () => {
     expect('').toEqual('');
-  });
+  })
 });
