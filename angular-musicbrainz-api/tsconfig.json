@@ -20,7 +20,7 @@
       "@core/*": ["src/app/core/*"],
       "@environments/*": ["src/environments/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@mock/*": ["src/app/__mock__/*"]
+      "@mock/*": ["src/app/__mocks__/*"]
     },
     "typeRoots": [
       "node_modules/@types"
