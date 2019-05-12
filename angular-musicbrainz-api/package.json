@@ -81,7 +81,7 @@
     "moduleNameMapper": {
       "@core/(.*)": "<rootDir>/src/app/core/$1",
       "@shared/(.*)": "<rootDir>/src/app/shared/$1",
-      "@mock/(.*)": "<rootDir>/src/app/mock/$1"
+      "@mock/(.*)": "<rootDir>/src/app/__mock__/$1"
     }
   }
 }
