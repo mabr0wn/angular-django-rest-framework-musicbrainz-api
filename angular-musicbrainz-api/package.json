@@ -53,6 +53,7 @@
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.0",
     "karma-cli": "^2.0.0",
+    "ngx-jest-snapshot-serializer": "^1.2.3",
     "ngx-wallaby-jest": "^0.0.2",
     "protractor": "^6.0.0",
     "rxjs-tslint": "^0.1.7",
@@ -65,11 +66,7 @@
   },
   "jest": {
     "preset": "jest-preset-angular",
-    "snapshotSerializers": [
-      "<rootDir>/jest-config/serializers/AngularNoNgAttributesSnapshotSerializer.js",
-      "<rootDir>/jest-config/serializers/AngularSnapshotSerializer.js",
-      "<rootDir>/jest-config/serializers/HTMLCommentSerializer.js"
-    ],
+    "snapshotSerializers": ["ngx-jest-snapshot-serializer"],
     "coveragePathIgnorePatterns": [
       "<rootDir>/jest-config/",
       "<rootDir>/node_modules/"
