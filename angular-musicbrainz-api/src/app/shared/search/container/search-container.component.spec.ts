@@ -1,5 +1,9 @@
 // Angular Testing
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { 
+  fakeAsync,  
+  TestBed,
+  tick 
+} from '@angular/core/testing';
 // Services
 import { SearchService } from '@core/services/search/search.service';
 // Local
@@ -16,12 +20,16 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Subject } from 'rxjs';
 
 describe('SearchContainer', () => {
-  let component: SearchContainer;
-  let fixture: ComponentFixture<SearchContainer>;
+  let container: SearchContainer;
+  let destroy: Subject<void> = new Subject();
+  const albumObserver = {
+    
+  }
 
-  beforeEach(async(() => {
+  beforeEach((() => {
 
     const searchService = {
       searchAlbums: jest.fn()
@@ -45,14 +53,4 @@ describe('SearchContainer', () => {
     })
     .compileComponents();
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SearchContainer);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should', () => {
-    expect('').toEqual('');
-  })
 });
