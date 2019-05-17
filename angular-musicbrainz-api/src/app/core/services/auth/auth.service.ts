@@ -27,7 +27,8 @@ export class AuthService {
   loadCreds() {
     let creds = JSON.parse(localStorage.getItem('userCreds'));
     if (creds) {
-      // ..
+      this.setUserName(creds.username);
+      this.authToken = creds.token;
     }
   }
 
@@ -43,8 +44,9 @@ export class AuthService {
 
   }
 
-  private setUserName() {
-
+  private setUserName(name: string) {
+    this.usernameStr = name;
+    this.usernameSub.next(name);
   }
 
   getAuthToken() {
@@ -52,7 +54,7 @@ export class AuthService {
   }
 
   logOut() {
-    
+
   }
 
 }
