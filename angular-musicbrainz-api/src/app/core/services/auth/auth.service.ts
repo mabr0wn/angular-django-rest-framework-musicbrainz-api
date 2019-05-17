@@ -17,6 +17,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  authToken: string;
+  usernameSub: Subject<string> = new Subject<string>();
+  usernameStr: string;
+  isLoggedIn: boolean = false;
 
   constructor() { }
 }
