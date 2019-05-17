@@ -22,5 +22,7 @@ export class AuthService {
   usernameStr: string;
   isLoggedIn: boolean = false;
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
+
+  
 }
