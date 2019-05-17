@@ -24,5 +24,35 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  
+  loadCreds() {
+    let creds = JSON.parse(localStorage.getItem('userCreds'));
+    if (creds) {
+      // ..
+    }
+  }
+
+  logIn(): Observable<any> {
+    return null;
+  }
+
+  getUsername() {
+
+  }
+
+  sendUsername() {
+
+  }
+
+  private setUserName() {
+
+  }
+
+  getAuthToken() {
+
+  }
+
+  logOut() {
+    
+  }
+
 }
