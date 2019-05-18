@@ -8,15 +8,11 @@ import { tap } from 'rxjs/operators';
 
 import { CredentialsService, Credentials } from '@core/services/auth/credentials.service';
 
-interface AuthResponse {
-  token: string
-}
-
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const auth = 'http://localhost:8000/api-auth/'
+const backend = 'http://localhost:8000/api-auth/'
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +31,6 @@ export class AuthService {
 
   loadCreds() {
     let creds = this.credentialsService.credentials
-    // let creds = JSON.parse(localStorage.getItem('userCreds'));
     if (creds) {
       this.setUserName(creds.username);
       this.authToken = creds.token;
@@ -47,17 +42,18 @@ export class AuthService {
       username: userInfo.username,
       password: userInfo.password
     }
-    return this.http.post<Credentials>(auth + 'login/', data, httpOptions)
+    return this.http.post<Credentials>(backend + 'login/', data, httpOptions)
       .pipe( 
         tap(res => {
           this.authToken = res.token;
           this.setUserName(userInfo.username);
-          if (userInfo.remember) {
-            localStorage.setItem('userCreds', JSON.stringify({
-              username: userInfo.username,
-              token: res.token
-            }));
-          }
+          this.credentialsService.setCredentials()
+          // if (userInfo.remember) {
+          //   localStorage.setItem('userCreds', JSON.stringify({
+          //     username: userInfo.username,
+          //     token: res.token
+          //   }));
+          // }
           this.isLoggedIn = true;
         })
       )
