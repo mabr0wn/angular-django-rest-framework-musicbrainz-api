@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 // RxJS
 import { Observable, Subject} from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 interface AuthResponse {
   token: string
@@ -12,6 +13,8 @@ interface AuthResponse {
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
+const auth = 'http://localhost:8000/api-auth/'
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +35,22 @@ export class AuthService {
     }
   }
 
-  logIn(): Observable<any> {
-    return null;
+  logIn(userInfo): Observable<any> {
+    let info = {'username': userInfo.username, 'password': userInfo.password};
+    return this.http.post<AuthResponse>(auth + 'login/', info, httpOptions)
+      .pipe( 
+        tap(res => {
+          this.authToken = res.token;
+          this.setUserName(userInfo.username);
+          if (userInfo.remember) {
+            localStorage.setItem('userCreds', JSON.stringify({
+              username: userInfo.username,
+              token: res.token
+            }));
+          }
+          this.isLoggedIn = true;
+        })
+      )
   }
 
   getUsername() {
