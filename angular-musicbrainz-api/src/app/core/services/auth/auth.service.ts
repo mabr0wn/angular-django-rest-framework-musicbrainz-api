@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Observable, Subject} from 'rxjs';
 import { tap } from 'rxjs/operators';
 
+import { CredentialsService, Credentials } from '@core/services/auth/credentials.service';
+
 interface AuthResponse {
   token: string
 }
@@ -25,10 +27,15 @@ export class AuthService {
   usernameStr: string;
   isLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(
+    private credentialsService: CredentialsService,
+    private http: HttpClient, 
+    private router: Router
+    ) { }
 
   loadCreds() {
-    let creds = JSON.parse(localStorage.getItem('userCreds'));
+    let creds = this.credentialsService.credentials
+    // let creds = JSON.parse(localStorage.getItem('userCreds'));
     if (creds) {
       this.setUserName(creds.username);
       this.authToken = creds.token;
@@ -40,8 +47,7 @@ export class AuthService {
       username: userInfo.username,
       password: userInfo.password
     }
-    // let info = {'username': userInfo.username, 'password': userInfo.password};
-    return this.http.post<AuthResponse>(auth + 'login/', data, httpOptions)
+    return this.http.post<Credentials>(auth + 'login/', data, httpOptions)
       .pipe( 
         tap(res => {
           this.authToken = res.token;
