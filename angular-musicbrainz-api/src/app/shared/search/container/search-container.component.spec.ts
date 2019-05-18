@@ -53,4 +53,8 @@ describe('SearchContainer', () => {
     })
     .compileComponents();
   }));
+
+  test('', fakeAsync(() => {
+    expect('').toEqual('');
+  }))
 });
