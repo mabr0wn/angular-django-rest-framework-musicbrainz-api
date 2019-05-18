@@ -36,8 +36,12 @@ export class AuthService {
   }
 
   logIn(userInfo): Observable<any> {
-    let info = {'username': userInfo.username, 'password': userInfo.password};
-    return this.http.post<AuthResponse>(auth + 'login/', info, httpOptions)
+    const data = {
+      username: userInfo.username,
+      password: userInfo.password
+    }
+    // let info = {'username': userInfo.username, 'password': userInfo.password};
+    return this.http.post<AuthResponse>(auth + 'login/', data, httpOptions)
       .pipe( 
         tap(res => {
           this.authToken = res.token;
