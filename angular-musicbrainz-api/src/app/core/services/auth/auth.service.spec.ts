@@ -108,5 +108,26 @@ describe('AuthService', () => {
       expect(isAuthenticated).toHaveBeenCalled();
       expect(spy.mock.calls[0][1]).toBe(true);
     }));
+    test('should remove user authentication', fakeAsync(() => {
+
+      // Mock
+      const data = {
+        username: 'cheeta',
+        password: '1234',
+      };
+      tick();
+
+      authService.login(data).subscribe(() => {
+        expect(credentialsService.isAuthenticated()).toBe(true);
+
+        const request = authService.logout();
+        tick();
+
+        request.subscribe(() => {
+          expect(credentialsService.isAuthenticated()).toBe(false);
+          expect(credentialsService.credentials).toBeNull();
+        });
+      });
+    }));
   });
 });

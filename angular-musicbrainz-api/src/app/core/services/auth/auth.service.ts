@@ -31,14 +31,6 @@ export class AuthService {
     private router: Router
     ) { }
 
-  loadCreds() {
-    let creds = this.credentialsService.credentials;
-    if (creds) {
-      this.setUserName(creds.username);
-      this.authToken = creds.token;
-    }
-  }
-
   login(userInfo): Observable<any> {
     const data = {
       username: userInfo.username,
@@ -48,16 +40,27 @@ export class AuthService {
       .pipe(
         map(res => {
           this.authToken = res.token;
-          this.setUserName(userInfo.username);
+          this.setUsername(userInfo.username);
           this.credentialsService.setCredentials(res, userInfo.remember);
         }),
         tap(() => this.credentialsService.isAuthenticated())
       );
   }
 
-  private setUserName(name: string) {
+  private setUsername(name: string) {
     this.usernameStr = name;
     this.usernameSub.next(name);
   }
 
+  /**
+   * Logs out the user and clear credentials.
+   * @return True if the user was logged out successfully.
+   */
+  logout(): Observable<boolean> {
+    this.authToken = null;
+    this.setUsername(null);
+    this.router.navigate(['/']);
+    this.credentialsService.setCredentials();
+    return of(true);
+  }
 }
