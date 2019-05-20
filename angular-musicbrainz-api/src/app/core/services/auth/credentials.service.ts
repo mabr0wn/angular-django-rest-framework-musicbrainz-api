@@ -14,7 +14,7 @@ export class CredentialsService {
 
   private _credentials: Credentials| null = null;
 
-  constructor() { 
+  constructor() {
     const savedCredentials = sessionStorage.getItem(credentialKey) || localStorage.getItem(credentialKey);
     if (savedCredentials) {
       this._credentials = JSON.parse(savedCredentials);
@@ -22,7 +22,7 @@ export class CredentialsService {
   }
 
   isAuthenticated(): boolean {
-    return !!this.credentials
+    return !!this.credentials;
   }
 
   get credentials() {
