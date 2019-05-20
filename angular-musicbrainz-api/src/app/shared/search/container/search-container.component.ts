@@ -8,9 +8,9 @@ import {
 import {
   Subject
  } from 'rxjs';
- import { 
+ import {
    switchMap,
-   distinctUntilChanged 
+   distinctUntilChanged
   } from 'rxjs/operators';
 // Services
 import { SearchService } from '@core/services/search/search.service';
@@ -56,6 +56,6 @@ export class SearchContainer implements OnInit{
     this.queryString = this.queryString ? this.queryString.trim() : 'tupac';
     // Log the `this.query` for debugging purposes
     console.log(this.queryString, '@container');
-    this.searchTerms.next(new SearchParams(this.queryString, this.searchType))   
+    this.searchTerms.next(new SearchParams(this.queryString, this.searchType));
   }
 }
