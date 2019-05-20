@@ -34,7 +34,7 @@ describe('AuthService', () => {
     });
 
     authService = TestBed.get(AuthService);
-    credentialsService = TestBed.get(CredentialsService)
+    credentialsService = TestBed.get(CredentialsService);
     credentialsService.credentials = null;
 
   });
