@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 // RxJS
 import { Observable, Subject} from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 // Services
 import {
   CredentialsService,
@@ -43,19 +43,15 @@ export class AuthService {
     const data = {
       username: userInfo.username,
       password: userInfo.password,
-      token: userInfo.token,
     };
     return this.http.post<Credentials>(backend + 'login/', data, httpOptions)
       .pipe(
         map(res => {
           this.credentialsService.setCredentials(res);
-        })
-        // tap(res => {
-        //   this.authToken = res.token;
-        //   this.setUserName(userInfo.username);
-        //   this.credentialsService.setCredentials()
-        //   this.credentialsService.isAuthenticated();
-        // })
+          this.authToken = res.token;
+          this.setUserName(userInfo.username);
+        }),
+        tap(() => this.credentialsService.isAuthenticated())
       );
   }
 
