@@ -1,8 +1,7 @@
 // Angular Testing
-import { 
-  fakeAsync,  
+import {
+  fakeAsync,
   TestBed,
-  tick 
 } from '@angular/core/testing';
 // Services
 import { SearchService } from '@core/services/search/search.service';
@@ -25,12 +24,8 @@ import { Subject } from 'rxjs';
 describe('SearchContainer', () => {
   let container: SearchContainer;
   let destroy: Subject<void> = new Subject();
-  const albumObserver = {
-    
-  }
 
   beforeEach((() => {
-
     const searchService = {
       searchAlbums: jest.fn()
     };
@@ -42,10 +37,10 @@ describe('SearchContainer', () => {
         FormsModule,
         ReactiveFormsModule
       ],
-      declarations: [ 
+      declarations: [
         BoldPipe,
-        SearchContainer, 
-        SearchComponent 
+        SearchContainer,
+        SearchComponent
       ],
       providers: [
         {provide: SearchService, useValue: searchService},
@@ -56,5 +51,5 @@ describe('SearchContainer', () => {
 
   test('', fakeAsync(() => {
     expect('').toEqual('');
-  }))
+  }));
 });
