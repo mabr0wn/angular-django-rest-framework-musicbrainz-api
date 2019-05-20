@@ -1,4 +1,4 @@
-import { 
+import {
   fakeAsync,
   TestBed,
   tick
@@ -14,7 +14,7 @@ describe('AuthService', () => {
 
   const http = {
     post: jest.fn()
-  }
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,8 +22,8 @@ describe('AuthService', () => {
         RouterTestingModule
       ],
       providers: [
-        { provide: HttpClient, useValue: http }, 
-        AuthService
+        AuthService,
+        { provide: HttpClient, useValue: http }
       ]
     });
 
@@ -38,7 +38,7 @@ describe('AuthService', () => {
       const data = {
         username: 'cheeta',
         password: '1234'
-      }
+      };
       // wait...
       tick();
       // mock url
@@ -48,7 +48,7 @@ describe('AuthService', () => {
         (url) => { argUrl = url; return of([]);
       });
       // subscribe to mocked data...
-      authService.logIn(data).subscribe()
+      authService.logIn(data).subscribe();
       // expect post to been called one time.
       expect(http.post).toHaveBeenCalledTimes(1);
       // mock url should contain login...

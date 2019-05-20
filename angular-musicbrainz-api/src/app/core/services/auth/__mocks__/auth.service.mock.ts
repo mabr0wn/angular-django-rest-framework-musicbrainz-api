@@ -1,4 +1,4 @@
 import { } from 'rxjs';
 
-import { User } from '@core/models/user'; 
+import { User } from '@core/models/user';
 
