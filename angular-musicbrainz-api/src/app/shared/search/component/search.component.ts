@@ -10,14 +10,14 @@ import {
  } from '@angular/core';
 import { FormControl } from '@angular/forms';
 // RxJs
-import { 
-  Observable, 
+import {
+  Observable,
   Subject
 } from 'rxjs';
-import { 
+import {
   map,
   startWith,
-  takeUntil 
+  takeUntil
 } from 'rxjs/operators';
 // Dummy data
 import { MOCK_SEARCH_RESULTS } from '@mock/mock-search-results';
