@@ -1,11 +1,24 @@
 import { TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
+import { HttpClient, HttpParams} from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+// RxJS
+import { of } from 'rxjs';
 import { AuthService } from './auth.service';
+
+const backend = 'http://localhost:8000/api-auth/'
+
 
 describe('AuthService', () => {
   let authService: AuthService;
+
+  const http = {
+    post: jest.fn()
+  }
+
+  const httpMock = {
+    post: jest.fn()
+  }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -13,7 +26,11 @@ describe('AuthService', () => {
         HttpClientTestingModule,
         RouterTestingModule
       ],
-      providers: [AuthService]
+      providers: [
+        // { provide: HttpTestingController, useValue: httpMock},
+        { provide: HttpClient, useValue: http }, 
+        AuthService
+      ]
     });
 
     authService = TestBed.get(AuthService);
@@ -21,16 +38,29 @@ describe('AuthService', () => {
 
   describe('Login', () => {
     test('Should return user information', fakeAsync(() => {
-      const resquest = authService.logIn({
+      // nothing should post yet
+      expect(http.post).not.toHaveBeenCalled();
+      // mocked data
+      const data = {
         username: 'cheeta',
         password: '1234'
-      });
+      }
+      // wait...
       tick();
 
-      resquest.subscribe(creds => {
-        expect(creds).toBeDefined();
-        expect(creds.token).toBeDefined();
+      // mock url
+      let argUrl: string;
+      // mock url post
+      http.post.mockImplementation(
+        (url) => { argUrl = url; return of([]);
       });
+      // subscribe to mocked data...
+      authService.logIn(data).subscribe()
+
+      // expect post to been called one time.
+      expect(http.post).toHaveBeenCalledTimes(1);
+      // mock url should contain login...
+      expect(argUrl).toContain('login/');
     }));
 
     test('Should authenticate user', fakeAsync(() => {

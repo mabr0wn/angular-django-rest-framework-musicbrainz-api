@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 // RxJS
 import { Observable, Subject} from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { CredentialsService, Credentials } from '@core/services/auth/credentials.service';
 
@@ -21,7 +21,6 @@ export class AuthService {
   authToken: string;
   usernameSub: Subject<string> = new Subject<string>();
   usernameStr: string;
-  isLoggedIn: boolean = false;
 
   constructor(
     private credentialsService: CredentialsService,
@@ -40,44 +39,26 @@ export class AuthService {
   logIn(userInfo): Observable<any> {
     const data = {
       username: userInfo.username,
-      password: userInfo.password
+      password: userInfo.password,
+      token: userInfo.token,
     }
     return this.http.post<Credentials>(backend + 'login/', data, httpOptions)
       .pipe( 
-        tap(res => {
-          this.authToken = res.token;
-          this.setUserName(userInfo.username);
-          this.credentialsService.setCredentials()
-          // if (userInfo.remember) {
-          //   localStorage.setItem('userCreds', JSON.stringify({
-          //     username: userInfo.username,
-          //     token: res.token
-          //   }));
-          // }
-          this.isLoggedIn = true;
+        map(res => {
+          this.credentialsService.setCredentials(res)
         })
+        // tap(res => {
+        //   this.authToken = res.token;
+        //   this.setUserName(userInfo.username);
+        //   this.credentialsService.setCredentials()
+        //   this.credentialsService.isAuthenticated();
+        // })
       )
-  }
-
-  getUsername() {
-
-  }
-
-  sendUsername() {
-
   }
 
   private setUserName(name: string) {
     this.usernameStr = name;
     this.usernameSub.next(name);
-  }
-
-  getAuthToken() {
-
-  }
-
-  logOut() {
-
   }
 
 }

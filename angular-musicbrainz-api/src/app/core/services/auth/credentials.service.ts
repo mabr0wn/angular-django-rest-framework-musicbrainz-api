@@ -21,6 +21,9 @@ export class CredentialsService {
     }
   }
 
+  isAuthenticated(): boolean {
+    return !!this.credentials
+  }
 
   get credentials() {
     return this._credentials || null;
