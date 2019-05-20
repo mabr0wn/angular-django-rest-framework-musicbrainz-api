@@ -33,7 +33,7 @@ describe(SearchPresenter.name, () => {
             presenter.search(tupac);
 
             expect(searchTerm.searchTerm).toHaveBeenCalledTimes(1);
-            expect(searchTerm.searchTerm).toHaveBeenCalledWith(tupac)
-        }))
-    })
-})
+            expect(searchTerm.searchTerm).toHaveBeenCalledWith(tupac);
+        }));
+    });
+});
