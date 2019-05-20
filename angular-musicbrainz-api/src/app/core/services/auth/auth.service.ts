@@ -5,14 +5,17 @@ import { Router } from '@angular/router';
 // RxJS
 import { Observable, Subject} from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { CredentialsService, Credentials } from '@core/services/auth/credentials.service';
+// Services
+import {
+  CredentialsService,
+  Credentials
+} from '@core/services/auth/credentials.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const backend = 'http://localhost:8000/api-auth/'
+const backend = 'http://localhost:8000/api-auth/';
 
 @Injectable({
   providedIn: 'root'
@@ -24,12 +27,12 @@ export class AuthService {
 
   constructor(
     private credentialsService: CredentialsService,
-    private http: HttpClient, 
+    private http: HttpClient,
     private router: Router
     ) { }
 
   loadCreds() {
-    let creds = this.credentialsService.credentials
+    let creds = this.credentialsService.credentials;
     if (creds) {
       this.setUserName(creds.username);
       this.authToken = creds.token;
@@ -41,11 +44,11 @@ export class AuthService {
       username: userInfo.username,
       password: userInfo.password,
       token: userInfo.token,
-    }
+    };
     return this.http.post<Credentials>(backend + 'login/', data, httpOptions)
-      .pipe( 
+      .pipe(
         map(res => {
-          this.credentialsService.setCredentials(res)
+          this.credentialsService.setCredentials(res);
         })
         // tap(res => {
         //   this.authToken = res.token;
@@ -53,7 +56,7 @@ export class AuthService {
         //   this.credentialsService.setCredentials()
         //   this.credentialsService.isAuthenticated();
         // })
-      )
+      );
   }
 
   private setUserName(name: string) {
