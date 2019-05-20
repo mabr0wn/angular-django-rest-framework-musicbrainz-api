@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  FormsModule, 
+  FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
 // Local
