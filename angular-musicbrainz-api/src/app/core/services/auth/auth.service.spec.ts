@@ -8,9 +8,14 @@ import { HttpClient} from '@angular/common/http';
 // RxJS
 import { of } from 'rxjs';
 import { AuthService } from './auth.service';
+// Credentials
+import { CredentialsService, Credentials } from './credentials.service';
+import { MockCredentialsService } from './__mocks__/credentials.service.mock';
+
 
 describe('AuthService', () => {
   let authService: AuthService;
+  let credentialsService: MockCredentialsService;
 
   const http = {
     post: jest.fn()
@@ -23,11 +28,15 @@ describe('AuthService', () => {
       ],
       providers: [
         AuthService,
+        { provide: CredentialsService, useClass: MockCredentialsService },
         { provide: HttpClient, useValue: http }
       ]
     });
 
     authService = TestBed.get(AuthService);
+    credentialsService = TestBed.get(CredentialsService)
+    credentialsService.credentials = null;
+
   });
 
   describe('Login', () => {
@@ -48,11 +57,35 @@ describe('AuthService', () => {
         (url) => { argUrl = url; return of([]);
       });
       // subscribe to mocked data...
-      authService.logIn(data).subscribe();
+      authService.login(data).subscribe();
       // expect post to been called one time.
       expect(http.post).toHaveBeenCalledTimes(1);
       // mock url should contain login...
       expect(argUrl).toContain('login/');
     }));
+    test('Should Authenticate user', fakeAsync(() => {
+      expect(credentialsService.isAuthenticated()).toBe(false);
+
+      const spy = jest.spyOn(credentialsService, 'setCredentials');
+      const isAuthenticated = credentialsService.setCredentials();
+
+      // Act
+      const data = {
+        username: 'toto',
+        password: '123',
+      };
+      tick();
+
+      authService.login(data).subscribe();
+
+      expect(credentialsService.isAuthenticated()).toBe(true);
+      expect(credentialsService.credentials).not.toBeNull();
+      // expect((<Credentials>credentialsService.credentials).token).toBeDefined();
+      // expect((<Credentials>credentialsService.credentials).token).not.toBeNull();
+      // Assert
+      // request.subscribe(() => {
+
+      // });
+    }))
   });
 });

@@ -69,7 +69,9 @@
     "snapshotSerializers": ["ngx-jest-snapshot-serializer"],
     "coveragePathIgnorePatterns": [
       "<rootDir>/jest-config/",
-      "<rootDir>/node_modules/"
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/app/shared/search/search-params.ts",
+      "<rootDir>/src/app/core/services/auth/credentials.service.ts"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist",

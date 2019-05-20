@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 // RxJS
-import { Observable, Subject} from 'rxjs';
+import { Observable, Subject, of} from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 // Services
 import {
@@ -39,7 +39,7 @@ export class AuthService {
     }
   }
 
-  logIn(userInfo): Observable<any> {
+  login(userInfo): Observable<any> {
     const data = {
       username: userInfo.username,
       password: userInfo.password,
@@ -47,9 +47,9 @@ export class AuthService {
     return this.http.post<Credentials>(backend + 'login/', data, httpOptions)
       .pipe(
         map(res => {
-          this.credentialsService.setCredentials(res);
           this.authToken = res.token;
           this.setUserName(userInfo.username);
+          this.credentialsService.setCredentials(res);
         }),
         tap(() => this.credentialsService.isAuthenticated())
       );

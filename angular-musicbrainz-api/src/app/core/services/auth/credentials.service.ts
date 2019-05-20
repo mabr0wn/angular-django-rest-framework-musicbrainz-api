@@ -33,7 +33,7 @@ export class CredentialsService {
     this._credentials = credentials || null;
 
     if (credentials) {
-      const storage  = remember ? localStorage : sessionStorage;
+      const storage = remember ? localStorage : sessionStorage;
       storage.setItem(credentialKey, JSON.stringify(credentials));
     } else {
       sessionStorage.removeItem(credentialKey);
