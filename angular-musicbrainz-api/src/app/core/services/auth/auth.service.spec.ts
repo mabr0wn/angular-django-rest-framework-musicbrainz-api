@@ -40,7 +40,7 @@ describe('AuthService', () => {
   });
 
   describe('Login', () => {
-    test('Should return user information', fakeAsync(() => {
+    test('Should mock http post for user login', fakeAsync(() => {
       // nothing should post yet
       expect(http.post).not.toHaveBeenCalled();
       // mocked data
@@ -66,7 +66,7 @@ describe('AuthService', () => {
     test('Should Authenticate user', fakeAsync(() => {
       expect(credentialsService.isAuthenticated()).toBe(false);
 
-      // Act
+      // Mock
       const data = {
         username: 'cheeta',
         password: '1234',
@@ -78,12 +78,12 @@ describe('AuthService', () => {
       expect(credentialsService.isAuthenticated()).toBe(true);
       expect(credentialsService.credentials).not.toBeNull();
     }));
-    test('Should persist credentials for the session', fakeAsync(() => {
+    test('Should obtain credentials for the session', fakeAsync(() => {
 
       const spy = jest.spyOn(credentialsService, 'setCredentials');
       const isAuthenticated = credentialsService.setCredentials;
 
-      // Act
+      // Mock
       const data = {
         username: 'cheeta',
         password: '1234'
@@ -95,12 +95,12 @@ describe('AuthService', () => {
       expect(isAuthenticated).toHaveBeenCalled();
       expect(spy.mock.calls[0][1]).toBe(undefined);
     }));
-    test('should persist credentials across sessions', fakeAsync(() => {
+    test('should obtain and remember credentials across session', fakeAsync(() => {
 
       const spy = jest.spyOn(credentialsService, 'setCredentials');
       const isAuthenticated = credentialsService.setCredentials;
 
-      // Act
+      // Mock
       const data = {
         username: 'cheeta',
         password: '1234',
@@ -112,6 +112,6 @@ describe('AuthService', () => {
 
       expect(isAuthenticated).toHaveBeenCalled();
       expect(spy.mock.calls[0][1]).toBe(true);
-    }))
+    }));
   });
 });
