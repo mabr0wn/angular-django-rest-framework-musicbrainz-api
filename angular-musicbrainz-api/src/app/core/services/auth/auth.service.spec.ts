@@ -10,7 +10,7 @@ import { of } from 'rxjs';
 import { AuthService } from './auth.service';
 // Credentials
 import { CredentialsService, Credentials } from './credentials.service';
-import { MockCredentialsService } from './__mocks__/credentials.service.mock';
+import { MockCredentialsService } from './mocks/credentials.service.mock';
 
 
 describe('AuthService', () => {
@@ -66,13 +66,10 @@ describe('AuthService', () => {
     test('Should Authenticate user', fakeAsync(() => {
       expect(credentialsService.isAuthenticated()).toBe(false);
 
-      const spy = jest.spyOn(credentialsService, 'setCredentials');
-      const isAuthenticated = credentialsService.setCredentials();
-
       // Act
       const data = {
-        username: 'toto',
-        password: '123',
+        username: 'cheeta',
+        password: '1234',
       };
       tick();
 
@@ -80,12 +77,41 @@ describe('AuthService', () => {
 
       expect(credentialsService.isAuthenticated()).toBe(true);
       expect(credentialsService.credentials).not.toBeNull();
-      // expect((<Credentials>credentialsService.credentials).token).toBeDefined();
-      // expect((<Credentials>credentialsService.credentials).token).not.toBeNull();
-      // Assert
-      // request.subscribe(() => {
+    }));
+    test('Should persist credentials for the session', fakeAsync(() => {
 
-      // });
+      const spy = jest.spyOn(credentialsService, 'setCredentials');
+      const isAuthenticated = credentialsService.setCredentials;
+
+      // Act
+      const data = {
+        username: 'cheeta',
+        password: '1234'
+      };
+      tick();
+
+      authService.login(data).subscribe();
+
+      expect(isAuthenticated).toHaveBeenCalled();
+      expect(spy.mock.calls[0][1]).toBe(undefined);
+    }));
+    test('should persist credentials across sessions', fakeAsync(() => {
+
+      const spy = jest.spyOn(credentialsService, 'setCredentials');
+      const isAuthenticated = credentialsService.setCredentials;
+
+      // Act
+      const data = {
+        username: 'cheeta',
+        password: '1234',
+        remember: true
+      };
+      tick();
+
+      authService.login(data).subscribe();
+
+      expect(isAuthenticated).toHaveBeenCalled();
+      expect(spy.mock.calls[0][1]).toBe(true);
     }))
   });
 });

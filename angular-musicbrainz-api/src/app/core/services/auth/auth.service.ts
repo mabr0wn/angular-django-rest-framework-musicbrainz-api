@@ -49,7 +49,7 @@ export class AuthService {
         map(res => {
           this.authToken = res.token;
           this.setUserName(userInfo.username);
-          this.credentialsService.setCredentials(res);
+          this.credentialsService.setCredentials(res, userInfo.remember);
         }),
         tap(() => this.credentialsService.isAuthenticated())
       );
