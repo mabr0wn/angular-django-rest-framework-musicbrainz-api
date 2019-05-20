@@ -39,6 +39,10 @@ describe('AuthService', () => {
 
   });
 
+  afterEach(() => {
+    jest.resetModules()
+  })
+
   describe('Login', () => {
     test('Should mock http post for user login', fakeAsync(() => {
       // nothing should post yet
@@ -57,14 +61,15 @@ describe('AuthService', () => {
         (url) => { argUrl = url; return of([]);
       });
       // subscribe to mocked data...
-      authService.login(data).subscribe();
+      authService.login(data).subscribe(() => {
       // expect post to been called one time.
       expect(http.post).toHaveBeenCalledTimes(1);
       // mock url should contain login...
-      expect(argUrl).toContain('login/');
+      expect(argUrl).toMatchSnapshot('login/');
+      });
     }));
     test('Should Authenticate user', fakeAsync(() => {
-      expect(credentialsService.isAuthenticated()).toBe(false);
+      expect(credentialsService.isAuthenticated()).toMatchSnapshot(false);
       // Mock
       const data = {
         username: 'cheeta',
@@ -72,10 +77,10 @@ describe('AuthService', () => {
       };
       tick();
 
-      authService.login(data).subscribe();
-
-      expect(credentialsService.isAuthenticated()).toBe(true);
-      expect(credentialsService.credentials).not.toBeNull();
+      authService.login(data).subscribe(() => {
+        expect(credentialsService.isAuthenticated()).toMatchSnapshot(true);
+        expect(credentialsService.credentials).not.toBeNull();
+      });
     }));
     test('Should obtain credentials for the session', fakeAsync(() => {
       const spy = jest.spyOn(credentialsService, 'setCredentials');
@@ -87,10 +92,10 @@ describe('AuthService', () => {
       };
       tick();
 
-      authService.login(data).subscribe();
-
-      expect(isAuthenticated).toHaveBeenCalled();
-      expect(spy.mock.calls[0][1]).toBe(undefined);
+      authService.login(data).subscribe(() => {
+        expect(isAuthenticated).toMatchSnapshot();
+        expect(spy.mock.calls[0][1]).toMatchSnapshot(undefined);
+      });
     }));
     test('should obtain and remember credentials across session', fakeAsync(() => {
       const spy = jest.spyOn(credentialsService, 'setCredentials');
@@ -103,10 +108,10 @@ describe('AuthService', () => {
       };
       tick();
 
-      authService.login(data).subscribe();
-
-      expect(isAuthenticated).toHaveBeenCalled();
-      expect(spy.mock.calls[0][1]).toBe(true);
+      authService.login(data).subscribe(() => {
+        expect(isAuthenticated).toMatchSnapshot();
+        expect(spy.mock.calls[0][1]).toMatchSnapshot(true);
+      });
     }));
     test('should remove user authentication', fakeAsync(() => {
 

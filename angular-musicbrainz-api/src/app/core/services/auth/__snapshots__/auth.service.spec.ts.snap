@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthService Login Should Authenticate user 1`] = `false`;
+
+exports[`AuthService Login Should Authenticate user 2`] = `true`;
+
+exports[`AuthService Login Should mock http post for user login: login/ 1`] = `"http://localhost:8000/api-auth/login/"`;
+
+exports[`AuthService Login Should obtain credentials for the session 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Array [],
+      undefined,
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`AuthService Login Should obtain credentials for the session 2`] = `undefined`;
+
+exports[`AuthService Login should obtain and remember credentials across session 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Array [],
+      true,
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`AuthService Login should obtain and remember credentials across session 2`] = `true`;
