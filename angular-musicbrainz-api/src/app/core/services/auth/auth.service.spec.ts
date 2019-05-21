@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 import { of } from 'rxjs';
 import { AuthService } from './auth.service';
 // Credentials
-import { CredentialsService, Credentials } from './credentials.service';
+import { CredentialsService } from './credentials.service';
 import { MockCredentialsService } from './mocks/credentials.service.mock';
 
 
@@ -58,18 +58,18 @@ describe('AuthService', () => {
       let argUrl: string;
       // mock url post
       http.post.mockImplementation(
-        (url) => { argUrl = url; return of([]);
+        (url) => { argUrl = url; return of(data);
       });
       // subscribe to mocked data...
       authService.login(data).subscribe(() => {
-      // expect post to been called one time.
-      expect(http.post).toHaveBeenCalledTimes(1);
-      // mock url should contain login...
-      expect(argUrl).toMatchSnapshot('login/');
+        // expect post to been called one time.
+        expect(http.post).toHaveBeenCalledTimes(1);
+        // mock url should contain login...
+        expect(argUrl).toMatchSnapshot('login/');
       });
     }));
     test('Should Authenticate user', fakeAsync(() => {
-      expect(credentialsService.isAuthenticated()).toMatchSnapshot(false);
+      expect(credentialsService.isAuthenticated()).toBe(false);
       // Mock
       const data = {
         username: 'cheeta',
@@ -94,7 +94,7 @@ describe('AuthService', () => {
 
       authService.login(data).subscribe(() => {
         expect(isAuthenticated).toMatchSnapshot();
-        expect(spy.mock.calls[0][1]).toMatchSnapshot(undefined);
+        expect(spy.mock.calls[0][0]).toMatchSnapshot();
       });
     }));
     test('should obtain and remember credentials across session', fakeAsync(() => {
@@ -129,7 +129,7 @@ describe('AuthService', () => {
         tick();
 
         request.subscribe(() => {
-          expect(credentialsService.isAuthenticated()).toBe(false);
+          expect(credentialsService.isAuthenticated()).toMatchSnapshot(false);
           expect(credentialsService.credentials).toBeNull();
         });
       });
