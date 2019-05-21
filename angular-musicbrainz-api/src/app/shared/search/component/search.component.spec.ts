@@ -46,7 +46,7 @@ describe('SearchComponent', () => {
   });
 
   it('should create search component', () => {
-    expect(component).toMatchSnapshot();
+    expect(component).toBeTruthy();
   });
 
   it('should filter new sample results array', (() => {
@@ -54,8 +54,8 @@ describe('SearchComponent', () => {
       'What\'s the weather in San Francisco?',
       'did you see the game?'
     ];
-    expect(component.filterResults('What\'s the weather in San Francisco?').length).toBe(1);
-    expect(component.filterResults('did you see the game?').length).toBe(1);
-    expect(component.filterResults('').length).toBe(0);
+    expect(component.filterResults('What\'s the weather in San Francisco?').length).toMatchSnapshot(1);
+    expect(component.filterResults('did you see the game?').length).toMatchSnapshot(1);
+    expect(component.filterResults('').length).toMatchSnapshot(0);
   }));
 });
