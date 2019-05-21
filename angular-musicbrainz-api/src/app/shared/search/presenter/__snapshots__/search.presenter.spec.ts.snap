@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPresenter emit search terms it will descibe an album search: tupac 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "tupac",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": "tupac",
+    },
+  ],
+}
+`;
