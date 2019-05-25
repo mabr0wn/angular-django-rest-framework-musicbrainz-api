@@ -10,7 +10,7 @@ export class SearchPresenter {
 
   search(term): void {
     // Log the term for debugging purposes
-    // console.log(term, '@presenter');
+    console.log(term, '@presenter');
     this.searchTerms.next(term);
   }
 }

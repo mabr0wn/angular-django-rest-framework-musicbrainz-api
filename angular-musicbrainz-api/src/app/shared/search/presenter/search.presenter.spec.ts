@@ -28,12 +28,12 @@ describe(SearchPresenter.name, () => {
         });
 
         test('it will descibe an album search', fakeAsync(() => {
-            const tupac = 'tupac';
+            const term = '';
 
-            presenter.search(tupac);
+            presenter.search(term);
 
             expect(searchTerm.searchTerm).toHaveBeenCalledTimes(1);
-            expect(searchTerm.searchTerm).toMatchSnapshot(tupac);
+            expect(searchTerm.searchTerm).toMatchSnapshot(term);
         }));
     });
 });
