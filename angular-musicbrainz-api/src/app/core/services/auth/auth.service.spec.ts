@@ -40,8 +40,8 @@ describe('AuthService', () => {
   });
 
   afterEach(() => {
-    jest.resetModules()
-  })
+    jest.resetModules();
+  });
 
   describe('Login', () => {
     test('Should mock http post for user login', fakeAsync(() => {

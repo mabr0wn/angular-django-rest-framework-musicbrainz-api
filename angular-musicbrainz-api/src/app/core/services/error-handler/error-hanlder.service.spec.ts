@@ -4,7 +4,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { ErrorHanlderService } from './error-hanlder.service';
 
 describe('ErrorHanlderService', () => {
-  let handler: ErrorHanlderService
+  let handler: ErrorHanlderService;
 
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
