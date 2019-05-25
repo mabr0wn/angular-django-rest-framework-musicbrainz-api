@@ -2,15 +2,16 @@
   matInput 
   id="search-input" 
   [matAutocomplete]="auto" 
-  [formControl]="searchControl" 
   [placeholder]="searchType === 'release' ? 'Album Title' : 'Artist Name'" 
+  [(ngModel)]="queryString"
   (keyup)="searchFor(search.value)" 
   name="search" 
   minlength="3" 
   required 
-  #search>
+  #search="ngModel">
 <mat-autocomplete  #auto="matAutocomplete">
-  <mat-option *ngFor="let item of filteredResults$ | async" [value]="item">
+  <!-- <mat-option *ngFor="let item of filteredResults$ | async" [value]="item">
       <span [innerHTML]="item | bold:searchControl.value"></span>
-  </mat-option>
+  </mat-option> -->
 </mat-autocomplete>
+

@@ -46,16 +46,6 @@ describe('SearchComponent', () => {
   });
 
   it('should create search component', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeUndefined();
   });
-
-  it('should filter new sample results array', (() => {
-    component.results = [
-      'What\'s the weather in San Francisco?',
-      'did you see the game?'
-    ];
-    expect(component.filterResults('What\'s the weather in San Francisco?').length).toMatchSnapshot(1);
-    expect(component.filterResults('did you see the game?').length).toMatchSnapshot(1);
-    expect(component.filterResults('').length).toMatchSnapshot(0);
-  }));
 });

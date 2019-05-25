@@ -7,12 +7,11 @@ import {
 } from '@angular/forms';
 // Local
 import { SearchComponent } from './search/component/search.component';
-import { SearchContainer } from './search/container/search-container.component';
 // Modules
 import { CoreModule } from '../core/core.module';
 import { MaterialModule } from './materials/material.module';
 @NgModule({
-  declarations: [SearchComponent, SearchContainer ],
+  declarations: [SearchComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -20,6 +19,6 @@ import { MaterialModule } from './materials/material.module';
     MaterialModule,
     ReactiveFormsModule,
   ],
-  exports: [SearchComponent, SearchContainer]
+  exports: [SearchComponent ]
 })
 export class SharedModule { }

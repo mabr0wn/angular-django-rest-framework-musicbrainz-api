@@ -7,7 +7,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 // Components
 import { AppComponent } from './app.component';
 import { SearchComponent } from '@shared/search/component/search.component';
-import { SearchContainer } from '@shared/search/container/search-container.component';
 
 // pipe
 import { BoldPipe } from '../core/pipe/bold.pipe';
@@ -34,8 +33,7 @@ describe('AppComponent', () => {
       declarations: [
         BoldPipe,
         AppComponent,
-        SearchComponent,
-        SearchContainer
+        SearchComponent      
       ],
     }).compileComponents();
   }));

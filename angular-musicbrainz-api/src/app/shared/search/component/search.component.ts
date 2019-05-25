@@ -3,71 +3,60 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-  Input
+  ChangeDetectionStrategy
  } from '@angular/core';
-import { FormControl } from '@angular/forms';
 // RxJs
 import {
-  Observable,
   Subject
 } from 'rxjs';
 import {
-  map,
-  startWith,
-  takeUntil
+  switchMap,
+  distinctUntilChanged
 } from 'rxjs/operators';
-// Dummy data
-import { MOCK_SEARCH_RESULTS } from '@mock/mock-search-results';
 // Model
 import { Album } from '@core/models/album';
 // Local
 import { SearchParams} from '@shared/search/search-params';
-import { SearchPresenter } from '@shared/search/presenter/search.presenter';
-
+// Services
+import { SearchService } from '@core/services/search/search.service';
 @Component({
   selector: 'app-search-component',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [SearchPresenter],
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  @Input() albums: Album[];
-  @Input() queryString: string;
-  @Output() search: EventEmitter<SearchParams> = new EventEmitter();
-
   private ngUnsubscribe: Subject<any> = new Subject();
-  filteredResults$: Observable<string[]>;
-  searchControl: FormControl;
-
-  results = MOCK_SEARCH_RESULTS;
+  searchTerms: Subject<SearchParams> = new Subject();
+  searching: boolean;
+  queryString: string;
   searchType: string;
 
-  constructor(private presenter: SearchPresenter) {}
+
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
-    this.searchControl = new FormControl('');
-    this.filteredResults$ = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(val => this.filterResults(val)),
-      map(val => val.slice(0, 4)));
-    this.presenter.searchTerms.pipe(
-      // complete when component is destroyed
-      takeUntil(this.ngUnsubscribe),
-    ).subscribe(_ => this.search.emit(new SearchParams(this.queryString, this.searchType)));
+    this.searching = false;
+    this.searchType = 'release';
+    this.searchTerms.pipe(
+        // only emit when the current value is different than the last.
+        distinctUntilChanged((params1, params2) => params2.equals(params1)),
+        switchMap(
+          (params) => this.searchService.searchAlbums(params.term, params.type))
+      )
+      .subscribe((albums) => {
+        // Log the albums for debugging purposes
+        console.log(albums, 'albums');
+    });
   }
 
-  searchFor(term): void {
-    // Log the term for debugging purposes
-    console.log(term, '@component');
-    this.presenter.search(term);
-  }
+  searchFor(): void {
+    this.queryString = this.queryString ? this.queryString.trim() : null;
+    if (this.queryString) {
+      this.searching = true;
+      this.searchTerms.next(new SearchParams(this.queryString, this.searchType));
+    }
 
-  filterResults(val: string): string[] {
-    return val ? this.results.filter(v => v.toLowerCase().indexOf(val.toLowerCase()) === 0) : [];
   }
 
   ngOnDestroy(): void {
