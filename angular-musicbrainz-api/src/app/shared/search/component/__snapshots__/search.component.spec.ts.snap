@@ -1,7 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchComponent should filter new sample results array 1`] = `1`;
-
-exports[`SearchComponent should filter new sample results array 2`] = `1`;
-
-exports[`SearchComponent should filter new sample results array 3`] = `0`;
+exports[`SearchComponent Should run "searchFor" method calls searchService.searchAlbums with queryString: testQuery 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "testQuery",
+      "release",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": Observable {
+        "_isScalar": true,
+        "_subscribe": [Function],
+        "value": Array [
+          Object {
+            "artistCredit": Array [],
+            "id": "1",
+            "image": "image1",
+            "title": "title1",
+          },
+          Object {
+            "artistCredit": Array [],
+            "id": "2",
+            "image": "image2",
+            "title": "title2",
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
