@@ -48,8 +48,7 @@ describe('SearchContainer', () => {
     })
     .compileComponents();
   }));
-
-  test('', fakeAsync(() => {
-    expect('').toEqual('');
+  test('Search-container should exist', fakeAsync(() => {
+    expect(container).not.toBeUndefined;
   }));
 });
