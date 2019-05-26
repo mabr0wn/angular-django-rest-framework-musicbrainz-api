@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   
   result: Album[];
 
-  search: Subject<SearchParams> = new Subject();
+  searchTerms$: Subject<SearchParams> = new Subject();
   private ngUnsubscribe: Subject<any> = new Subject();
 
   constructor(private searchService: SearchService) { }
@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.searching = false;
     this.searchType = 'release';
-    this.search.pipe(
+    this.searchTerms$.pipe(
         // only emit when the current value is different than the last.
         distinctUntilChanged((params1, params2) => params2.equals(params1)),
         switchMap(
@@ -57,13 +57,13 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.queryString = this.queryString ? this.queryString.trim() : null;
     if (this.queryString) {
       this.searching = true;
-      this.search.next(new SearchParams(this.queryString, this.searchType));
+      this.searchTerms$.next(new SearchParams(this.queryString, this.searchType));
     }
   }
 
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
-    this.search.complete();
+    this.searchTerms$.complete();
   }
 }
