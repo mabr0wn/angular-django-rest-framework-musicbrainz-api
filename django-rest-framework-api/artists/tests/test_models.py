@@ -52,7 +52,7 @@ def test_base():
     assert artist.artist == 'Daft Punk'
     assert artist.end_time == '4:34'
 
-    # Test that we can print the duration of a Artist
+    # Test the duration of an Artist
     assert artist.get_period_of_play_time() == '0:16-4:34'
 
 
