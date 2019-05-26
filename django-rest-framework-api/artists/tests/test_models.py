@@ -19,7 +19,7 @@ def mixer(request):
 def test_base():
     from mixer.backend.django import mixer
     
-    # Generate model with some values
+    # Generate models with some attributes
     album = mixer.blend(Album, 
         name='Random Access Memories',
         artist='Daft Punk',

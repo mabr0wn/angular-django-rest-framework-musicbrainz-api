@@ -1,5 +1,6 @@
 # Django
 from django.urls import resolve
+from django.utils.encoding import force_text
 # Pytest
 import pytest
 # Django rest
@@ -59,24 +60,25 @@ class AlbumAPITestCase(APITestCase):
         self.assertEqual(response.data[0]['name'], 'Humanz')
         self.assertEqual(response.data[1]['url'], 'http://testserver/api/albums/1/')
     
-class TrackAPITestCase(APITestCase):
-    
+class TrackAPITestCase(object):
     def setUp(self):
-        self.eyelid_movies = Album.objects.create(name='Eyelid Movies', slug='eyelig-movies')
-        self.futuristic_casket = Track.objects.create(name='Futuristic Casket', slug='futuristic-casket',
-                                                           album=self.eyelid_movies)
-        self.electropop_artist = Artist.objects.create(genre='electropop', artist='Phantogram',
-                                                           slug='phantogram', track=self.futuristic_casket)
-    def test_retrieve_track(self):
+        eyelid_movies = Album.objects.create(name='Eyelid Movies', slug='eyelig-movies')
+        futuristic_casket = Track.objects.create(name='Futuristic Casket', slug='futuristic-casket',                                              album=self.eyelid_movies)
+        electropop_artist = Artist.objects.create(genre='electropop', artist='Phantogram',
+                                                           slug='phantogram', track=futuristic_casket)
+    @pytest.mark.django_db                                                     
+    def test_retrieve_track(self, client):
         ''' Test that we can get a list of tracks '''
-        response = self.client.get('/api/tracks/')
+        r = client.get('/api/tracks/')
         
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data[0]['name'], 'Futuristic Casket')
-        self.assertEqual(response.data[0]['url'], 'http://testserver/api/tracks/1/')
-   
-    def test_album_list_route(self):
+        assert r.status_code == 200
+        assert r.data[0]['name'] == 'Futuristic Casket'
+        assert r.data[0]['url'] == 'http://testserver/api/tracks/1/'
+       
+
+    @pytest.mark.django_db 
+    def test_album_list_route(self, client):
         ''' Test that we've got routing setup for set '''
-        route = resolve('/api/tracks/1/')
-        
-        self.assertEqual(route.func.__name__, 'TrackViewSet')
+        route = client.get('/api/tracks/1/')
+
+        assert force_text(route.content) == 'TrackViewSet'
