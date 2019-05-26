@@ -1,137 +1,42 @@
 <img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true&passingText=master%20-%20OK" alt="Project Badge"> [![PyPI](https://img.shields.io/pypi/pyversions/Django.svg)]()
+<img src="https://img.shields.io/codacy/coverage/59d607d0e311408885e418004068ea58.svg">
+
+# angular-django-rest-framework-musicbrainz-api
+
+This project consist of a simple API call to search albums and artists from [MusicBrainz](https://musicbrainz.org/) database.  The inspiration for this project came across multiple project on github including [plumbn](https://github.com/plumbn/MusicList) and [jmad](https://github.com/kevinharvey/jmad).  I like to start by thanking them both for their open-source project which helped guide me to create my own implementation of this open-source repo.
+
+> **NOTE**: although test are passing and coverage is well above 80% the project will continue to inherit commits.  Please feel free to contribute to this on-going open-source project.
+
+# MusicBrainz
+
+If you are not familiar with the MusicBrainz the website gives this description about it:
+
+**MusicBrainz is a community-maintained open source encyclopedia of music information.**
+
+This means that anyone — including you — can help contribute to the project by adding information about your favorite artists and their works.
+
+In 2000, Gracenote took over the free CDDB project and commercialized it, essentially charging users for accessing the very data they themselves contributed. In response, Robert Kaye founded MusicBrainz. The project has since grown rapidly from a one-man operation to an international community of enthusiasts that appreciates both music and music metadata. Along the way, the scope of the project has expanded from its origins as a mere CDDB replacement to the true music encyclopedia MusicBrainz is today.
+
+As an encyclopedia and as a community, MusicBrainz exists only to collect as much information about music as we can. We do not discriminate or prefer one "type" of music over another, and we try to collect information about as many different types of music as possible. Whether it is published or unpublished, popular or fringe, western or non-western human or non-human — we want it all in MusicBrainz.
+
+### MusicBrainz Database
+
+The [MusicBrainz Database](https://musicbrainz.org/doc/MusicBrainz_Database) stores all of the various pieces of information we collect about music, from artists and their releases to works and their composers, and much more. 
+
+> **Note:** We do not actually store or have access to any of the music recordings!
+
+Most of the data in the [MusicBrainz Database](https://musicbrainz.org/doc/MusicBrainz_Database) is licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/), which effectively places the data into the Public Domain. That means that anyone can download the data and use it in any way they want. The remaining data is released under the Creative Commons [Attribution-NonCommercial-ShareAlike 3.0](http://creativecommons.org/licenses/by-nc-sa/3.0/) license.
+
+All our data is available for commercial licensing. If you are interested in licensing this data for commercial use, please [contact us](https://musicbrainz.org/doc/Contact_Us).
+
+### What can I do with MusicBrainz?
+If you have a digital music collection, [MusicBrainz Picard](https://musicbrainz.org/doc/MusicBrainz_Picard) will help you tag your files.
+
+If you are a developer, our [developer resources](https://musicbrainz.org/doc/Developer_Resources) will help you in making use of our data.
+
+If you are a commercial user, our [live data feed](https://musicbrainz.org/doc/Live_Data_Feed) will provide your local database with replication packets to keep it in sync.
 
 
 
-# Angular-Django-serialization-001 w/ MusicBrainzNGS
-
-![alt text](https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?w=460&fit=max&v=1463687041&auto=format&q=92&s=18c6f5574a0053aa1934f0845f4dd4bb)
-
-![alt text](http://i3.cpcache.com/product/14639896/musicbrainz_magnet.jpg?height=460&width=460&qv=90)
-
-Create a Django project including serialization to serialize and deserialize the experiment instances into representations such as `json`, this allows us to take our `models.py` and turn that data into `json` representation of your data.
-
-```python
-{
-    "count": 2,
-    "next": null,
-    "previous": null,
-    "results": [
-        {
-            "url": "http://127.0.0.1:7000/snippets/1/",
-            "id": 1,
-            "highlight": "http://127.0.0.1:7000/snippets/1/highlight/",
-            "owner": "mattd",
-            "title": "MusicBrainz",
-            "code": "for item in mb.browse_releases(results['name'])",
-            "linenos": false,
-            "language": "python3",
-            "style": "tango"
-        },
-```
-
-### Web API 
-
-REST framework, and give you a comprehensive understanding of how everything fits together. we need to use serialization to store instances for representation of `JSON`
-
-- We can do this by declaring serializers that work very similar to Django's forms
-- Create a `models.py` to have that data be serialized in `serializers.py`
-
-```python
-LEXERS = [item for item in get_all_lexers() if item[1]]
-LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
-STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
-
-class Experiment(models.Model):
-	owner = models.ForeignKey('auth.User', related_name='artists', on_delete=models.CASCADE)
-	highlighted = models.TextField()
-	created = models.DateTimeField(auto_now_add=True)
-	title = models.CharField(max_length=100, blank=True, default='')
-	code = models.TextField()
-	linenos = models.BooleanField(default=False)
-	language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
-	style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
-
-	def save(self, *args, **kwargs):
-                lexer = get_lexer_by_name(self.language)
-		linenos = self.linenos and 'table' or False
-		options = self.title and {'title': self.title} or {}
-		formatter = HtmlFormatter(style=self.style, linenos=linenos,
-								  full=True, **options)
-		self.highlighted = highlight(self.code, lexer, formatter)
-		super().save(*args, **kwargs)
-
-	
-	class Meta:
-		ordering = ('created',)
-```
-- Create a `serializers.py` to serialize the db fields in `models.py` into `JSON`
-
-```python
-class Artisterializer(serializers.HyperlinkedModelSerializer):
-
-	owner = serializers.ReadOnlyField(source='owner.username')
-	highlight = serializers.HyperlinkedIdentityField(view_name='experiment-highlight', format='html')
-
-	class Meta:
-		model = Experiment
-		fields = ('url', 'id', 'highlight', 'owner', 
-				  'title', 'code', 'linenos', 'language', 'style', )
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-	artists = serializers.HyperlinkedRelatedField(many=True, view_name='experiment-detail', read_only=True)
-
-	class Meta:
-		model = User
-		fields = ('url', 'id', 'username', 'snippets')
-```
-
-- We are going to also implement this into a music DB of all artist we want to add, such as electropop, pop, electronic from MusicBrainzNGS
-
-- Run your `requirements.txt` file first, you will have all your requirements you need to build your app.
-
-`pip install requirements.txt`
-
-```
-djangorestframework==3.6.2
-Django==1.11
-Pygments==2.1.3
-Markdown==2.6.3
-musicbrainzngs==0.5
-```
-
-- Must add the musicbrainzngs import, also MB will not allow you to retrieve data without a set_useragent to keep track of who or what is communicating with MB API
-
-- add the below into your `views.py` and your `models.py`.
-
-```python
-import musicbrainzngs as mb 
-
-mb.set_useragent('some_content', version='0.0.1')
-```
-
-Below is what the HTML file will look like at the home-page of your project.
-
-```html
-<a class="navbar-brand">MB</a>
-
-<form>
-  <label for="mb-genre">Genre</label>
-  <input type="text" class="form-control" id="mb-genre" name="genre" placeholder="i.e. pop" />
-
-  <label for="mb-artist">Artist</label>
-  <input type="text" class="form-control" id="mb-artist" name="artist" placeholder="i.e. Maroon 5" />
-
-  <button type="submit">Search MB</button>
-</form>
-
-{% for artist in artists %}
-  <div class="mb-search-result">
-      <a href="{{ composer.get_absolute_url }}">
-        {{ artist.track }}: {{ artist.artist }} on {{ artist.genre }}
-      </a>
-  </div>
-{% endfor %}
-
-```
 
 
