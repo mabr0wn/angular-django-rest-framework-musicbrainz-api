@@ -36,7 +36,26 @@ If you are a developer, our [developer resources](https://musicbrainz.org/doc/De
 
 If you are a commercial user, our [live data feed](https://musicbrainz.org/doc/Live_Data_Feed) will provide your local database with replication packets to keep it in sync.
 
+# Unit Testing
 
+My goal for this project for build the entire application based on [unit testing](http://softwaretestingfundamentals.com/unit-testing/), as I grow my knowledge as a software developer.  There is a vast importance to unit testing 
+
+Unit Testing Tasks
+
+--------------------
+
+-   Unit Test Plan
+    -   Prepare
+    -   Review
+    -   Rework
+    -   Baseline
+-   Unit Test Cases/Scripts
+    -   Prepare
+    -   Review
+    -   Rework
+    -   Baseline
+-   Unit Test
+    -   Perform
 
 
 
