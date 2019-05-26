@@ -1,6 +1,6 @@
 {
   "name": "angular-musicbrainz-api",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -70,8 +70,7 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/jest-config/",
       "<rootDir>/node_modules/",
-      "<rootDir>/src/app/shared/search/search-params.ts",
-      "<rootDir>/src/app/core/services/auth/credentials.service.ts"
+      "<rootDir>/src/app/shared/search/search-params.ts"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist",

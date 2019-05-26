@@ -38,7 +38,7 @@ If you are a commercial user, our [live data feed](https://musicbrainz.org/doc/L
 
 # Unit Testing
 
-My goal for this project for build the entire application based on [unit testing](http://softwaretestingfundamentals.com/unit-testing/), as I grow my knowledge as a software developer.  There is a vast importance to unit testing 
+My goal for this project is to build the entire application based on [unit testing](http://softwaretestingfundamentals.com/unit-testing/), as I grow my knowledge as a software developer, I see the importance of testing your applications.
 
 Unit Testing Tasks
 
