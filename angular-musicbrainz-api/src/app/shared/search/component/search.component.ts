@@ -38,6 +38,10 @@ export class SearchComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.queryResults();
+  }
+
+  queryResults() {
     this.searching = false;
     this.searchType = 'release';
     this.searchTerms$.pipe(
