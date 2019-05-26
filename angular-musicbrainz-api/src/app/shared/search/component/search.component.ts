@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   result: Album[];
 
   searchTerms$: Subject<SearchParams> = new Subject();
-  private ngUnsubscribe: Subject<any> = new Subject();
+  private destroy: Subject<any> = new Subject();
 
   constructor(private searchService: SearchService) { }
 
@@ -62,8 +62,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
+    this.destroy.next();
+    this.destroy.complete();
     this.searchTerms$.complete();
   }
 }
