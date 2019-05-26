@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.searchType = 'release';
     this.searchTerms$.pipe(
         // only emit when the current value is different than the last.
-        distinctUntilChanged((params1, params2) => params2.equals(params1)),
+        // distinctUntilChanged((params1, params2) => params2.equals(params1)),
         switchMap(
           (params) => this.searchService.queryAlbums(params.term, params.type)),
       )
@@ -54,7 +54,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   searchFor(): void {
-    this.queryString = this.queryString ? this.queryString.trim() : null;
     if (this.queryString) {
       this.searching = true;
       this.searchTerms$.next(new SearchParams(this.queryString, this.searchType));
