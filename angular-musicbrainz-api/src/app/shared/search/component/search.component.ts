@@ -5,7 +5,7 @@ import {
   OnDestroy,
   ChangeDetectionStrategy
  } from '@angular/core';
-// RxJs
+ // RxJs
 import {
   Subject
 } from 'rxjs';
@@ -26,27 +26,30 @@ import { SearchService } from '@core/services/search/search.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit, OnDestroy {
-  private ngUnsubscribe: Subject<any> = new Subject();
-  searchTerms: Subject<SearchParams> = new Subject();
   searching: boolean;
   queryString: string;
   searchType: string;
+  
+  result: Album[];
 
+  search: Subject<SearchParams> = new Subject();
+  private ngUnsubscribe: Subject<any> = new Subject();
 
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
     this.searching = false;
     this.searchType = 'release';
-    this.searchTerms.pipe(
+    this.search.pipe(
         // only emit when the current value is different than the last.
         distinctUntilChanged((params1, params2) => params2.equals(params1)),
         switchMap(
-          (params) => this.searchService.searchAlbums(params.term, params.type))
+          (params) => this.searchService.searchAlbums(params.term, params.type)),
       )
       .subscribe((albums) => {
         // Log the albums for debugging purposes
-        console.log(albums, 'albums');
+        console.log(albums, 'albums[]');
+        this.result = albums;
     });
   }
 
@@ -54,13 +57,13 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.queryString = this.queryString ? this.queryString.trim() : null;
     if (this.queryString) {
       this.searching = true;
-      this.searchTerms.next(new SearchParams(this.queryString, this.searchType));
+      this.search.next(new SearchParams(this.queryString, this.searchType));
     }
-
   }
 
   ngOnDestroy(): void {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+    this.search.complete();
   }
 }
