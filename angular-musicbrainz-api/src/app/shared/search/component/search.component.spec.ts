@@ -30,7 +30,7 @@ describe('SearchComponent', () => {
   let fixture: ComponentFixture<SearchComponent>;
   let dummyResult: Album[];
   const searchService = {
-    searchAlbums: jest.fn()
+    queryAlbums: jest.fn()
   };
 
   beforeEach(async(() => {
@@ -67,15 +67,15 @@ describe('SearchComponent', () => {
   describe('Should run "searchFor" method', () => {
     const mockQueryString = 'testQuery';
     let setUp = () => {
-      searchService.searchAlbums.mockReturnValueOnce(of(dummyResult));
+      searchService.queryAlbums.mockReturnValueOnce(of(dummyResult));
       component.queryString = mockQueryString;
     }
-    test('calls searchService.searchAlbums with queryString', () => {
+    test('calls searchService.queryAlbums with queryString', () => {
       setUp();
-      expect(searchService.searchAlbums).not.toHaveBeenCalled();
+      expect(searchService.queryAlbums).not.toHaveBeenCalled();
 
       component.searchFor();
-      expect(searchService.searchAlbums)
+      expect(searchService.queryAlbums)
         .toMatchSnapshot(mockQueryString, component.searchType);
     });
   });

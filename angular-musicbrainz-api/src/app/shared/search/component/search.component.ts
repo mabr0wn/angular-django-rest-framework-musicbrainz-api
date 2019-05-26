@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         // only emit when the current value is different than the last.
         distinctUntilChanged((params1, params2) => params2.equals(params1)),
         switchMap(
-          (params) => this.searchService.searchAlbums(params.term, params.type)),
+          (params) => this.searchService.queryAlbums(params.term, params.type)),
       )
       .subscribe((albums) => {
         // Log the albums for debugging purposes

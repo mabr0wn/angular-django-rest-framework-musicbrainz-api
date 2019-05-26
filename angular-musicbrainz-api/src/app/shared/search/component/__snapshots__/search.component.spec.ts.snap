@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchComponent Should run "searchFor" method calls searchService.searchAlbums with queryString: testQuery 1`] = `
+exports[`SearchComponent Should run "searchFor" method calls searchService.queryAlbums with queryString: testQuery 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [

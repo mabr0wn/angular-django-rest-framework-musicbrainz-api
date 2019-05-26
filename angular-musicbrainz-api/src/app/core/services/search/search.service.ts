@@ -22,19 +22,7 @@ export class SearchService {
     private errorService: ErrorHanlderService
   ) { }
 
-    /* GET heroes whose name contains search term */
-  searchHeroes(term: string): Observable<Album[]> {
-      if (!term.trim()) {
-        // if not search term, return empty hero array.
-        return of([]);
-      }
-      return this.http.get<Album[]>(`https://musicbrainz.org/ws/2/release-group=${term}`).pipe(
-        tap(_ => console.log(`found heroes matching "${term}"`)),
-        catchError(this.errorService.handle<Album[]>('searchHeroes', []))
-      );
-    }
-
-  searchAlbums(term: string, field: string): Observable<Album[]> {
+  queryAlbums(term: string, field: string): Observable<Album[]> {
     const options = {
       params: new HttpParams()
                   .set('query', `${field}:${term}`)
@@ -44,7 +32,7 @@ export class SearchService {
       .pipe(
         map(data => this.processData(data)),
         retry(3),
-        catchError(this.errorService.handle<Album[]>('searchAlbums', []))
+        catchError(this.errorService.handle<Album[]>('queryAlbums', []))
       );
   }
 

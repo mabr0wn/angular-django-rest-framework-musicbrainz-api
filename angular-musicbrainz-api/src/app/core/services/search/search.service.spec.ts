@@ -35,7 +35,7 @@ describe('SearchService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('"searchAlbums" method', () => {
+  describe('"queryAlbums" method', () => {
     test('calls external api with supplied query value and field', () => {
       expect(http.get).not.toHaveBeenCalled();
 
@@ -46,7 +46,7 @@ describe('SearchService', () => {
       });
       let testValue = 'testValue';
       let testField = 'testField';
-      service.searchAlbums(testValue, testField).subscribe();
+      service.queryAlbums(testValue, testField).subscribe();
 
       expect(http.get).toHaveBeenCalledTimes(1);
       expect(argUrl).toContain('https://musicbrainz.org/');
@@ -75,7 +75,7 @@ describe('SearchService', () => {
       };
       http.get.mockReturnValueOnce(of({'release-groups': [rg1, rg2]}));
       let returned: any[];
-      service.searchAlbums('value', 'field').subscribe(data => returned = data);
+      service.queryAlbums('value', 'field').subscribe(data => returned = data);
 
       expect(returned.length).toBe(2);
       expect(returned[0].id).toBe(rg1.id);
