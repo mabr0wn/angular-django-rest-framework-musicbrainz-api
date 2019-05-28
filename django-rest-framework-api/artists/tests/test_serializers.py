@@ -1,19 +1,22 @@
 # Pytest
 import pytest
-# Mock
-from unittest import TestCase
+from mixer.backend.django import Mixer
+# Django
+from django.core.management import call_command
 # Local
 from ..serializers import ArtistSerializer
 
 # We need to do this so that writing to the DB is possible in our tests.
 pytestmark = pytest.mark.django_db
 
-class ArtistSerializerTest(TestCase):
+@pytest.fixture(autouse=True)
+def mixer(request):
+    call_command('migrate', interactive=False, verbosity=0)
+    request.addfinalizer(lambda: call_command('flush', interactive=False, verbosity=0))
+    return Mixer()
 
-    def test_validate(self):
-        serializer = ArtistSerializer()
-        data = serializer.validate({'artist': 'Ray Brown'})
+def test_validate(mixer):
+    serializer = ArtistSerializer()
+    data = serializer.validate({'artist': 'LoFi Hip Hop'})
 
-        self.assertEqual(data, {
-            'artist': 'Ray Brown',
-        })
+    assert data == {'artist': 'LoFi Hip Hop' }

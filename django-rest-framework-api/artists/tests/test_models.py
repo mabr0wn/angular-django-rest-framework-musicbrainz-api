@@ -64,6 +64,9 @@ def test_track_fields(mixer):
 
 def test_artist_fields(mixer):
     pass
+
+def test_relations(mixer):
+    pass
     
 def test_get_genre_from_musicbrainz_tag_list(mixer):
     # will save to test DB.
