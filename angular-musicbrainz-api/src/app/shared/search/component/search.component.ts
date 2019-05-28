@@ -27,7 +27,7 @@ import { SearchService } from '@core/services/search/search.service';
 })
 export class SearchComponent implements OnInit, OnDestroy {
   searching: boolean;
-  queryString: string;
+  query: string;
   searchType: string;
   
   result: Album[];
@@ -58,9 +58,9 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   searchFor(): void {
-    if (this.queryString) {
+    if (this.query) {
       this.searching = true;
-      this.searchTerms$.next(new SearchParams(this.queryString, this.searchType));
+      this.searchTerms$.next(new SearchParams(this.query, this.searchType));
     }
   }
 

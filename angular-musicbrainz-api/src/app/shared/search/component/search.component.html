@@ -4,14 +4,14 @@
   id="search-input" 
   [matAutocomplete]="auto" 
   [placeholder]="'Album Title'" 
-  [(ngModel)]="queryString"
+  [(ngModel)]="query"
   (keyup)="searchFor(search.value)" 
   name="search" 
   required 
   #search="ngModel">
 <mat-autocomplete #auto="matAutocomplete">
   <mat-option *ngFor="let album of result">
-    <span [innerHTML]="album.title | bold:queryString"></span>
+    <span [innerHTML]="album.title | bold:query"></span>
   </mat-option>
 </mat-autocomplete>
 

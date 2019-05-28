@@ -68,7 +68,7 @@ describe('SearchComponent', () => {
     const mockQueryString = 'testQuery';
     let setUp = () => {
       searchService.queryAlbums.mockReturnValueOnce(of(dummyResult));
-      component.queryString = mockQueryString;
+      component.query = mockQueryString;
     }
     test('calls searchService.queryAlbums with queryString', () => {
       setUp();
