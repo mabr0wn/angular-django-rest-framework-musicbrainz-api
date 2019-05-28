@@ -21,13 +21,11 @@ class Track(models.Model):
     name = models.CharField(max_length=255)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     track_number = models.PositiveIntegerField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
-    last_update = models.DateTimeField(auto_now=True)
     slug = models.SlugField()
 
 
 class Artist(models.Model):
-    track = models.ForeignKey(Track, related_name='artistTrack', on_delete=models.CASCADE)
+    track = models.ForeignKey(Track, on_delete=models.CASCADE)
     artist = models.CharField(max_length=255)
     genre = models.CharField(max_length=255)
     start_time = models.CharField(max_length=20, blank=True, null=True)

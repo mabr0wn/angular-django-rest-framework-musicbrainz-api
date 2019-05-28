@@ -13,22 +13,6 @@ from .tasks import get_artist_tracks_from_musicbrianz_api
 class ArtistViewSet(viewsets.ModelViewSet):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    filter_backends = (filters.SearchFilter,)
-    search_fields = ('artist',  'genre')
-
-    @action(methods=['post'], detail=True)
-    def get_queryset(self, **kwargs):
-        artists = []
-
-        text = kwargs.get('text', None)
-        
-        if text:
-            artists = Artist.objects.filter(artist=text)
-
-        if not artists:
-           artist = get_artist_tracks_from_musicbrianz_api(text)
-           artists = [artist]
-        return artists
 
 class AlbumViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.RetrieveModelMixin):
     queryset = Album.objects.all()

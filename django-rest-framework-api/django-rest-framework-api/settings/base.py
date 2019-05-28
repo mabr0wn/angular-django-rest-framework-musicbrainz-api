@@ -57,11 +57,6 @@ WEBPACK_LOADER = {
     }
 }
 
-# GraphQL
-GRAPHENE = {
-    'SCHEMA': 'django-rest-framework-api.schema.schema'
-}
-
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',

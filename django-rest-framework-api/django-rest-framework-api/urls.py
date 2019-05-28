@@ -20,9 +20,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.views.generic import TemplateView
 from django.conf.urls.static import static
-# Graphene for GraphQL
-from graphene_django.views import GraphQLView
-from .schema import schema
 # Django rest framework
 from rest_framework import routers
 # Views
@@ -39,8 +36,6 @@ urlpatterns = [
     path(r'api/', include(router.urls)),
     # angular view
     re_path('.*', TemplateView.as_view(template_name='index.html')),
-    # graphql
-    path(r'graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
