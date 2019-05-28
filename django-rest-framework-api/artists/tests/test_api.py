@@ -50,26 +50,26 @@ class AlbumAPITestCase(APITestCase):
         ''' Test that we have got routing setup for set '''
         route = resolve('/api/albums/')
         
-        self.assertEqual(route.func.__name__, 'AlbumViewSet')
+        assert route.func.__name__ == 'AlbumViewSet'
 
     def test_list_albums(self):
         ''' Test that we can get a list of set '''
         response = self.client.get('/api/albums/')
         
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data[0]['name'], 'Humanz')
-        self.assertEqual(response.data[1]['url'], 'http://testserver/api/albums/1/')
+        assert response.status_code == 200
+        assert response.data[0]['name'] == 'Humanz'
+        assert response.data[1]['url'] == 'http://testserver/api/albums/1/'
     
-class TrackAPITestCase(object):
+class TrackAPITestCase(APITestCase):
     def setUp(self):
-        eyelid_movies = Album.objects.create(name='Eyelid Movies', slug='eyelig-movies')
-        futuristic_casket = Track.objects.create(name='Futuristic Casket', slug='futuristic-casket',                                              album=self.eyelid_movies)
-        electropop_artist = Artist.objects.create(genre='electropop', artist='Phantogram',
-                                                           slug='phantogram', track=futuristic_casket)
+        self.eyelid_movies = Album.objects.create(name='Eyelid Movies', slug='eyelig-movies')
+        self.futuristic_casket = Track.objects.create(name='Futuristic Casket', slug='futuristic-casket',                                              album=self.eyelid_movies)
+        self.electropop_artist = Artist.objects.create(genre='electropop', artist='Phantogram',
+                                                           slug='phantogram', track=self.futuristic_casket)
     @pytest.mark.django_db                                                     
-    def test_retrieve_track(self, client):
+    def test_retrieve_track(self):
         ''' Test that we can get a list of tracks '''
-        r = client.get('/api/tracks/')
+        r = self.client.get('/api/tracks/')
         
         assert r.status_code == 200
         assert r.data[0]['name'] == 'Futuristic Casket'
@@ -77,8 +77,9 @@ class TrackAPITestCase(object):
        
 
     @pytest.mark.django_db 
-    def test_album_list_route(self, client):
-        ''' Test that we've got routing setup for set '''
-        route = client.get('/api/tracks/1/')
+    def test_album_list_route(self):
+        """ Test that we've got routing set up for Albums
+        """
+        route = resolve('/api/tracks/1/')
 
-        assert force_text(route.content) == 'TrackViewSet'
+        assert route.func.__name__ == 'TrackViewSet'
