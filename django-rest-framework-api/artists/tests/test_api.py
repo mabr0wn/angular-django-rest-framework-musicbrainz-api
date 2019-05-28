@@ -23,8 +23,8 @@ class ArtistAPITestCase(APITestCase):
         ''' Post the data into artists in the format of json '''
         response = self.client.post('/api/artists/', data=post_data, format='json')
         
-        self.assertEqual(response.status_code, 201, response.data)
-        self.assertEqual(response.data, {
+        assert response.status_code, 201 == response.data
+        assert response.data == {
             'url': 'http://testserver/api/artists/1/',
             'artist': 'New Order',
             'slug': 'new-order',
@@ -32,13 +32,13 @@ class ArtistAPITestCase(APITestCase):
             'start_time': '0:16',
             'end_time': '3:15',
             'track':  'http://testserver/api/tracks/1/'
-        })
+        }
     
     def test_artist_list_route(self):
         ''' Test that we've got routing set up for artists '''
         route = resolve('/api/artists/')
         
-        self.assertEqual(route.func.__name__, 'ArtistViewSet')
+        assert route.func.__name__ == 'ArtistViewSet'
 
 class AlbumAPITestCase(APITestCase):
     
