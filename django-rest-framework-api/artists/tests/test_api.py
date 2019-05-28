@@ -1,6 +1,5 @@
 # Django
 from django.urls import resolve
-from django.utils.encoding import force_text
 # Pytest
 import pytest
 # Django rest
