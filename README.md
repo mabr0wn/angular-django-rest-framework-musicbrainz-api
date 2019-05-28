@@ -9,8 +9,6 @@ This project consist of a simple API call to search albums and artists from [Mus
 
 # MusicBrainz
 
-This repository is build 
-
 If you are not familiar with the MusicBrainz the website gives this description about it:
 
 **MusicBrainz is a community-maintained open source encyclopedia of music information.**
@@ -40,7 +38,7 @@ If you are a commercial user, our [live data feed](https://musicbrainz.org/doc/L
 
 # Unit Testing
 
-My goal for this project is to build the entire application based on [unit testing](http://softwaretestingfundamentals.com/unit-testing/), as I grow my knowledge as a software developer, I see the importance of testing your applications.
+My goal for this project is to build the entire application based on [unit testing](http://softwaretestingfundamentals.com/unit-testing/), as I grow my knowledge as a software developer, I see the importance of testing your applications.  I have two sets of unit testing for this repo, one base on the frontend written in [Jest](https://jestjs.io/) with [Angular](https://angular.io/).  Although Angular has some awesome out of the box testing tools, I wanted to challenge myself with building a test driven enivornment using Jest.  The backend unit testing environment is written using [Pytest](https://docs.pytest.org/en/latest/)
 
 Unit Testing Tasks
 
