@@ -17,6 +17,6 @@ class TestSeleniumCases:
         Test external resource, run as:
         pytest -vv -rfsX -s tests/selenium_tests.py        
         """
-        self.browser = webdriver.Chrome('/Users/matthewbrown/downloads/chromedriver-3')
+        self.browser = webdriver.Chrome('')
         print(self.browser.get("https://docs.djangoproject.com/"))
         self.browser.quit()
