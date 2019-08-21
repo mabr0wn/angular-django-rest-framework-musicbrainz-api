@@ -3,7 +3,8 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  ViewEncapsulation
  } from '@angular/core';
  // RxJs
 import {
@@ -21,6 +22,7 @@ import { SearchParams} from '@shared/search/search-params';
 import { SearchService } from '@core/services/search/search.service';
 @Component({
   selector: 'app-search-component',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
