@@ -35,5 +35,82 @@
   .spacer {
     height: 200px;
   }
+
+  footer {
+    max-width: 100vw;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    align-items: flex-start;
+    margin: auto;
+  }
+  
+  .row-item {
+    display: flex;
+    width: calc(33% - 0.5em);
+    padding: 0.5em 2em;
+  }
+  
+  .row-item img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  
+  .row-item p {
+    font-size: 0.8em;
+  }
+  
+  .row-item.one {
+    justify-content: flex-end;
+  }
+  
+  .row-item.one p {
+    text-align: end;
+    text-align: right;
+    -webkit-text-align: right;
+  }
+  
+  .row-item.two {
+    justify-content: center;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  
+  .row-item.three {
+    justify-content: flex-start;
+  }
+  
+  /* Something Fun */
+  #countMe:hover {
+    animation-name: wiggle;
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+  }
+  @keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+  }
+  
   
   
