@@ -23,6 +23,7 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 describe('SearchComponent', () => {
@@ -42,6 +43,7 @@ describe('SearchComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [
+        MDBBootstrapModule,
         MatAutocompleteModule,
         MatFormFieldModule,
         FormsModule,
@@ -75,8 +77,7 @@ describe('SearchComponent', () => {
       expect(searchService.queryAlbums).not.toHaveBeenCalled();
 
       component.searchFor();
-      expect(searchService.queryAlbums)
-        .toMatchSnapshot(mockQueryString, component.searchType);
+      expect(searchService.queryAlbums).toMatchSnapshot(mockQueryString, component.searchType);
     });
   });
 });

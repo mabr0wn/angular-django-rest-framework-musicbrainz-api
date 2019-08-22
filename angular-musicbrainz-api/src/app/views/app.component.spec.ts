@@ -19,11 +19,13 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        MDBBootstrapModule,
         MatAutocompleteModule,
         MatFormFieldModule,
         FormsModule,
