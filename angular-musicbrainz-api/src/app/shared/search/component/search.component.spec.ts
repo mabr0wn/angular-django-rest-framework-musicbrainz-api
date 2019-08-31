@@ -4,8 +4,6 @@ import {
   ComponentFixture,
   TestBed
 } from '@angular/core/testing';
-// RxJs
-import { of } from 'rxjs';
 // Components
 import { SearchComponent } from './search.component';
 // Pipe
@@ -69,7 +67,7 @@ describe('SearchComponent', () => {
   describe('Should run "searchFor" method', () => {
     const mockQueryString = 'testQuery';
     let setUp = () => {
-      searchService.queryAlbums.mockReturnValueOnce(of(dummyResult));
+      searchService.queryAlbums.mockReturnValueOnce((dummyResult));
       component.query = mockQueryString;
     }
     test('calls searchService.queryAlbums with queryString', () => {

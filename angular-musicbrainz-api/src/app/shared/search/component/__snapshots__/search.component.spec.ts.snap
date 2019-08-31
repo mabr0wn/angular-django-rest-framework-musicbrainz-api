@@ -11,10 +11,20 @@ exports[`SearchComponent Should run "searchFor" method calls searchService.query
   "results": Array [
     Object {
       "type": "return",
-      "value": Observable {
-        "_isScalar": false,
-        "_subscribe": [Function],
-      },
+      "value": Array [
+        Object {
+          "artistCredit": Array [],
+          "id": "1",
+          "image": "image1",
+          "title": "title1",
+        },
+        Object {
+          "artistCredit": Array [],
+          "id": "2",
+          "image": "image2",
+          "title": "title2",
+        },
+      ],
     },
   ],
 }
